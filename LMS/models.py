@@ -10,13 +10,16 @@ class Library(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name_plural = "Libraries"
+    
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
     pk_num = models.CharField(max_length=128, unique=True)
     reg_library = models.ForeignKey(Library, on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
-    book_limit = models.IntegerField(max_length=20)
+    book_limit = models.IntegerField()
     email = models.EmailField()
     date_reg = models.DateTimeField(auto_now_add=True)
     
@@ -35,6 +38,9 @@ class Staff(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name_plural = "Staff"
+    
 class Category(models.Model):
     pk_num = models.IntegerField(unique=True)
     name = models.CharField(max_length=128)
@@ -43,6 +49,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name_plural = "Categories"
+        
 class ISBN(models.Model):
     pk_num = models.IntegerField(unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -52,6 +61,9 @@ class ISBN(models.Model):
     
     def __str__(self):
         return self.pk_num
+    
+    class Meta:
+        verbose_name_plural = "ISBNs"
     
 class Book(models.Model):
     pk_num = models.IntegerField(unique=True)
