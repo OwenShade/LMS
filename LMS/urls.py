@@ -4,6 +4,9 @@ from LMS import views
 app_name = 'LMS'
 
 urlpatterns = [
-    path('home', views.home, name ='home'),
-    path('register', views.register, name='register'),
+    path('', views.home, name ='home'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login, name='register'),
+    path('browse/', views.browse, name='browse' ),
+    path('search/', views.search, name='search')
 ]
