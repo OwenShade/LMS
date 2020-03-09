@@ -4,18 +4,18 @@ from django.http import HttpResponse
 
 #All these views just link back to the home page, still need to link them back to each other
 def home(request):
-    return render(request, 'LMS/home.html')
+    return render(request, 'home.html')
 
 def register(request):
-    return render(request, 'LMS/register.html')
+    return render(request, 'register.html')
 
 def login(request):
-    return render(request, 'LMS/login.html')
+    return render(request, 'login.html')
 
 def browse(request):
-    return render(request, 'LMS/browse.html')
+    return render(request, 'browse.html')
 
 def search(request):
-    return render(request, 'LMS/search.html')
+    return render(request, 'search.html')
 
     
