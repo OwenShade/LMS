@@ -30,13 +30,13 @@ class Staff(models.Model):
     name = models.CharField(max_length=128)
     reg_library = models.ForeignKey(Library, on_delete=models.CASCADE)
     role = models.CharField(max_length=128)
-    phone = models.IntegerField(max_length=15)
+    phone = models.IntegerField()
     
     def __str__(self):
         return self.name
     
 class Category(models.Model):
-    pk_num = models.IntegerField(max_length=11, unique=True)
+    pk_num = models.IntegerField(unique=True)
     name = models.CharField(max_length=128)
     manager = models.ForeignKey(Staff, on_delete=models.CASCADE)
     
@@ -44,7 +44,7 @@ class Category(models.Model):
         return self.name
     
 class ISBN(models.Model):
-    pk_num = models.IntegerField(max_length=13, unique=True)
+    pk_num = models.IntegerField(unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
     author = models.CharField(max_length=128)
