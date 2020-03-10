@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from LMS.models import Member, Category, Book
+from LMS.models import Member, Category, Book, Staff 
 
 #Form for adding a category
 class CategoryForm(forms.ModelForm):
@@ -8,7 +8,8 @@ class CategoryForm(forms.ModelForm):
         help_text="Please enter the new category.")
     
     class Meta:
-        #Not too sure what is meant to go in here!
+        model = Category
+        fields = ('name',)
 
 #form for adding a book
 class BookForm(forms.ModelForm):
@@ -22,10 +23,11 @@ class BookForm(forms.ModelForm):
         help_text="Please enter the genre.")
 
     class Meta:
-        #Same here! - Owen.
+        model = Book
+        fields = ('title', 'category', 'author', 'genre',)
 
 #form for adding a staff member
-class StaffMember(forms.ModelForm):
+class StaffForm(forms.ModelForm):
     name = forms.CharField(max_length=128,
         help_text="Please enter the name of the staff member.")
     role = forms.CharField(max_length=128,
@@ -34,18 +36,13 @@ class StaffMember(forms.ModelForm):
         help_text="Please enter their phone number.")
     
     class Meta:
-        # same here.
+        model = Staff
+        fields = ('name', 'role', 'phone',)
 
-#form for a new user to register themselves
-#don't think this works, needs some work
-class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
+# class UserForm(forms.ModelForm):
+#     password = forms.CharField(widget=forms.PasswordInput())
 
-    class Meta:
-        model = Member
-        fields = ('name', 'email')
 
-class UserProfileForm(forms.ModelForm):
-    class Meta:
-        model = Member
-        fields = ('pk_num',) 
+#     class Meta:
+#         model = Member
+#         fields = ('name', 'email')
