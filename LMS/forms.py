@@ -39,10 +39,13 @@ class StaffForm(forms.ModelForm):
         model = Staff
         fields = ('name', 'role', 'phone',)
 
-# class UserForm(forms.ModelForm):
-#     password = forms.CharField(widget=forms.PasswordInput())
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    name = forms.CharField(max_length=128,
+        help_text="Please enter your full name.")
+    email = forms.CharField(max_length=128,
+        help_text="Please enter your email.")
 
-
-#     class Meta:
-#         model = Member
-#         fields = ('name', 'email')
+    class Meta:
+        model = Member
+        fields = ('name', 'email')

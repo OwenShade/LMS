@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from LMS.forms import CategoryForm, BookForm, StaffForm
+from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm
 from django.shortcuts import redirect
 
 #All these views just link back to the home page, still need to link them back to each other
@@ -8,7 +8,23 @@ def home(request):
     return render(request, 'home.html')
 
 def register(request):
-    return render(request, 'register.html')
+    registered = False
+
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+
+        if user_form.is_valid():
+            user = user_form.save()
+
+            user.set_password(user.password)
+            user.save()
+
+            registered = True
+        else:
+            print(user_form.errors)
+    else:
+        user_form = UserForm()
+    return render(request, 'register.html', context ={'user-form': user_form, 'registered': registered})
 
 def login(request):
     return render(request, 'login.html')
