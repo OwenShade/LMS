@@ -1,6 +1,4 @@
-
 {% extends 'base.html' %}
-{% load staticfiles %}
 
 {% block title_block %}
     Add Staff
@@ -9,18 +7,21 @@
 {% block body_block %}
 <h1>Add a Staff Member</h1>
 <div> 
-    <form id="StaffForm" method="post" action="/add_staff/">
+    <form id="StaffForm" method="post" class="col-8" action="/add_staff/">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %} 
             {{ hidden }} 
         {% endfor %} 
-        {% for field in form.visible_fields %} 
-            {{ field.errors }} 
-            {{ field.help_text }} 
-            {{ field }} 
-            <br>
+        {% for field in form.visible_fields %}
+            <div class="form-group row">
+                <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
+                <div class="mb-3 ml-3 col">
+                    <div class="">{{field}}</div>
+                    <div class="invalid-feedback">{{ field.errors }}</div>
+                </div>
+            </div>
         {% endfor %} 
-        <input type="submit" name="submit" value="Add Staff" /> 
+        <input type="submit" name="submit" class="btn btn-primary" value="Add Staff" /> 
     </form> 
 </div>
 {% endblock %}

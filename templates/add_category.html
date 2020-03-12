@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
 
 {% block title_block %}
     Add a Category
@@ -7,19 +6,22 @@
 
 {% block body_block %}
 <h1>Add a Category</h1>
-        <div> 
-            <form id="CategroyForm" method="post" action="/add_category/">
-                {% csrf_token %}
-                {% for hidden in form.hidden_fields %} 
-                    {{ hidden }} 
-                {% endfor %} 
-                {% for field in form.visible_fields %} 
-                    {{ field.errors }} 
-                    {{ field.help_text }} 
-                    {{ field }} 
-                    <br>
-                {% endfor %} 
-                <input type="submit" name="submit" value="Create Category" /> 
-            </form> 
-        </div>
+<div> 
+    <form id="CategoryForm" class="col-8" method="post" action="/add_category/">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %} 
+            {{ hidden }} 
+        {% endfor %} 
+        {% for field in form.visible_fields %}
+            <div class="form-group row">
+                <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
+                <div class="mb-3 ml-3 col">
+                    <div class="">{{field}}</div>
+                    <div class="invalid-feedback">{{ field.errors }}</div>
+                </div>
+            </div>
+        {% endfor %} 
+        <input type="submit" name="submit" class="btn btn-primary" value="Create Category" /> 
+    </form> 
+</div>
 {% endblock %}
