@@ -16,10 +16,7 @@ Thank you for registering!
 
     {% csrf_token %}
     {{ UserForm.as_p }}
-    {% for hidden in form.hidden_fields %} 
-            {{ hidden }} 
-        {% endfor %} 
-        {% for field in form.visible_fields %}
+        {% for field in form%}
             <div class="form-group row">
                 <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
                 <div class="mb-3 ml-3 col">

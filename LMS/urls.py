@@ -12,4 +12,6 @@ urlpatterns = [
     path('add_category/', views.add_category, name='add_category'),
     path('add_book/', views.add_book, name='add_book'),
     path('add_staff/', views.add_staff, name='add_staff'),
+    path('returns/', views.returns, name='returns'),
+    path('staff_page/', views.staff_page, name='staff_page')
 ]

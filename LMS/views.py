@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm
 from django.shortcuts import redirect
+from django.views.generic import ListView
 
 def home(request):
     return render(request, 'home.html')
@@ -94,6 +95,12 @@ def add_staff(request):
             print(form.errors)
     
     return render(request, 'add_staff.html', {'form': form})
+
+def returns(request):
+    return render(request, 'returns.html')
+
+def staff_page(request):
+    return render(request, 'staff_page.html')
 
 
 

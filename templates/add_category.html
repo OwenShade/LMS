@@ -22,6 +22,13 @@
             </div>
         {% endfor %} 
         <input type="submit" name="submit" class="btn btn-primary" value="Create Category" /> 
+        
     </form> 
+    <br/>
+    <form>
+        <div class="mb-3 ml-3 col">
+            <button formaction="{% url 'LMS:staff_page' %}" class="btn btn-primary">Staff Page</button>
+        </div>
+    </form>
 </div>
 {% endblock %}
