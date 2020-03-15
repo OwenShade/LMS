@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+
 {% block title_block %}
     Login
 {% endblock %}
 
 {% block body_block %}
-Login
+<h1>Login to Library</h1>
+<form id="login_form" method="post" action="/login/">
+    {% csrf_token %}
+    <div class="form-group row">
+        <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
+        <div class="mb-3 ml-3 col">
+            <div class=""> Username: <input type="text" name="username" value="" size="50" /></div>
+            <div class=""> Password: <input type="password" name="password" value="" size="50" /></div>
+            <div class="invalid-feedback">{{ field.errors }}</div>
+        </div>
+    </div>
+
+    <input type="submit" value="submit" class="btn btn-primary" value="Login" />
+</form>
 {% endblock %}

@@ -48,4 +48,4 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = Member
-        fields = ('name', 'email')
+        fields = ('password', 'name', 'email',)
