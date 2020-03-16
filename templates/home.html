@@ -2,9 +2,38 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Home
 {% endblock %}
 
 {% block body_block %}
-This is the Home Page
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h1 class="text-center">Welcome to Oakwood Library</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h3 class="text-center">Log in to take any books.</h3>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <a type="button" class="btn btn-outline-primary" href="{% url 'LMS:login' %}">Log in</a>
+            <a type="button" class="btn btn-outline-primary" href="{% url 'LMS:register' %}">Register</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <h3 class="text-center">Popular Categories</h3>
+            <!-- Should create a list of links of Categories -->
+        </div>
+        <div class="col-6">
+            <h3 class="text-center">Popular Books</h3>
+            <!-- Should create a table with the following columns: Title, Author, Genre -->
+        </div>
+    </div>
+
+
 {% endblock %}
