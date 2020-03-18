@@ -53,14 +53,14 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
         
 class ISBN(models.Model):
-    pk_num = models.IntegerField(unique=True)
+    ISBN = models.IntegerField(unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
     author = models.CharField(max_length=128)
     genre = models.CharField(max_length=128)
     
     def __str__(self):
-        return self.pk_num
+        return self.title
     
     class Meta:
         verbose_name_plural = "ISBNs"
@@ -69,7 +69,7 @@ class Book(models.Model):
     pk_num = models.IntegerField(unique=True)
     isbn = models.ForeignKey(ISBN, on_delete=models.CASCADE)
     location = models.ForeignKey(Library, on_delete=models.CASCADE)
-    taken_out = models.ForeignKey(Member, on_delete=models.SET(None), default=None, null=True)
+    taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
     
     def __str__(self):
         return self.pk_num
