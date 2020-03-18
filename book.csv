@@ -1,3 +1,4 @@
+<<<<<<< HEAD,,,,,
 ISBN,CategoryID,title,Author,Genre,Category
 9.78E+12,8,"The Wadsworth Themes American Literature Series, 1945-Present, Theme 18: Class Conflicts and the American Dream",Jay Parini,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
 9.78E+12,8,Glencoe Literature: American Literature: The Reader's Choice,Jeffrey D. Wilhelm,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
@@ -488,3 +489,495 @@ ISBN,CategoryID,title,Author,Genre,Category
 9.78E+12,8,Montana Women Writers: A Geography of the Heart,Farcountry Press,Women Authors - Literature Anthologies,Fiction & Literature
 9.78E+12,8,"Damage Control: Women on the Therapists, Beauticians, and Trainers Who Navigate Their Bodies",Emma Forrest,Women Authors - Literature Anthologies,Fiction & Literature
 9.78E+12,5,"B. O. O. B. S.: A Bunch of Outrageous Breast-Cancer Survivors Tell Their Stories of Courage, Hope and Healing",Ann Kempner Fisher,Women's Diseases & Disorders,Natural Sciences
+=======,,,,,
+isbn,categoryID,title,author,genre,category
+9799462935,8,"The Wadsworth Themes American Literature Series, 1945-Present, Theme 18: Class Conflicts and the American Dream",Jay Parini,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
+5100573668,8,Glencoe Literature: American Literature: The Reader's Choice,Jeffrey D. Wilhelm,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
+6111590482,8,Contemporary U. S. Latino a Literary Criticism,Lyn Di Iorio Sandin,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
+3516949408,8,Paradise Road: Jack Kerouac's Lost Highway and My Search for America,Jay Atkinson,20th Century American Literature - Post WWII - Literary Criticism,Fiction & Literature
+2360802632,9,Introduction to African Oral Literature and Performance,Bayo Ogunjimi,Africa - Anthropology & Sociology,History & Geography
+4210680319,9,Oral and Written Expressions of African Cultures,Toyin Falola,Africa - Anthropology & Sociology,History & Geography
+8896370404,9,Black on White: Black Writers on What It Means to Be White,David R. Roediger,African Americans - General & Miscellaneous,History & Geography
+2882042037,9,"Pamphlets of Protest: An Anthology of Early African American Protest Literature, 1790-1860",Richard G. Newman,African Americans - General & Miscellaneous,History & Geography
+8947825642,8,Land Apart: A South African Reader,Various,African Literature Anthologies,Fiction & Literature
+8122395604,8,Love Child,Gcina Mhlophe,African Literature Anthologies,Fiction & Literature
+8557544895,8,The Rienner Anthology of African Literature,Anthonia C. Kalu,African Literature Anthologies,Fiction & Literature
+2404735802,8,Glass Jars among Trees,Arja Salafranca,African Literature Anthologies,Fiction & Literature
+4187405400,8,Running Towards Us: New Writing from South Africa,Isabel Balseiro,African Literature Anthologies,Fiction & Literature
+5108076574,8,Among the Blacks,Ron Padgett,African Literature Anthologies,Fiction & Literature
+5076424695,5,Literature and Aging: An Anthology,Martin Kohn,Aging - General & Miscellaneous,Natural Sciences
+4166173198,9,Denali: A Literary Anthology,Bill Sherwonit,Alaska - State & Local History,History & Geography
+8101802979,8,The Lost Algonquin Round Table,Nat Benchley,American & Canadian Literature,Fiction & Literature
+6177246919,8,"Women of the Beat Generation: The Writers, Artists and Muses at the Heart of a Revolution",Brenda Knight,American & Canadian Literature,Fiction & Literature
+2399675463,8,American Gothic: An Anthology 1787-1916 (Blackwell Anthologies Series),Crow,American & Canadian Literature,Fiction & Literature
+3771864958,8,The Best American Essays 2009,Mary Oliver,American Essays,Fiction & Literature
+5671873752,8,The Best American Essays of the Century,Joyce Carol Oates,American Essays,Fiction & Literature
+3571177420,8,The Best American Essays 2008,Adam Gopnik,American Essays,Fiction & Literature
+5828789112,8,The Best American Nonrequired Reading 2007,Dave Eggers,American Essays,Fiction & Literature
+4253745572,8,Sticks and Stones and Other Student Essays,Ruthe Thompson,American Essays,Fiction & Literature
+6802456795,8,Brooklyn Was Mine,Chris Knutsen,American Essays,Fiction & Literature
+9001647650,8,Selected Works,Ralph Waldo Emerson,American Essays,Fiction & Literature
+1208980373,8,Florida Frenzy,Harry E. Crews,American Essays,Fiction & Literature
+4614918818,8,The Best American Short Stories 2003,Walter Mosley,American Fiction,Fiction & Literature
+5665433787,8,The Best American Short Stories 2004,Lorrie Moore,American Fiction,Fiction & Literature
+4191525310,8,The Best American Short Stories 2005,Michael Chabon,American Fiction,Fiction & Literature
+8485182925,8,The Complete Works of Kate Chopin,Kate Chopin,American Fiction,Fiction & Literature
+5193237025,8,The Best American Short Stories 2001,Barbara Kingsolver,American Fiction,Fiction & Literature
+7231015716,8,The Best American Short Stories 2002,Sue Miller,American Fiction,Fiction & Literature
+8762852421,8,"Writings: The Autobiography of an Ex-Colored Man, Along This Way, Essays and Editorials, Selected Poems",James Weldon Johnson,American Fiction,Fiction & Literature
+8631024323,8,The Portable Sixties Reader,Ann Charters,American Fiction & Literature Classics,Fiction & Literature
+1440812915,9,Don't Squat With Your Spurs On: A Cowboy's Guide to Life,Texas Bix Bender,American Humor - Peoples & Cultures,History & Geography
+5669182840,9,"Don't Squat With Yer Spurs On! II, Vol. 2",Texas Bix Bender,American Humor - Peoples & Cultures,History & Geography
+2670536064,9,"Who's to Say What's Obscene?: Politics, Culture, and Comedy in America Today",Paul Krassner,American Humor - Peoples & Cultures,History & Geography
+4993706029,8,The Best American Nonrequired Reading 2010,Dave Eggers,American Literature Anthologies,Fiction & Literature
+3767273766,8,"The Norton Anthology of American Literature, Shorter Seventh Edition, One-Volume Paperback",Wayne Franklin,American Literature Anthologies,Fiction & Literature
+7674521731,8,"The Norton Anthology of American Literature, Package 2: Volumes C, D, and E",Jerome Klinkowitz,American Literature Anthologies,Fiction & Literature
+1022205733,8,Couldn't Keep It to Myself: Testimonies from Our Imprisoned Sisters,Wally Lamb,American Literature Anthologies,Fiction & Literature
+1030400408,8,The Norton Anthology of American Literature: Volume A: Beginnings to 1820,Wayne Franklin,American Literature Anthologies,Fiction & Literature
+7688623599,8,Norton Anthology of Literature by Women: The Traditions in English,Sandra M. Gilbert,American Literature Anthologies,Fiction & Literature
+8111398946,8,The American Tradition in Literature (concise) book alone,George Perkins,American Literature Anthologies,Fiction & Literature
+7045995909,8,The Norton Anthology of American Literature: Volume C: 1865-1914,Arnold Krupat,American Literature Anthologies,Fiction & Literature
+9009712045,8,Concise Anthology of American Literature,James Leonard,American Literature Anthologies,Fiction & Literature
+6838160620,8,"The Heath Anthology of American Literature: Contemporary Period (1945 To The Present), Volume E",Paul Lauter,American Literature Anthologies,Fiction & Literature
+6845051845,8,"The Harper American Literature, Single Volume Edition",Donald McQuade,American Literature Anthologies,Fiction & Literature
+5207176579,8,Writing New York: A Literary Anthology,Phillip Lopate,American Literature Anthologies,Fiction & Literature
+8620957006,8,The Norton Anthology of American Literature: Volume D: 1914-1945,Jerome Klinkowitz,American Literature Anthologies,Fiction & Literature
+2105474530,8,"The American Tradition in Literature, Volume 1(book alone)",George Perkins,American Literature Anthologies,Fiction & Literature
+3622134852,8,The Outlaw Bible of American Literature,Alan Kaufmann,American Literature Anthologies,Fiction & Literature
+7020996284,8,Spider Woman's Granddaughters: Traditional Tales and Contemporary Writing by Native American Women,Paula Gunn Allen,American Literature Anthologies,Fiction & Literature
+4135037067,8,True Crime: An American Anthology,Harold Schechter,American Literature Anthologies,Fiction & Literature
+3536301831,8,"Anthology of American Literature, Volume I",George McMichael,American Literature Anthologies,Fiction & Literature
+2504791162,8,"The Heath Anthology of American Literature: Modern Period (1910?1945), Volume D",Kirk Curnutt,American Literature Anthologies,Fiction & Literature
+8397219940,8,The American Transcendentalists: Essential Writings,Lawrence Buell,American Literature Anthologies,Fiction & Literature
+8583521863,8,"The American Tradition in Literature, Volume 2 (book alone)",George Perkins,American Literature Anthologies,Fiction & Literature
+3781561648,8,The Butterfly's Way: Voices from the Haitian Dyaspora in the United States,Edwidge Danticat,American Literature Anthologies,Fiction & Literature
+6251470108,8,Bedford Anthology of American Literature: Volume Two: 1865 to Present,Susan Belasco,American Literature Anthologies,Fiction & Literature
+7417743858,8,"The Vietnam War in American Stories, Songs, and Poems",H. Bruce Franklin,American Literature Anthologies,Fiction & Literature
+9340879963,8,"American Literature, Volume II (Penguin Academics Series)",William E. Cain,American Literature Anthologies,Fiction & Literature
+9191626868,8,Boricuas: Influential Puerto Rican Writings--- An Anthology,Roberto Santiago,American Literature Anthologies,Fiction & Literature
+8700001430,8,Short Story Masterpieces,Robert Penn Warren,American Literature Anthologies,Fiction & Literature
+9557997681,8,"The Heath Anthology of American Literature, Concise Edition",Paul Lauter,American Literature Anthologies,Fiction & Literature
+7761619691,8,Out of Her Mind: Women Writing on Madness,Rebecca Shannonhouse,American Literature Anthologies,Fiction & Literature
+6104151633,8,Growing Up in the South: An Anthology of Modern Southern Literature,Suzanne Jones,American Literature Anthologies,Fiction & Literature
+4347225763,8,The Norton Anthology of American Literature: Volume E: 1945 to the Present,Jerome Klinkowitz,American Literature Anthologies,Fiction & Literature
+8639464813,8,Witnessing Lynching: American Writers Respond,Anne P. Rice,American Literature Anthologies,Fiction & Literature
+6737581136,8,Literary Nevada: Writings from the Silver State,Cheryll Glotfelty,American Literature Anthologies,Fiction & Literature
+5030511629,8,The Heath Anthology of American Literature: Volume B: Early Nineteenth Century (1800-1865),Paul Lauter,American Literature Anthologies,Fiction & Literature
+5152921534,8,"Love, Castro Street: Reflections of San Francisco",Katherine V. Forrest,American Literature Anthologies,Fiction & Literature
+8551285255,8,Rising Voices,Arlene Hirschfelder,American Literature Anthologies,Fiction & Literature
+4359294191,8,"American Literature (Penguin Academics Series), Vol. 1",William E. Cain,American Literature Anthologies,Fiction & Literature
+9100397707,8,A Hallowe'en Anthology: Literary and Historical Writings over the Centuries,Lisa Morton,American Literature Anthologies,Fiction & Literature
+1514673003,8,The Last Best Place: A Montana Anthology,William Kittredge,American Literature Anthologies,Fiction & Literature
+8511686976,8,Growing up Poor: A Literary Anthology,Robert Coles,American Literature Anthologies,Fiction & Literature
+9950568488,8,The Beat Book: Writings from the Beat Generation,Anne Waldman,American Literature Anthologies,Fiction & Literature
+7665410845,8,No Walls of Stone: An Anthology of Literature by Deaf and Hard of Hearing Writers,Jill Jepson,American Literature Anthologies,Fiction & Literature
+8424284355,8,Riding Low on Streets of Gold,Judith Ortiz Cofer,American Literature Anthologies,Fiction & Literature
+6742268337,8,Voices in First Person: Reflections on Latino Identity,Lori Marie Carlson,American Literature Anthologies,Fiction & Literature
+9489190147,8,Writing Los Angeles: A Literary Anthology,David L. Ulin,American Literature Anthologies,Fiction & Literature
+3446974562,8,American Austen: The Forgotten Writing of Agnes Repplier,Agnes Repplier,American Literature Anthologies,Fiction & Literature
+8903671186,8,Bold Words: A Century of Asian American Writing,Rajini Srikanth,American Literature Anthologies,Fiction & Literature
+2083812973,8,Through the Eye of the Deer: An Anthology of Native American Women Writers,Carolyn Dunn,American Literature Anthologies,Fiction & Literature
+2654769809,8,Daughters Of Decadence,Elaine Showalter,American Literature Anthologies,Fiction & Literature
+9776456633,8,"American Tradition in Literature : With American Ariel, Vol. 2",George Perkins,American Literature Anthologies,Fiction & Literature
+8146532628,8,"Literatura Chicana, 1965-1995: An Anthology in Spanish, English, and Calo, Vol. 191",Garland,American Literature Anthologies,Fiction & Literature
+1725495237,8,"Richard Wright: Early Works (Lawd Today!, Uncle Tom's Children, Native Son)",Richard Wright,American Literature Anthologies,Fiction & Literature
+4413743699,8,The Heath Anthology of American Literature: Volume E: Contemporary Period (1945 to the Present),Paul Lauter,American Literature Anthologies,Fiction & Literature
+7270068453,8,The Best of Bamboo Ridge,Eric Chock,American Literature Anthologies,Fiction & Literature
+2819900837,8,Listen Here: Women Writing in Appalachia,Sandra L. Ballard,American Literature Anthologies,Fiction & Literature
+4895138233,8,This Bridge We Call Home: Radical Visions for Transformation,Gloria E. Anzaldua,American Literature Anthologies,Fiction & Literature
+3382988362,8,Santa Fe Nativa: A Collection of Nuevomexicano Writing,Rosalie C. Otero,American Literature Anthologies,Fiction & Literature
+1415716922,8,Crazy Woman Creek: Women Rewrite the American West,Nancy Curtis,American Literature Anthologies,Fiction & Literature
+3576510575,8,Circle of Women: An Anthology of Contemporary Western Women Writers,Kim Barnes,American Literature Anthologies,Fiction & Literature
+6572361424,8,American Reader,Kathy-jo Wargin,American Literature Anthologies,Fiction & Literature
+3635774557,9,New York Stories: The Best of the City Section of the New York Times,Constance Rosenblum,Americans - Regional Biography,History & Geography
+1050855636,6,Califauna: A Literary Field Guide,Terry Beers,Animals - General,Applied Sciences
+7036961553,8,"Traditions in World Literature: Literature of Africa, Softcover Student Edition",McGraw-Hill,Anthologies,Fiction & Literature
+3710501806,8,Basali!: Stories by and about Women in Lesotho,K. Limakatso Kendall,Anthologies,Fiction & Literature
+7854805419,9,Asian American Studies Now: A Critical Reader,Jean Yu-wen Shen Wu,Asian American Studies - General & Miscellaneous,History & Geography
+6697970053,9,Asian American Studies: A Reader,Jean Yu-wen Shen Wu,Asian American Studies - General & Miscellaneous,History & Geography
+8781824172,9,Screaming Monkeys: Critiques of Asian American Images,M. Evelina Galang,Asian American Studies - General & Miscellaneous,History & Geography
+4498715381,7,Baseball: A Literary Anthology,Nicholas Dawidoff,Baseball & Softball,Recreation
+8664315932,7,Tenderheaded: A Comb-Bending Collection of Hair Stories,Juliette Harris,Beauty & Grooming,Recreation
+6643082377,8,How God Fix Jonah,Lorenz Graham,Bible - Stories,Fiction & Literature
+5672616259,9,The Oxford Book of American Short Stories,Joyce Carol Oates,Biographies,History & Geography
+1585478496,9,Mother California: A Story of Redemption Behind Bars,Kenneth E. Hartman,Biographies,History & Geography
+8214671655,9,Death Blossoms: Reflections from a Prisoner of Conscience,Mumia Abu-Jamal,Biographies,History & Geography
+7722515806,9,Queer 13: Lesbian and Gay Writers Recall Seventh Grade,Clifford Chase,Biographies,History & Geography
+5324365029,9,Running a Thousand Miles for Freedom: The Escape of William and Ellen Craft from Slavery,William Craft,Biographies,History & Geography
+1259282104,9,Sky Begins at Your Feet,Caryn Mirriam-Goldberg,Cancer Patients - Biography,History & Geography
+2663224743,8,Of Suffocated Hearts and Tortured Souls: Seeking Subjecthood through Madness in Francophone Women's,ValZrie Orlando,Caribbean Fiction & Prose Literature - Literary Criticism,Fiction & Literature
+2103907020,8,Uncle Remus: His Songs and His Sayings,Joel Chandler Harris,Children's Fiction,Fiction & Literature
+9165943553,9,Message to Aztlan: Selected Readings,Rodolfo Gonzales,Civil Rights - United States,History & Geography
+1163622181,1,The American Aeneas: Classical Origins of the American Self,John C. Shields,Classicism,Philosophy
+3887527201,7,American Food Writing: An Anthology with Classic Recipes,Molly O'Neill,Cooking,Recreation
+5839958020,7,American Food Writing: An Anthology with Classic Recipes,Molly O'Neill,Cooking Essays,Recreation
+8031921480,6,Transforming a Rape Culture,Emilie Buchwald,Criminology - Bias Crimes,Applied Sciences
+6994409333,3,The Best American Short Plays 2003-2004,Glenn Young,Drama,Social Sciences
+2391465631,3,New Playwrights: The Best Plays of 2007,Lawrence Harbison,Drama,Social Sciences
+5593497310,3,Thom Pain (based on nothing),Will Eno,Drama,Social Sciences
+6961969818,3,Women Heroes: Six Short Plays from the Women's Project,Julia Miles,Drama,Social Sciences
+1521861872,3,New Playwrights: The Best Plays of 2004,D. L. Lepidus,Drama,Social Sciences
+9113133537,3,"Off Off Broadway Festival Plays, 34th Series",Various,Drama,Social Sciences
+7544856524,3,"Roots of African American Drama: An Anthology of Early Plays, 1858-1938",Leo Hamalian,Drama,Social Sciences
+8423167010,3,Classic Plays from the Negro Ensemble Company,Paul Carter Harrison,Drama,Social Sciences
+2613373180,3,The Best American Short Plays 2008-2009,Barbara Parisi,Drama Anthologies,Social Sciences
+9961061207,3,Touch,Toni Press-Coffman,Drama Anthologies,Social Sciences
+1430387596,3,The Best American Short Plays 2006-2007,Barbara Parisi,Drama Anthologies,Social Sciences
+7320731181,3,The Best New Playwrights 2009,Lawrence Harbison,Drama Anthologies,Social Sciences
+6597657825,3,2007: The Best Ten-Minute Plays for Two Actors,Lawrence Harbison,Drama Anthologies,Social Sciences
+2257814112,3,Nickel and Dimed,Joan Holden,Drama Anthologies,Social Sciences
+7505638441,3,"The Women's Project and Productions: The Best One-Act Plays, 1975-1999",Julia Miles,Drama Anthologies,Social Sciences
+8596940511,3,New Playwrights: The Best Plays of 2008,Lawrence Harbison,Drama Anthologies,Social Sciences
+5593006817,3,New Playwrights: The Best Plays of 2006,D. L. Lepidus,Drama Anthologies,Social Sciences
+7249385429,3,American Political Plays after 9/11,Allan Havis,Drama Anthologies,Social Sciences
+4722829477,3,"Best Plays of the Early American Theatre, 1787-1911",John Gassner,Drama Anthologies,Social Sciences
+9044896887,3,"Twenty One-Acts from the Twenty Years at the Humana Festival, 1975-1995",Michele Volansky,Drama Anthologies,Social Sciences
+1061806422,3,Plays and Playwrights 2002,Martin Denton,Drama Anthologies,Social Sciences
+2554604784,3,Plays and Playwrights 2009,Martin Denton,Drama Anthologies,Social Sciences
+2051057415,3,The Best Plays Theater Yearbook 2007-2008,Jeffrey Eric Jenkins,Drama Anthologies,Social Sciences
+6930459342,3,New Playwrights: The Best Plays of 2000,D. L. Lepidus,Drama Anthologies,Social Sciences
+8825661759,3,Salaam. Peace: An Anthology of Middle Eastern-American Drama,Holly Hill,Drama Anthologies,Social Sciences
+5926734925,3,Plays and Playwrights 2008,Robert Attweiler,Drama Anthologies,Social Sciences
+5137314760,3,Death Defying Acts,Woody Allen,Drama Anthologies,Social Sciences
+4276463625,3,New Playwrights: The Best Plays of 2001,D. L. Lepidus,Drama Anthologies,Social Sciences
+3654903833,3,New Playwrights: The Best Plays of 2005,D. L. Lepidus,Drama Anthologies,Social Sciences
+3876997661,3,The Flu Season and Other Plays,Will Eno,Drama Anthologies,Social Sciences
+6849132742,3,The Best American Short Plays 2004-2005,Barbara Parisi,Drama Anthologies,Social Sciences
+4705207899,3,New Playwrights: The Best Plays of 2003,D. L. Lepidus,Drama Anthologies,Social Sciences
+9165887382,3,Wines in the Wilderness: Plays by African American Women from the Harlem Renaissance to the Present,Elizabeth Brown-Guillory,Drama Anthologies,Social Sciences
+1147312643,4,Nine Plays of the Modern Theater: Waiting for Godot; The Visit; Tango; The Caucasian Chalk Circle; The Balcony; Rhinoceros; American Buffalo; The Birthday Party; Rosencrantz and Guildenstern are Dead,Harold Clurman,English,Culture
+3095308949,4,"Halloween Reader: Poems, Stories, and Plays from Halloweens Past",Lesley Pratt Bannatyne,English & Irish Literature Anthologies,Culture
+9647449581,4,Literature and Science in the Nineteenth Century: An Anthology,Laura Otis,English & Irish Literature Anthologies,Culture
+5737815729,4,"Living Literature: An Introduction to Fiction, Poetry, Drama",John Brereton,English Language Readers,Culture
+7773066964,4,Inside Out/Outside In: Exploring American Literature,Victoria Holder,English Language Readers,Culture
+2675033109,9,Americans in Paris: A Literary Anthology,Adam Gopnik,Europe - Travel Essays & Descriptions,History & Geography
+3695462664,2,Listening For God Rdr Vol 4,Paula J. Carlson,Faith,Religion
+2385899413,2,"Listening For God Reader, Vol 1",Paula J. Carlson,Faith,Religion
+4934399330,2,Listening For God Reader Volume 3,Paula J. Carlson,Faith,Religion
+9277294993,2,Listening for God: Contemporary Literature And The Life Of Faith: Volume 2,Paula J. Carlson,Faith,Religion
+8054420478,6,Motherland: Writings by Irish American Women about Mothers and Daughters,Caledonia Kearns,Family - Assorted Topics,Applied Sciences
+1800125987,8,American Fantastic Tales Boxed Set,Peter Straub,Fiction,Fiction & Literature
+8896499769,8,The Portable Jack Kerouac,Jack Kerouac,Fiction,Fiction & Literature
+3660847815,8,The Vietnam Reader: The Definitive Collection of American Fiction and Nonfiction on the War,Stewart O'Nan,Fiction,Fiction & Literature
+3157412111,8,Reinventing the Enemy's Language: Contemporary Native Women's Writings of North America,Gloria Bird,Fiction,Fiction & Literature
+6854159511,8,Longman Anthology of Women's Literature,Mary K. DeShazer,Fiction,Fiction & Literature
+6984907823,8,The Best of the West: An Anthology of Classic Writing from the American West,Tony Hillerman,Fiction,Fiction & Literature
+7334153576,8,Atop an Underwood: Early Stories and Other Writings,Jack Kerouac,Fiction,Fiction & Literature
+1854000005,8,American Fantastic Tales: Terror and the Uncanny from Poe to the Pulps,Peter Straub,Fiction,Fiction & Literature
+6325378516,8,"Freedom in This Village: Twenty-Five Years of Black Gay Men's Writing, 1979 to the Present",E. Lynn Harris,Fiction,Fiction & Literature
+9426865936,8,Don't Squat With Yer Spurs On!: A Cowboy's Guide to Life,Texas Bix Bender,Fiction,Fiction & Literature
+6635762498,8,Word Virus,William S. Burroughs,Fiction,Fiction & Literature
+4234361209,8,American Fantastic Tales: Terror and the Uncanny from the 1940s to Now,Peter Straub,Fiction,Fiction & Literature
+2616119507,8,"Friction, Volume 7: Best Gay Erotic Fiction",Jesse Grant,Fiction,Fiction & Literature
+9267165213,8,Impossible Princess,Kevin Killian,Fiction,Fiction & Literature
+4660720618,8,More Mirth of a Nation: The Best Contemporary Humor,Michael J. Rosen,Fiction,Fiction & Literature
+2361128615,7,Queer Beats: How the Beats Turned America On to Sex,Regina Marler,Gay & Lesbian Literary Studies,Recreation
+6024617105,7,Voices from the Harlem Renaissance,Nathan Irvin Huggins,General & Miscellaneous American Art,Recreation
+4614330504,7,Decolonial Voices: Chicana and Chicano Cultural Studies in the 21st Century,Arturo J. Aldama,General & Miscellaneous American Art,Recreation
+5759107764,9,Quixotic Fictions of the USA 1792-1815,Sarah Florence Wood,General & Miscellaneous European Literature - Literary Criticism,History & Geography
+2367343032,9,Writing Off the Hyphen: New Perspectives on the Literature of the Puerto Rican Diaspora,Jose L. Torres-Padilla,General & Miscellaneous Latin American Literature - Literary Criticism,History & Geography
+1049292449,9,Opening Spaces: An Anthology of Contemporary African Women's Writing,Yvonne Vera,General & Miscellaneous Literature Anthologies,History & Geography
+2884614106,9,"New York Nocturne: The City After Dark in Literature, Painting, and Photography, 1850-1950",William Chapman Sharpe,General & Miscellaneous Photography,History & Geography
+5837484084,9,Winter Song: Christmas Readings,Madeleine L'Engle,General & Miscellaneous Religion,History & Geography
+9738035763,7,"I Am Not My Breast Cancer: Women Talk Openly about Love and Sex, Hair Loss and Weight Gain, Mothers and Daughters, and Being a Woman with Breast Cancer",Ruth Peltason,Health,Recreation
+9819696110,9,Recollections of the Early Republic: Selected Autobiographies,Joyce Appleby,Historical Biography - United States - 19th Century,History & Geography
+2825458793,9,Classic American Autobiographies,William L. Andrews,Historical Biography - United States - General & Miscellaneous,History & Geography
+4875366819,9,Modern American Memoirs,Annie Dillard,Historical Biography - United States - General & Miscellaneous,History & Geography
+5481076716,9,The Norton Book of American Autobiography,Jay Parini,Historical Biography - United States - General & Miscellaneous,History & Geography
+5690583798,9,The Hudson River Valley Reader,Edward C. Goodman,History,History & Geography
+8468556171,9,Hot Biscuits: Eighteen Stories by Women and Men of the Ranching West,Max Evans,History,History & Geography
+3256136570,9,Literary Austin,Don Graham,History,History & Geography
+9758834223,7,Christmas in Minnesota,Marilyn Ziebarth,Holidays,Recreation
+1928915969,7,The Daily Show with Jon Stewart Presents Earth (the Book): A Visitor's Guide to the Human Race,Jon Stewart,Humor,Recreation
+5869915780,7,Humor Me: An Anthology of Funny Contemporary Writing (Plus Some Great Old Stuff Too),Ian Frazier,Humor,Recreation
+5611467668,7,Mental Floss: Scatterbrained,Editors Of Mental Floss,Humor,Recreation
+4322705011,7,Fierce Pajamas: An Anthology of Humor Writing from the New Yorker,David Remnick,Humor,Recreation
+9772233120,7,Hokum: An Anthology of African-American Humor,Paul Beatty,Humor,Recreation
+8514496724,7,American Wits: An Anthology of Light Verse,VARIOUS,Humor,Recreation
+3280619380,7,American Satire,Nicholas Bakalar,Humor - History & Criticism,Recreation
+9836483650,9,Becoming Americans: Four Centuries of Immigrant Writing,Ilan Stavans,Immigrants,History & Geography
+8866038515,7,Moment's Notice: Jazz in Poetry and Prose,Art Lange,Jazz - General & Miscellaneous,Recreation
+7835233038,1,In Fact: The Best of Creative Nonfiction,Lee Gutkind,Journalism - Collections & History,Philosophy
+1720433146,1,Literary Journalism: A New Collection of the Best American Nonfiction,Mark Kramer,Journalism - Collections & History,Philosophy
+1305644285,1,"In So Many More Words: Arguments and Adventures, Second Edition",Robert Schmuhl,Journalism - Collections & History,Philosophy
+4947287047,4,An Anthology of Interracial Literature: Black-White Contacts in the Old World and the New,Werner Sollors,Language Arts,Culture
+5774213101,4,Making Literature Matter: An Anthology for Readers and Writers,John Schilb,Language Arts,Culture
+3013987239,4,Our Own Stories: Readings for Cross-Cultural Communication,Norine Dresser,Language Arts,Culture
+3459003762,4,Hispanic-American Literature: A Brief Introduction and Anthology,Nicolas Kanellos,Latinos,Culture
+2308945400,4,"Imagined Transnationalism: U. S. Latino/A Literature, Culture, and Identity",Kevin Concannon,Latinos,Culture
+2959033026,4,U.S. Latino Literature Today,Gabriela Baeza Ventura,Latinos - General,Culture
+7993776327,4,Latina,Lillian Castillo-speed,Latinos - General,Culture
+8691754288,0,"10 Years of the Caine Prize for African Writing: Plus Coetzee, Gordimer, Achebe, Okri",The Caine The Caine Prize for African Writing,Literary Collections,General Works
+3470093651,0,Up the Down Escalator,Linda Rode,Literary Collections,General Works
+3197537424,0,The Daily Show with Jon Stewart Presents Earth (the Book): A Visitor's Guide to the Human Race,Jon Stewart,Literary Collections,General Works
+2005303753,0,The Portable Beat Reader,Various,Literary Collections,General Works
+3916531302,0,One Hundred and One Famous Poems (Barnes &amp; Noble Library of Essential Reading),Roy J. Cook,Literary Collections,General Works
+7021530198,0,Literature: A Pocket Anthology,R. S. Gwynn,Literary Collections,General Works
+8122626424,0,Anthology of American Literature Volume II,George McMichael,Literary Collections,General Works
+2054810531,0,The Norton Anthology of African American Literature,Henry Louis Gates Jr.,Literary Collections,General Works
+2091065974,0,"To The Shore Once More, Volume II: A Journey Down The Jersey Shore; Prose, Poetry, And Works Of Art",Frank Finale,Literary Collections,General Works
+3773527739,0,Literature and the Environment: A Reader on Nature and Culture,Lorraine Anderson,Literary Collections,General Works
+4055710378,0,Immigrant Women,Maxine Schwartz Seller,Literary Collections,General Works
+7423989399,0,A Place Apart: A Cape Cod Reader,Robert Finch,Literary Collections,General Works
+3804870030,0,I Thought My Father Was God: And Other True Tales from NPR's National Story Project,Paul Auster,Literary Collections,General Works
+1019381389,0,81 Famous Poems,Alexander Scourby,Literary Collections,General Works
+9487109043,0,Thousand and One Afternoons in Chicago,Ben Hecht,Literary Collections,General Works
+8158647961,0,Philadelphia Stories: America's Literature of Race and Freedom,Samuel Otter,Literary Collections,General Works
+8890804766,0,"Voices of Black America: Historical Recordings of Poetry, Humor and Drama, 1908-1947",Washington,Literary Collections,General Works
+3768884508,0,Shadowed Dreams: Women's Poetry of the Harlem Renaissance,Maureen Honey,Literary Collections,General Works
+8869902629,0,Latinos in Lotusland: An Anthology of Contemporary Southern California Literature,Daniel A. Olivas,Literary Collections,General Works
+9938859463,0,First Thought Best Thought,Allen Ginsberg,Literary Collections,General Works
+9115288858,4,Oral Epics from Africa,John William Johnson,Literary Criticism,Culture
+7520542887,4,African Fundamentalism: A Literary and Cultural Anthology of Garvey's Harlem Renaissance,Tony Martin,Literary Criticism,Culture
+7440494190,4,An Anthology of Interracial Literature: Black-White Contacts in the Old World and the New,Werner Sollors,Literary Criticism,Culture
+2582398009,4,Multicultural Children's Literature: Through the Eyes of Many Children,Donna E. Norton,Literary Criticism,Culture
+4902550208,4,"The Norton Anthology of Literature by Women: The Traditions in English, Vol. 2",Sandra M. Gilbert,Literary Criticism,Culture
+3568343718,4,Finding Freedom: Writings from Death Row,Jarvis Jay Masters,Literary Criticism,Culture
+8847717328,4,Early American Writing,Various,Literary Criticism,Culture
+1709706571,4,"The Norton Anthology of Literature by Women: The Traditions in English, Vol. 1",Sandra M. Gilbert,Literary Criticism,Culture
+7088378499,4,Concise Anthology of American Literature,George McMichael,Literary Criticism,Culture
+2680024804,4,"To the Shore Once More: A Portrait Of The Jersey Shore; Prose, Poetry, and Works of Art",Frank Finale,Literary Criticism,Culture
+4781822293,4,A Companion to African American Literature,Gene A. Jarrett,Literary Criticism,Culture
+3574010624,4,Conversations with Mexican American Writers: Languages and Literatures in the Borderlands,Elisabeth Mermann-Jozwiak,Literary Criticism,Culture
+2597606010,4,"Show &amp; Tell: Writers on Writing, Sixth Edition",Dept of Creative Writing,Literary Criticism,Culture
+1256669405,4,Twentieth-Century American Poetry,Dana Gioia,Literary Criticism,Culture
+9957166554,4,"Blacklegs, Card Sharps, and Confidence Men",Thomas Ruys Smith,Literary Criticism,Culture
+3095017800,4,A Beginner's Guide to Critical Reading: An Anthology of Literary Texts,Richard Jacobs,Literary Criticism,Culture
+5661518059,4,Solomon Northup's Twelve Years a Slave: And Plantation Life in the Antebellum South,Solomon Northup,Literary Criticism,Culture
+5920170469,4,Bamboo among the Oaks: Contemporary Writing by Hmong Americans,Mai Neng Moua,Literary Criticism,Culture
+2298782304,4,Literary Nashville,Patrick Allen,Literary Criticism,Culture
+6701880957,4,Mississippi Writers: An Anthology,Dorothy Abbott,Literary Criticism,Culture
+3930926986,4,Stand Up Poetry: An Expanded Anthology,Charles Harper Webb,Literary Criticism,Culture
+2663147381,4,For She Is the Tree of Life: Grandmothers Through the Eyes of Women Writers,Valerie Kack-Brice,Literary Criticism,Culture
+2202251506,4,Women Writing Africa: West Africa and the Sahel,Esi Sutherland-Addy,Literary Criticism - General & Miscellaneous,Culture
+6141437939,4,Violence in Francophone African and Caribbean Women's Literature,Marie-Chantal Kalisa,Literary Criticism - General & Miscellaneous,Culture
+8782299726,4,Less Than One and Double: A Feminist Reading of African Women's Writing,Kenneth W. Harrow,Literary Criticism - General & Miscellaneous,Culture
+9441740919,4,Tales for Little Rebels: A Collection of Radical Children's Literature,Philip Nel,Literary Criticism - General & Miscellaneous,Culture
+4831025518,4,Xerophilia: Ecocritical Explorations in Southwestern Literature,Tom Lynch,Literary Criticism - General & Miscellaneous,Culture
+2404795258,1,Written by Herself: Autobiographies of American Women,Jill Ker Conway,Literary Figures - Women's Biography,Philosophy
+3727107094,4,American Working-Class Literature: An Anthology,Nicholas Coles,Literature Anthologies - General & Miscellaneous,Culture
+7605588839,4,"Titanica: The Disaster of the Century in Poetry, Song and Prose",Steven Biel,Literature Anthologies - General & Miscellaneous,Culture
+3788797706,4,Fire and Ink: An Anthology of Social Action Writing,Frances Payne Adler,Literature Anthologies - General & Miscellaneous,Culture
+6758035242,6,Love and Marriage in Early African America,Frances Smith Foster,Marriage,Applied Sciences
+3673765622,9,Age Ain't Nothing But a Number: Black Women Explore Midlife,Carleen Brice,Middle Age,History & Geography
+9970729579,8,Modernism: An Anthology,Lawrence Rainey,Modernism - Literary Movements,Fiction & Literature
+3782189494,8,Ethnic Modernism,Werner Sollors,Modernism - Literary Movements,Fiction & Literature
+3232274858,6,Literary Mama: Reading for the Maternally Inclined,Andrea J. Buchanan,Motherhood,Applied Sciences
+6671639029,6,American Dreams,Sapphire,Multicultural Aspects/Gay & Lesbian Communities,Applied Sciences
+7805705291,9,Sister Nations: Native American Women Writing on Community,Heid E. Erdrich,Native North American Peoples - General & Miscellaneous,History & Geography
+7898992546,8,American Earth: Environmental Writing Since Thoreau,Bill McKibben,Natural Literature & History,Fiction & Literature
+9053796545,9,Chattooga: Descending into the Myth of Deliverance River,John Lane,Natural Terrain - Rivers,History & Geography
+6919613331,5,Inherit the Atchafalaya,Greg Guirard,Nature,Natural Sciences
+2208712553,5,A River Through Illinois,Daniel V. Overturf,Nature,Natural Sciences
+6232577811,5,At Home on the Earth: Becoming Native to Our Place,David Landis Barnhill,Nature,Natural Sciences
+2955726378,8,Down Time: Great Writers on Diving,Ed Kittrell,Nautical & Maritime Fiction,Fiction & Literature
+9181928315,0,"Approaching Literature: Writing, Reading, Thinking",Peter Schakel,Nonfiction Writing - General & Miscellaneous,General Works
+9672049197,0,In Our Own Words: Student Writers at Work,Rebecca Mlynarczyk,Nonfiction Writing - General & Miscellaneous,General Works
+2891511984,3,Uncle Remus: His Songs and His Sayings,Joel Chandler Harris,North American Folklore & Mythology,Social Sciences
+9194732829,0,Tuscany in Mind,Alice Leccese Powers,Northern Italy - Tuscany - Travel,General Works
+2607743809,5,Elements of Evolutionary Genetics,Brian Charlesworth,Organic Chemistry,Natural Sciences
+5051225764,7,The Best American Magazine Writing,Clay Felker,Other Media,Recreation
+7178449104,6,Out on the Porch: An Evocation in Words and Pictures,Reynolds Price,Outdoor & Recreational Areas,Applied Sciences
+4669037308,5,I'll Fly Away: Further Testimonies from the Women of York Prison,Wally Lamb,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
+8058562941,5,Mother California: A Story of Redemption Behind Bars,Kenneth E. Hartman,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
+7038373184,5,Forced Passages: Imprisoned Radical Intellectuals and the U.S. Prison Regime,Dylan Rodriguez,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
+7077101524,4,Step into a World: A Global Anthology of the New Black Literature,Kevin Powell,Peoples & Cultures - American Anthologies,Culture
+1103870809,4,"The Norton Anthology of African American Literature, Vol. 2",Henry Louis Gates Jr.,Peoples & Cultures - American Anthologies,Culture
+3355164116,4,Coming of Age in America: A Multicultural Anthology,Mary Frosch,Peoples & Cultures - American Anthologies,Culture
+7292898135,4,The Latino Reader: An American Literary Tradition from 1542 to the Present,Margarite Fernandez Olmos,Peoples & Cultures - American Anthologies,Culture
+7295100745,4,"Luis Valdez - Early Works: Actos, Bernabe and Pensamiento Serpentino",Luis Valdez,Peoples & Cultures - American Anthologies,Culture
+4416998697,4,African American Literature (Penguin Academics Series),Keith Gilyard,Peoples & Cultures - American Anthologies,Culture
+8470386753,4,"Black Theatre USA, V2: Plays by African Americans 1935-Today, Vol. 2",Ted Shine,Peoples & Cultures - American Anthologies,Culture
+6427989603,4,Black Voices: An Anthology of African-American Literature,Various,Peoples & Cultures - American Anthologies,Culture
+5064168859,4,Bordering Fires: The Vintage Book of Contemporary Mexican and Chicano/a Literature,Cristina Garcia,Peoples & Cultures - American Anthologies,Culture
+1568328090,4,Coming of Age in the 21st Century,Mary Frosch,Peoples & Cultures - American Anthologies,Culture
+3430095314,4,Voices in Our Blood: America's Best on the Civil Rights Movement,Jon Meacham,Peoples & Cultures - American Anthologies,Culture
+8176119118,4,La Llorona on the Longfellow Bridge: Poetry Y Otras Movidas,Alicia Gaspar De Alba,Peoples & Cultures - American Anthologies,Culture
+3549378011,4,Crossing the Danger Water: Three Hundred Years of African-American Writing,Deirdre Mullane,Peoples & Cultures - American Anthologies,Culture
+8868864707,4,Latino Boom: An Anthology of U. S. Latino Literature,John Christie,Peoples & Cultures - American Anthologies,Culture
+1429464725,4,Brotherman: The Odyssey of Black Men in America--an Anthology,Robert Allen,Peoples & Cultures - American Anthologies,Culture
+9356138562,4,"Richard Wright: Later Works (Black Boy, American Hunger, The Outsider)",Richard Wright,Peoples & Cultures - American Anthologies,Culture
+5691859030,4,"Glances Backward: An Anthology of American Homosexual Writing, 1830-1920",James J. Gifford,Peoples & Cultures - American Anthologies,Culture
+2321955077,4,Deaf Way II Anthology: A Literary Collection of Deaf and Hard of Hearing Writers,Tonya M. Stremlau,Peoples & Cultures - American Anthologies,Culture
+6397439101,4,The Black Woman: An Anthology,Toni Cade Bambara,Peoples & Cultures - American Anthologies,Culture
+6971637810,4,The Civil Rights Reader: American Literature from Jim Crow to Reconciliation,Julie Buckner Armstrong,Peoples & Cultures - American Anthologies,Culture
+4153969599,4,Asian-American Literature: A Brief Introduction and Anthology,Shawn Wong,Peoples & Cultures - American Anthologies,Culture
+6889592071,4,The Prentice Hall Anthology of Latino Literature,Eduardo del Rio,Peoples & Cultures - American Anthologies,Culture
+3295643705,4,So Fey,Steve Berman,Peoples & Cultures - American Anthologies,Culture
+7947785179,4,Call and Response: The Riverside Anthology of the African American Literary Tradition CD,Patricia Liggins Hill,Peoples & Cultures - American Anthologies,Culture
+6401291464,4,En Otra Voz: Antolog&#237;a de Literatura Hispana de los Estados Unidos,Nicolas Kanellos,Peoples & Cultures - American Anthologies,Culture
+4935142702,4,African-American Literature: A Brief Introduction and Anthology,Al Young,Peoples & Cultures - American Anthologies,Culture
+8934935571,4,The Floating Borderlands: Twenty-Five Years of U.S. Hispanic Literature,Lauro Flores,Peoples & Cultures - American Anthologies,Culture
+9569235603,7,The Best American Short Plays 2007-2008,Barbara Parisi,Performing Arts,Recreation
+2181461144,7,The Best American Short Plays 2006-2007,Barbara Parisi,Performing Arts,Recreation
+6779438386,9,Nobody Ever Said AIDS: Poems and Stories from Southern Africa,Nobantu Rasebotsa,Places - Literary Anthologies,History & Geography
+7125026112,9,Women Writing Africa: The Southern Region: Volume 1,Sheila Meintjes,Places - Literary Anthologies,History & Geography
+8988201246,9,The Portable Harlem Renaissance Reader,David Lewis,Places - Literary Anthologies,History & Geography
+9094592959,9,Empire City: New York Through the Centuries,Kenneth T. Jackson,Places - Literary Anthologies,History & Geography
+3055363301,9,New York Stories: The Best Writing from Four Decades of New York Magazine,Steve Fishman,Places - Literary Anthologies,History & Geography
+1055878079,9,Double-Take: A Revisionist Harlem Renaissance Anthology,Venetria Patton,Places - Literary Anthologies,History & Geography
+6765577574,8,The Poets Laureate Anthology,Elizabeth Hun Schmidt,Poetry,Fiction & Literature
+6389509890,8,Best Poems of the English Language: From Chaucer Through Robert Frost,Harold Bloom,Poetry,Fiction & Literature
+3787261774,8,Six American Poets: An Anthology,Joel Conarroe,Poetry,Fiction & Literature
+5498633682,8,Great Love Poems,Shane Weller,Poetry,Fiction & Literature
+8901677273,8,I Am the Darker Brother: An Anthology of Modern Poems by African Americans,Arnold Adoff,Poetry,Fiction & Literature
+3375318730,8,Bum Rush the Page: A Def Poetry Jam,Tony Medina,Poetry,Fiction & Literature
+2803885489,8,The Unswept Path: Contemporary American Haiku,John Brandi,Poetry,Fiction & Literature
+7294128917,8,Poems from the Women's Movement,Honor Moore,Poetry,Fiction & Literature
+3462581109,8,The Classic Hundred Poems: All-Time Favorites,William Harmon,Poetry,Fiction & Literature
+4080087415,8,Three Centuries of American Poetry,Allen Mandelbaum,Poetry,Fiction & Literature
+3337120260,8,The Palm of My Heart: Poetry by African American Children,Davida Adedjouma,Poetry,Fiction & Literature
+3886775573,8,Postmodern American Poetry: A Norton Anthology,Paul Hoover,Poetry,Fiction & Literature
+3187541991,8,The New Anthology of American Poetry: Volume II: Modernisms: 1900-1950,Steven Gould Axelrod,Poetry,Fiction & Literature
+7902412993,8,The Color of Gratitude: And Other Spiritual Surprises,Robert Morneau,Poetry,Fiction & Literature
+4430932514,8,The Best American Erotic Poems: From 1800 to the Present,David Lehman,Poetry,Fiction & Literature
+9163137806,8,Best New Poets: 50 Poems from Emerging Writers,Kim Addonizio,Poetry,Fiction & Literature
+5766346027,8,The Best American Poetry 2007,Heather McHugh,Poetry,Fiction & Literature
+4625597579,8,The Best American Poetry 2006,Billy Collins,Poetry,Fiction & Literature
+7697219390,8,The Best American Poetry 2010,Amy Gerstler,Poetry,Fiction & Literature
+6372468193,8,American Negro Poetry,Arna Bontemps,Poetry,Fiction & Literature
+1499268657,8,100 Poems by 100 Poets,Harold Pinter,Poetry,Fiction & Literature
+3931512982,8,American Sonnets: An Anthology,David Bromwich,Poetry,Fiction & Literature
+1092192989,8,The Best American Poetry 2009,David Wagoner,Poetry,Fiction & Literature
+7778228912,8,Another Way to Dance: Contemporqary Asian Poetry from Canada and the United States,Cyril Dabydeen,Poetry,Fiction & Literature
+2474085822,8,"The New Anthology of American Poetry: Volume I: Traditions and Revolutions, Beginnings to 1900",Steven Gould Axelrod,Poetry,Fiction & Literature
+8295306398,8,Modern American Prose: Fifteen Writers + 15,John Clifford,Poetry,Fiction & Literature
+6796070879,8,For a Living: The Poetry of Work,Nicholas Coles,Poetry,Fiction & Literature
+8143348269,8,The Classic Hundred Poems: All-Time Favorites,William Harmon,Poetry,Fiction & Literature
+2837429636,8,Caroling Dusk,Countee Cullen,Poetry,Fiction & Literature
+7886415851,8,Starting Today: 100 Poems for Obama's First 100 Days,Rachel Zucker,Poetry,Fiction & Literature
+7489891590,8,The Book of American Negro Poetry,James Weldon Johnson,Poetry,Fiction & Literature
+2382759596,8,Common Wealth,Marjorie Maddox,Poetry,Fiction & Literature
+6041592029,8,El Coro,Martin Espada,Poetry,Fiction & Literature
+4035925213,8,A Loving Voice II: A Caregiver's Book of More Read-Aloud Stories for the Elderly,Carolyn Banks,Poetry - General & Miscellaneous,Fiction & Literature
+7987059163,8,A Loving Voice: A Caregiver's Book of Read-Aloud Stories for the Elderly,Carolyn Banks,Poetry - General & Miscellaneous,Fiction & Literature
+3179892480,8,Georgia Cowboy Poets,David Fillingim,Poetry - General & Miscellaneous,Fiction & Literature
+2202238415,8,100 Best-Loved Poems,Philip Smith,Poetry Anthologies,Fiction & Literature
+5694077522,8,"African-American Poetry: An Anthology, 1773-1930",Joan R. Sherman,Poetry Anthologies,Fiction & Literature
+6726485762,8,"The Norton Anthology of Poetry, Shorter 5th Edition",Margaret Ferguson,Poetry Anthologies,Fiction & Literature
+4644452071,8,The Best American Poetry 2010,Amy Gerstler,Poetry Anthologies,Fiction & Literature
+4506126990,8,The Best Loved Poems of the American People,Hazel Felleman,Poetry Anthologies,Fiction & Literature
+7294190781,8,The Norton Anthology of Poetry,Margaret Ferguson,Poetry Anthologies,Fiction & Literature
+6152499709,8,"Poems, Poets, Poetry: An Introduction and Anthology",Helen Vendler,Poetry Anthologies,Fiction & Literature
+7581424635,8,The Vintage Book of Contemporary American Poetry,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
+8024071975,8,100 Best African American Poems with CD,Nikki Giovanni,Poetry Anthologies,Fiction & Literature
+2116204617,8,The Voice That Is Great within Us: American Poetry of the Twentieth Century,Hayden Carruth,Poetry Anthologies,Fiction & Literature
+5895783924,8,Poems That Touch the Heart,A.L. Alexander,Poetry Anthologies,Fiction & Literature
+8213069566,8,Unsettling America: An Anthology of Contemporary Multicultural Poetry,Maria Mazziotti Gillan,Poetry Anthologies,Fiction & Literature
+4869456468,8,Black Nature,Camille T. Dungy,Poetry Anthologies,Fiction & Literature
+7945567511,8,Best Remembered Poems,Martin Gardner,Poetry Anthologies,Fiction & Literature
+6048358900,8,The Best American Poetry 2009,David Wagoner,Poetry Anthologies,Fiction & Literature
+5181825094,8,The Four Seasons: Poems,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
+4313301788,8,The Top 500 Poems,William Harmon,Poetry Anthologies,Fiction & Literature
+2707461063,8,Poems of New York,Elizabeth Schmidt,Poetry Anthologies,Fiction & Literature
+7274248599,8,Native American Songs and Poems: An Anthology,Brian Swann,Poetry Anthologies,Fiction & Literature
+7206142684,8,The Stuffed Owl: An Anthology of Bad Verse,D.B. Wyndham Lewis,Poetry Anthologies,Fiction & Literature
+1898609632,8,The Best American Poetry 2008,Charles Wright,Poetry Anthologies,Fiction & Literature
+8687989576,8,After Frost: Anthol Poetry From N E,Henry Lyman,Poetry Anthologies,Fiction & Literature
+9157739328,8,Rag and Bone Shop of the Heart: A Poetry Anthology,Robert Bly,Poetry Anthologies,Fiction & Literature
+6464436940,8,Oxford Book of American Poetry,David Lehman,Poetry Anthologies,Fiction & Literature
+1281760297,8,Soulscript: A Collection of Classic African American Poetry,June Jordan,Poetry Anthologies,Fiction & Literature
+8367825460,8,The Vintage Book of African American Poetry,Michael S. Harper,Poetry Anthologies,Fiction & Literature
+7631232121,8,Blues Poems (Everyman's Library Pocket Poets),Kevin Young,Poetry Anthologies,Fiction & Literature
+5516936684,8,Anthology of Modern American Poetry,Cary Nelson,Poetry Anthologies,Fiction & Literature
+9891117231,8,"A Patriot'S Handbook: Songs, Poems, Stories, And Speeches Celebrating The Land We Love",Caroline Kennedy,Poetry Anthologies,Fiction & Literature
+6425867320,8,The Columbia Anthology of American Poetry,Jay Parini,Poetry Anthologies,Fiction & Literature
+7394221101,8,The Jazz Poetry Anthology,Sascha Feinstein,Poetry Anthologies,Fiction & Literature
+2838030151,8,Nineteenth-Century American Poetry,Various,Poetry Anthologies,Fiction & Literature
+9291845706,8,Beat Poets,Carmela Ciuraru,Poetry Anthologies,Fiction & Literature
+4828786393,8,Great American Prose Poems,David Lehman,Poetry Anthologies,Fiction & Literature
+5110252993,8,Poets of World War II,Various,Poetry Anthologies,Fiction & Literature
+8415195775,8,Orpheus and Company: Contemporary Poems on Greek Mythology,Deborah De Nicola,Poetry Anthologies,Fiction & Literature
+6199312790,8,Poems That Live Forever,Hazel Felleman,Poetry Anthologies,Fiction & Literature
+7167001543,8,Oxford Anthology of African American Poetry,Arnold Rampersad,Poetry Anthologies,Fiction & Literature
+4456993746,8,The Wind Shifts: New Latino Poetry,Francisco Arag&#243;n,Poetry Anthologies,Fiction & Literature
+5138116056,8,Slamma Lamma Ding Dong: An Anthology by Nebraska's Slam Poets,J. M. Huscher,Poetry Anthologies,Fiction & Literature
+4536118431,8,The Best American Poetry 2003,Yusef Komunyakaa,Poetry Anthologies,Fiction & Literature
+2733680450,8,"New Oxford Book of American Verse, Vol. 1",Richard Ellmann,Poetry Anthologies,Fiction & Literature
+3229388495,8,Poets of the Civil War,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
+1298575903,8,The Best American Poetry 2005,Paul Muldoon,Poetry Anthologies,Fiction & Literature
+7316629041,8,Every Shut Eye Ain't Asleep; An Anthology of Poetry by African Americans since 1945,Michael S. Harper,Poetry Anthologies,Fiction & Literature
+8779270851,4,American Protest Literature,Zoe Trodd,Political Protest & Dissent,Culture
+6300635549,4,30 Satires,Lewis H. Lapham,Political Science,Culture
+8459597683,1,Postmodern American Fiction: A Norton Anthology,Paula Geyh,Postmodernism - Literary Movements,Philosophy
+7230623413,6,All Things Censored [With CD],Mumia Abu-Jamal,Prisoners & Accused Persons - Biography,Applied Sciences
+3142418691,6,Prison Writings in 20th-Century America,H. Bruce Franklin,Prisons & Prison Life,Applied Sciences
+9069210866,9,Getting Home Alive,Aurora Levins Morales,Puerto Ricans - General & Miscellaneous,History & Geography
+7413969674,9,The American Puritans: Their Prose and Poetry,Perry Miller,Puritanism,History & Geography
+9402298892,9,"The Literature of California, Volume 1: Native American Beginnings to 1945",Jack Hicks,Regional American Anthologies,History & Geography
+7415833961,9,Essential Saroyan,William Saroyan,Regional American Anthologies,History & Geography
+3404831128,9,Transcendentalism: A Reader,Joel Myerson,Regional American Anthologies,History & Geography
+5777143852,9,"Appalachia Inside Out: Conflict and Change, Vol. 1",Robert J. Higgs,Regional American Anthologies,History & Geography
+8520330211,9,The New England Transcendentalists: Life of the Mind and of the Spirit (Perspectives on History Series),Ellen Hansen,Regional American Anthologies,History & Geography
+1062309986,9,Literature of the American South: A Norton Anthology,William L. Andrews,Regional American Anthologies,History & Geography
+4690986030,9,The Little Big Book of California,Natasha Tabori Fried,Regional American Anthologies,History & Geography
+5924857808,9,Inlandia,Gayle Wattawa,Regional American Anthologies,History & Geography
+9088253195,9,Literary Fort Worth,Judy Alter,Regional American Anthologies,History & Geography
+6714331386,9,Writing New England: An Anthology from the Puritans to the Present,Andrew Delbanco,Regional American Anthologies,History & Geography
+4866701802,9,The Portable Western Reader,Various,Regional American Anthologies,History & Geography
+6449719932,7,Sporting Lives: Metaphor and Myth in American Sports,James W. Pipkin,Regional Sports,Recreation
+9486574033,2,A Kentucky Christmas,George Ella Lyon,Religion,Religion
+2365683152,8,Thom Pain (based on nothing),Will Eno,Scenes and Monologues,Fiction & Literature
+4377504044,8,Bandana Republic: A Literary Anthology by Gang Members and Their Affliliates,Louis Reyes Rivera,Settings & Atmosphere - Fiction,Fiction & Literature
+8040861263,6,"Drinking, Smoking and Screwing: Great Writers on Good Times",Sara Nickles,Sexology & Sexual Behavior - General & Miscellaneous,Applied Sciences
+6262260469,8,The Caine Prize for African Writing 2010: 11th Annual Collection,The Caine Prize for African Writing,Short Story Anthologies,Fiction & Literature
+2754801215,8,The Caine Prize 2009: The Caine Prize for African Writing 10th Annual Collection,New Internationalist,Short Story Anthologies,Fiction & Literature
+7237502908,8,Seventh Street Alchemy 2004: A Selection of Works from the Caine Prize for African Writing,Jacana Media,Short Story Anthologies,Fiction & Literature
+1191397289,8,Jambula Tree and other stories: The Caine Prize for African Writing 8th Annual Collection,Monica Arac de Nyeko,Short Story Anthologies,Fiction & Literature
+9980619043,8,The Best American Nonrequired Reading 2009,Dave Eggers,Short Story Anthologies,Fiction & Literature
+8628692855,8,The Gift of Love,Lori Foster,Short Story Anthologies,Fiction & Literature
+9869772808,8,I Thought My Father Was God: And Other True Tales from NPR's National Story Project,Paul Auster,Short Story Anthologies,Fiction & Literature
+9584731784,8,American Short Stories,Bert Hitchcock,Short Story Anthologies,Fiction & Literature
+8278278281,8,Sudden Fiction Latino: Short-Short Stories from the United States and Latin America,Robert Shapard,Short Story Anthologies,Fiction & Literature
+8445773123,8,The Signet Classic Book of American Short Stories,Burton Raffel,Short Story Anthologies,Fiction & Literature
+7576189573,8,Erotique Noire: Black Erotica,Miriam Decosta-Willis,Short Story Anthologies,Fiction & Literature
+7251413105,8,The Haves and Have Nots: 30 Stories about Money and Class in America,Barbara H. Solomon,Short Story Anthologies,Fiction & Literature
+6491814985,8,Up All Night: Adventures in Lesbian Sex,Stacy Bias,Short Story Anthologies,Fiction & Literature
+3628564771,8,American Short Story and Its Writer: An Anthology,Ann Charters,Short Story Anthologies,Fiction & Literature
+4559405288,8,The Best American Nonrequired Reading 2008,Dave Eggers,Short Story Anthologies,Fiction & Literature
+5672249731,8,On Grandma's Porch: Stories and True Facts about Growing up Southern in the Good Old Days,Sandra Chastain,Short Story Anthologies,Fiction & Literature
+7290844119,8,Best American Nonrequired Reading 2005,Dave Eggers,Short Story Anthologies,Fiction & Literature
+2438933735,8,Black Silk: A Collection of African-American Erotica,Retha Powers,Short Story Anthologies,Fiction & Literature
+6114596473,8,Brother to Brother: New Writings by Black Gay Men,Essex Hemphill,Short Story Anthologies,Fiction & Literature
+8788297263,8,New Stories from the Southwest,D. Seth Horton,Short Story Anthologies,Fiction & Literature
+2120983597,8,Loving in the War Years: Lo que nunca paso por sus labios,Cherrie Moraga,Short Story Collections (Single Author),Fiction & Literature
+6753993921,3,Early African American Classics (Barnes &amp; Noble Classics Series),Barnes &amp; Noble,Slavery - Social Sciences,Social Sciences
+6567794953,3,"Classic Slave Narratives: The Life of Olaudah Equiano, The History of Mary Prince, Narrative of the Life of Frederick Douglass, Incidents in the Life of a Slave Girl",Henry Louis Gates Jr.,Slavery - Social Sciences,Social Sciences
+7574534474,3,Running a Thousand Miles for Freedom: The Escape of William and Ellen Craft from Slavery,Craft,Slavery - Social Sciences,Social Sciences
+6239357492,3,"Slave Narratives: James Albert Ukawsaw Gronniosaw, Olaudah Equiano, Nat Turner, Frederick Douglass, William Wells Brown, Henry Bibb, Sojourner Truth, William and Ellen Craft, Harriet A. Jacobs, Jacob D. Green (Library of America)",William L. Andrews,Slavery - Social Sciences,Social Sciences
+6155400234,3,Women Writing Africa: The Eastern Region,Amandina Lihamba,Social Sciences,Social Sciences
+9636181314,3,Of Suffocated Hearts And Tortured Souls,Valerie Key Orlando,Social Sciences,Social Sciences
+7400602031,3,The Lowell Offering: Writings by New England Mill Women (1840-1845),Benita Eisler,Social Sciences,Social Sciences
+4507376443,3,More New York Stories: The Best of the City Section of The New York Times,Constance Rosenblum,Social Sciences - General & Miscellaneous,Social Sciences
+8707002463,3,Imagination And Spirit,J. Brent Bill,Society of Friends (Quakers),Social Sciences
+8807897968,7,The Best American Sports Writing 2008,William Nack,Sports Essays,Recreation
+2712305882,6,White Lines: Writers on Cocaine,Geno Zanetti,Substance Use & Abuse - Medical Aspects,Applied Sciences
+3368383321,6,"Three African-American Classics: Up from Slavery, The Souls of Black Folk and Narrative of the Life of Frederick Douglass",Booker T. Washington,Teachers - General & Miscellaneous - Biography,Applied Sciences
+8014464867,4,African Folktales,Roger D. Abrahams,Travel,Culture
+5338090889,4,Literary Savannah,Patrick Allen,Travel,Culture
+4981163157,9,What's Nature Worth?: Narrative Expressions of Environmental Values,Terre Satterfield,U.S. & Canadian Authors - Interviews,History & Geography
+5258945805,9,The American Stage: Writing on Theater from Washington Irving to Tony Kushner,Lawrence Senelick,U.S. & Canadian Drama - Literary Criticism,History & Geography
+3598980905,9,Dream Me Home Safely: Writers on Growing Up in America,Susan Richards Shreve,U.S. Authors - 20th Century - Literary Biography,History & Geography
+9017550958,9,"Women and Children of the Mills: An Annotated Guide to Nineteenth-Century American Textile Factory Literature, Vol. 28",Judith Ranta,U.S. Literature - Reference,History & Geography
+1690652769,9,"Appalachia inside Out, Vol. 2",Robert J. Higgs,United States - Civilization,History & Geography
+4984820989,9,Feeling Italian: The Art of Ethnicity in America,Thomas Ferraro,United States - Ethnic & Race Relations,History & Geography
+5599093375,9,Bombshells: War Stories and Poems by Women on the Homefront,Missy Martin,United States - World War II - Homefront,History & Geography
+1737947775,9,Unchained Voices: An Anthology of Black Authors in the English-Speaking World of the Eighteenth Century,Vincent Carretta,United States History - African American History,History & Geography
+2923404178,9,"Pioneers of the Black Atlantic: Five Slave Narratives from the Enlightenment, 1772-1815",Henry Louis Gates Jr.,United States History - African American History,History & Geography
+9016251281,9,"Iowa, the Definitive Collection: Classic and Contemporary Readings by Iowans, for Iowans",Zachary Michael Jack,United States History - Midwestern Region,History & Geography
+2533945088,9,Bronx Accent: A Literary and Pictorial History of the Borough,Lloyd Ultan,United States History - Northeastern & Middle Atlantic Region,History & Geography
+1363224802,9,The Maine Reader: The Down East Experience from 1614 to the Present,Charles Shain,United States History - Northeastern & Middle Atlantic Region,History & Geography
+7551074885,9,The Lincoln Anthology: Great Writers on His Life and Legacy from 1860 to Now,Harold Holzer,United States History - Reference,History & Geography
+4295109494,9,American Studies Anthology,Richard P. Horwitz,United States History - Social Aspects,History & Geography
+4550212292,9,In a Narrow Grave: Essays on Texas,Larry McMurtry,United States History - Southern Region,History & Geography
+6560435783,9,"The New World Border: Prophecies, Poems, and Loqueras for the End of the Century",Guillermo Gomez-Pena,United States Studies - General & Miscellaneous,History & Geography
+1638381804,1,New Orleans Stories: Great Writers on the City,John Miller,Urban Sociology,Philosophy
+9071652083,8,A Whole Other Ball Game: Women's Literature on Women's Sport,Joli Sandoz,Women Authors - Literature Anthologies,Fiction & Literature
+6420966174,8,If I Had My Life to Live Over,Sandra Martz,Women Authors - Literature Anthologies,Fiction & Literature
+3739113398,8,Sisters of the Earth: Women's Prose and Poetry About Nature,Lorraine Anderson,Women Authors - Literature Anthologies,Fiction & Literature
+1871908379,8,Infinite Divisions: An Anthology of Chicana Literature,Tey Diana Rebolledo,Women Authors - Literature Anthologies,Fiction & Literature
+6877215411,8,Women's Worlds: The Mcgraw-Hill Anthology of Women's Writing,Robyn Warhol-Down,Women Authors - Literature Anthologies,Fiction & Literature
+1212838195,8,Montana Women Writers: A Geography of the Heart,Farcountry Press,Women Authors - Literature Anthologies,Fiction & Literature
+5301899644,8,"Damage Control: Women on the Therapists, Beauticians, and Trainers Who Navigate Their Bodies",Emma Forrest,Women Authors - Literature Anthologies,Fiction & Literature
+7275823735,5,"B. O. O. B. S.: A Bunch of Outrageous Breast-Cancer Survivors Tell Their Stories of Courage, Hope and Healing",Ann Kempner Fisher,Women's Diseases & Disorders,Natural Sciences
+>>>>>>> cfcd7edd6d2025bb2e2dacd327631a0c6e65f829,,,,,

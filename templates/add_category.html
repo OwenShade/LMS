@@ -7,7 +7,7 @@
 {% block body_block %}
 <h1>Add a Category</h1>
 <div> 
-    <form id="CategoryForm" class="col-8" method="post" action="/add_category/">
+    <form id="CategoryForm" class="col-8" method="post" action="/LMS/add_category/">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %} 
             {{ hidden }} 

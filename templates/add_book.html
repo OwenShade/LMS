@@ -7,7 +7,7 @@
 {% block body_block %}
 <h1>Add a Book.</h1>
         <div> 
-            <form id="BookForm" method="post" class="col-8" action="/add_book/">
+            <form id="BookForm" method="post" class="col-8" action="/LMS/add_book/">
                 {% csrf_token %}
                 {% for hidden in form.hidden_fields %} 
                     {{ hidden }} 

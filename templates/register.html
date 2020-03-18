@@ -11,7 +11,7 @@
 Thank you for registering!
 <a href="{% url 'home' %}">Return to the Homepage.</a><br />
 {% else %}
-<form id="UserForm" method="post" action="/register/"
+<form id="UserForm" method="post" action="/LMS/register/"
     enctype="multipart/form-data">
 
     {% csrf_token %}
