@@ -6,5 +6,24 @@
 {% endblock %}
 
 {% block body_block %}
-Browse
+    <h1>Choose a Category to Browse</h1>
+    <ul>
+        {% if categories %}
+            {% for c in categories %}
+                {% if c == current_category %}
+                <li>
+                <strong>
+                        <a href="{% url 'LMS:show_category' c.slug %}">{{ c.name }}</a>
+                </strong>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'LMS:show_category' c.slug %}">{{ c.name }}</a>
+                </li>
+                {% endif %}
+            {% endfor%}
+        {% else %}
+            <li><strong>There are no categories present.</strong></li>
+        {% endif %}
+        </ul>
 {% endblock %}

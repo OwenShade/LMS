@@ -13,5 +13,6 @@ urlpatterns = [
     path('add_book/', views.add_book, name='add_book'),
     path('add_staff/', views.add_staff, name='add_staff'),
     path('returns/', views.returns, name='returns'),
-    path('staff_page/', views.staff_page, name='staff_page')
+    path('staff_page/', views.staff_page, name='staff_page'),
+    path('category/<slug:Category_name_slug>/', views.show_category, name='show_category'),
 ]

@@ -102,6 +102,13 @@ def returns(request):
 def staff_page(request):
     return render(request, 'staff_page.html')
 
-
+def show_category(request, category_name_slug):
+    context_dict = {}
+    try:
+        category = Category.objects.get(slug=category_name_slug)
+        context_dict['category'] = category
+    except Category.DoesNotExist:
+        context_dict['category'] = None
+    return render(request, 'browse.html', context=context_dict)
 
     
