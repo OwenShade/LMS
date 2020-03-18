@@ -7,7 +7,7 @@
 {% block body_block %}
 <h1>Add a Staff Member</h1>
 <div> 
-    <form id="StaffForm" method="post" class="col-8" action="/add_staff/">
+    <form id="StaffForm" method="post" class="col-8" action="/LMS/add_staff/">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %} 
             {{ hidden }} 
