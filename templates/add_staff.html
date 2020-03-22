@@ -7,12 +7,11 @@
 {% block body_block %}
 <h1>Add a Staff Member</h1>
 <div> 
-    <form id="StaffForm" method="post" class="col-8" action="/LMS/add_staff/">
+    <form id="StaffForm" method="post" action="/LMS/add_staff/">
         {% csrf_token %}
-        {% for hidden in form.hidden_fields %} 
-            {{ hidden }} 
-        {% endfor %} 
-        {% for field in form.visible_fields %}
+        {{ staff_form.as_p }} 
+        {{ profile_form.as_p }}
+        {% for field in form %}
             <div class="form-group row">
                 <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
                 <div class="mb-3 ml-3 col">

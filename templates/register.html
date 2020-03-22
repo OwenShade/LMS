@@ -15,7 +15,8 @@ Thank you for registering!
     enctype="multipart/form-data">
 
     {% csrf_token %}
-    {{ UserForm.as_p }}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
         {% for field in form%}
             <div class="form-group row">
                 <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>

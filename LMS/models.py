@@ -16,27 +16,22 @@ class Library(models.Model):
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
-    pk_num = models.CharField(max_length=128, unique=True)
     reg_library = models.ForeignKey(Library, on_delete=models.CASCADE)
-    name = models.CharField(max_length=128)
-    book_limit = models.IntegerField()
-    email = models.EmailField()
+    book_limit = models.IntegerField(default=10)
     date_reg = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return self.name
+        return self.user.username
 
 class Staff(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
-    pk_num = models.CharField(max_length=128, unique=True)
-    name = models.CharField(max_length=128)
     reg_library = models.ForeignKey(Library, on_delete=models.CASCADE)
     role = models.CharField(max_length=128)
     phone = models.IntegerField()
     
     def __str__(self):
-        return self.name
+        return self.user.username
     
     class Meta:
         verbose_name_plural = "Staff"

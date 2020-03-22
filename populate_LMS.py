@@ -30,5 +30,5 @@ def populate():
         b = Book(pk_num=key[0], isbn=key[1], location=Library.objects.get(pk_num=1))
         b.save()
 if __name__ == '__main__':
-    print('Starting Rango population script...')
+    print('Starting LMS population script...')
 populate()
