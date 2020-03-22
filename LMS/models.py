@@ -44,7 +44,7 @@ class Staff(models.Model):
 class Category(models.Model):
     pk_num = models.IntegerField(unique=True)
     name = models.CharField(max_length=128)
-    manager = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    manager = models.ForeignKey(Staff, on_delete=models.SET(None), blank=True, null=True)
     
     def __str__(self):
         return self.name
@@ -60,7 +60,7 @@ class ISBN(models.Model):
     genre = models.CharField(max_length=128)
     
     def __str__(self):
-        return self.title
+        return str(self.title)
     
     class Meta:
         verbose_name_plural = "ISBNs"
@@ -72,4 +72,4 @@ class Book(models.Model):
     taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
     
     def __str__(self):
-        return self.pk_num
+        return str(self.isbn)
