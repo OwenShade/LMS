@@ -1,11 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from LMS.models import Library, Member, Staff, Category, ISBN, Book
 from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm, UserProfileForm, StaffProfileForm
 from django.shortcuts import redirect
 from django.views.generic import ListView
 
 def home(request):
-    return render(request, 'home.html')
+    context_dict = {}
+    try:
+        category_list = Category.objects.all()
+        context_dict['categories'] = category_list
+    except Category.DoesNotExist:
+        context_dict['categories'] = None
+    response = render(request, 'home.html', context=context_dict)
+    return response
 
 def register(request):
     registered = False
