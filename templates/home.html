@@ -43,6 +43,28 @@
         <div class="col-6">
             <h3 class="text-center">Popular Books</h3>
             <!-- Should create a table with the following columns: Title, Author, Genre -->
+            {% if books %}
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Genre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr>
+                        <td>{{book.isbn.title}}</td>
+                        <td>{{book.isbn.author}}</td>
+                        <td>{{book.isbn.genre}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <strong>There are no books present.</strong>
+            {% endif %}
         </div>
     </div>
 

@@ -8,10 +8,17 @@ from django.views.generic import ListView
 def home(request):
     context_dict = {}
     try:
-        category_list = Category.objects.all()
+        category_list = Category.objects.order_by('-views')[:5]
         context_dict['categories'] = category_list
     except Category.DoesNotExist:
         context_dict['categories'] = None
+
+    try:
+        book_list = Book.objects.order_by('-views')[:5]
+        context_dict['books'] = book_list
+    except Book.DoesNotExist:
+        context_dict['books'] = None
+        
     response = render(request, 'home.html', context=context_dict)
     return response
 
@@ -60,7 +67,14 @@ def login(request):
         return render(request, 'login.html')
 
 def browse(request):
-    return render(request, 'browse.html')
+    context_dict = {}
+    try:
+        category_list = Category.objects.all()
+        context_dict['categories'] = category_list
+    except Category.DoesNotExist:
+        context_dict['categories'] = None
+    response = render(request, 'browse.html', context=context_dict)
+    return response
 
 def search(request):
     return render(request, 'search.html')

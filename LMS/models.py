@@ -39,6 +39,7 @@ class Staff(models.Model):
 class Category(models.Model):
     pk_num = models.IntegerField(unique=True)
     name = models.CharField(max_length=128)
+    views = models.IntegerField(default=0)
     manager = models.ForeignKey(Staff, on_delete=models.SET(None), blank=True, null=True)
     
     def __str__(self):
@@ -65,6 +66,7 @@ class Book(models.Model):
     isbn = models.ForeignKey(ISBN, on_delete=models.CASCADE)
     location = models.ForeignKey(Library, on_delete=models.CASCADE)
     taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
+    views = models.IntegerField(default=0)
     
     def __str__(self):
         return str(self.isbn)

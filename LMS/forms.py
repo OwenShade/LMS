@@ -6,6 +6,7 @@ from LMS.models import Member, Category, Book, Staff, Library
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128,
         help_text="Please enter the new category.")
+    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     
     class Meta:
         model = Category
@@ -21,6 +22,7 @@ class BookForm(forms.ModelForm):
         help_text="Please enter the author of the book.")
     genre = forms.CharField(max_length=128,
         help_text="Please enter the genre.")
+    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     class Meta:
         model = Book
