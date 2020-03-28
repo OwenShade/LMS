@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from LMS.models import Member, Category, Book, Staff, Library
+from LMS.models import Member, Category, Book, Staff, Library, ISBN
 
 #Form for adding a category
 class CategoryForm(forms.ModelForm):
@@ -14,10 +14,10 @@ class CategoryForm(forms.ModelForm):
 
 #form for adding a book
 class BookForm(forms.ModelForm):
+    ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.")
     title = forms.CharField(max_length=128,
         help_text="Please enter the book title.")
-    category = forms.CharField(max_length=128,
-        help_text="Please enter the Category.")
+    category = forms.ModelChoiceField(Category.objects.all(), help_text="Please select a category.")
     author = forms.CharField(max_length=128,
         help_text="Please enter the author of the book.")
     genre = forms.CharField(max_length=128,
@@ -25,8 +25,8 @@ class BookForm(forms.ModelForm):
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     class Meta:
-        model = Book
-        fields = ('title', 'category', 'author', 'genre',)
+        model = ISBN
+        fields = ('ISBN', 'title', 'category', 'author', 'genre',)
 
 #form for adding a staff member
 class StaffForm(forms.ModelForm):

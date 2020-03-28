@@ -24,12 +24,12 @@ def populate():
     with open('book.csv') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            p = ISBN(ISBN=int(row['isbn']), title=row['title'], author=row['author'], genre=row['genre'], category=Category.objects.get(pk_num=int(row['categoryid'])))
+            p = ISBN(ISBN=int(row['isbn']), title=row['title'], author=row['author'], genre=row['genre'], category=Category.objects.get(pk_num=int(row['categoryid'])),views=random.randrange(75))
             p.save()
             
     #Add Books
     for key in enumerate(ISBN.objects.all()):
-        b = Book(pk_num=key[0], isbn=key[1], location=Library.objects.get(pk_num=1),views = random.randrange(100))
+        b = Book(isbn=key[1], location=Library.objects.get(pk_num=1))
         b.save()
 if __name__ == '__main__':
     print('Starting LMS population script...')

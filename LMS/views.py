@@ -14,9 +14,9 @@ def home(request):
         context_dict['categories'] = None
 
     try:
-        book_list = Book.objects.order_by('-views')[:5]
+        book_list = ISBN.objects.order_by('-views')[:5]
         context_dict['books'] = book_list
-    except Book.DoesNotExist:
+    except ISBN.DoesNotExist:
         context_dict['books'] = None
         
     response = render(request, 'home.html', context=context_dict)
@@ -102,11 +102,11 @@ def add_book(request):
 
         if form.is_valid():
             form.save(commit=True)
-
+            book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=Library.objects.get(pk_num=1))
+            book.save()
             return redirect('/LMS/')
-        else:
-            print(form.errors)
-    
+    else:
+        form = BookForm()
     return render(request, 'add_book.html', {'form': form})
 
 def add_staff(request):
@@ -128,8 +128,6 @@ def add_staff(request):
             profile.save()
             
             return redirect('/LMS/')
-        else:
-            print(form.errors, profile_form.errors)
     else:
         staff_form = StaffForm()
         profile_form = StaffProfileForm()

@@ -5,30 +5,27 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Add a Book.</h1>
-        <div> 
-            <form id="BookForm" method="post" class="col-8" action="/LMS/add_book/">
-                {% csrf_token %}
-                {% for hidden in form.hidden_fields %} 
-                    {{ hidden }} 
-                {% endfor %} 
-                {% for field in form.visible_fields %}
-                    <div class="form-group row">
-                        <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
-                        <div class="mb-3 ml-3 col">
-                            <div class="">{{field}}</div>
-                            <div class="invalid-feedback">{{ field.errors }}</div>
-                        </div>
-                    </div>
-                {% endfor %} 
-
-                <input type="submit" name="submit" class="btn btn-primary" value="Create Book" /> 
-            </form> 
-            <br>
-            <form>
-                <div class="mb-3 ml-3 col">
-                    <button formaction="{% url 'LMS:staff_page' %}" class="btn btn-primary">Staff Page</button>
+<h1>Add a Book</h1>
+<div> 
+    <form id="BookForm" method="post" action="/LMS/add_book/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error }}</strong>
                 </div>
-            </form>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        <input type="submit" name="submit" class="btn btn-primary" value="Create Book" /> 
+    </form> 
+    <br>
+    <form>
+        <div class="mb-3 ml-3 col">
+            <button formaction="{% url 'LMS:staff_page' %}" class="btn btn-primary">Staff Page</button>
         </div>
+    </form>
+</div>
 {% endblock %}

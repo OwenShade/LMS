@@ -54,6 +54,7 @@ class ISBN(models.Model):
     title = models.CharField(max_length=128)
     author = models.CharField(max_length=128)
     genre = models.CharField(max_length=128)
+    views = models.IntegerField(default=0)
     
     def __str__(self):
         return str(self.title)
@@ -62,11 +63,10 @@ class ISBN(models.Model):
         verbose_name_plural = "ISBNs"
     
 class Book(models.Model):
-    pk_num = models.IntegerField(unique=True)
+    pk_num = models.AutoField(primary_key=True)
     isbn = models.ForeignKey(ISBN, on_delete=models.CASCADE)
     location = models.ForeignKey(Library, on_delete=models.CASCADE)
     taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
-    views = models.IntegerField(default=0)
     
     def __str__(self):
         return str(self.isbn)

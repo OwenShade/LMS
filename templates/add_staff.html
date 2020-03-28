@@ -11,15 +11,15 @@
         {% csrf_token %}
         {{ staff_form.as_p }} 
         {{ profile_form.as_p }}
-        {% for field in form %}
-            <div class="form-group row">
-                <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
-                <div class="mb-3 ml-3 col">
-                    <div class="">{{field}}</div>
-                    <div class="invalid-feedback">{{ field.errors }}</div>
+        {% if staff_form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error }}</strong>
                 </div>
-            </div>
-        {% endfor %} 
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
         <input type="submit" name="submit" class="btn btn-primary" value="Add Staff" /> 
     </form> 
     <br/>
