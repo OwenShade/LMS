@@ -61,6 +61,10 @@ class UserProfileForm(UserForm):
 
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
+        
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
+
         self.fields['reg_library'].widget.attrs.update({'class' : 'custom-select d-block w-100'})
 
     class Meta:
