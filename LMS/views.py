@@ -3,7 +3,10 @@ from django.http import HttpResponse
 from LMS.models import Library, Member, Staff, Category, ISBN, Book
 from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm, UserProfileForm, StaffProfileForm
 from django.shortcuts import redirect
+from django.urls import reverse
 from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 
 def home(request):
     context_dict = {}
@@ -47,7 +50,7 @@ def register(request):
         profile_form = UserProfileForm()
     return render(request, 'register.html', context ={'user_form': user_form,'profile_form' : profile_form, 'registered': registered})
 
-def login(request):
+def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -147,5 +150,11 @@ def show_category(request, category_name_slug):
     except Category.DoesNotExist:
         context_dict['category'] = None
     return render(request, 'browse.html', context=context_dict)
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect(reverse('home'))
+
 
     

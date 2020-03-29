@@ -8,7 +8,7 @@
 
 {% block body_block %}
 <h1>Login to Library</h1>
-<form id="login_form" method="post" action="LMS/login/">
+<form id="login_form" method="post" action="/LMS/login/">
     {% csrf_token %}
     <div class="form-group row">
         <label for="id_{{field.name}}" class="col-form-label col">{{ field.help_text }}</label>
