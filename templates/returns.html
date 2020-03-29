@@ -6,5 +6,25 @@
 {% endblock %}
 
 {% block body_block %}
-Return a Book.
+<h1>Return a Book</h1>
+{% if returned %}
+<h2>Book returned!</h2>
+{% endif %}
+<br/>
+<strong>List of Books</strong>
+{% if books %}
+<form id="ReturnForm" method="post" action="/LMS/returns/">
+    {% csrf_token %}
+    <ul>
+    {% for book in books %}
+        <li>
+            {{ book.isbn.title }}
+            <input type="submit" name="return:{{ book.pk_num }}" class="btn btn-primary" value="Return" />
+        </li>
+    {% endfor %}
+    </ul>
+{% else %} 
+    <br/>
+    No books to return.
+{% endif %}
 {% endblock %}
