@@ -1,12 +1,12 @@
-from LMS.models import Library, Member, Staff, Category, ISBN, Book
-from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm, UserProfileForm, StaffProfileForm
+from LMS.models import *
+from LMS.forms import *
 from django.shortcuts import render, reverse, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 
 
 def home(request):
@@ -52,23 +52,31 @@ def register(request):
     return render(request, 'register.html', context ={'user_form': user_form,'profile_form' : profile_form, 'registered': registered})
 
 def user_login(request):
+    context = {"login_errors": []}
+
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        print("post")
+        form = LoginForm(request=request, data=request.POST)
+        context["form"] = form
 
-        user = authenticate(username=username, password=password)
-
-        if user:
-            if user.is_active:
+        if form.is_valid():
+            print("valid")
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
                 login(request, user)
-                return redirect(reverse('home'))
+                messages.info(request, f"You are now logged in as {username}")
+                return redirect('/')
             else:
-                return HttpResponse("Your library account is disabled.")
+                context["login_errors"].append("Invalid login details supplied.")
         else:
-            print(f"Invalid login details: {username}, {password}")
-            return render(request, 'login.html', context={"login_errors": ["Invalid login details supplied."]})
-    else:
-        return render(request, 'login.html')
+            print(form.errors)
+            context["login_errors"] = (form.errors)
+
+    form = LoginForm()
+    context["form"] = form
+    return render(request = request, template_name = "login.html", context=context)
 
 def browse(request):
     context_dict = {}
