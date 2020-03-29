@@ -5,14 +5,31 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Add a Staff Member</h1>
-<div> 
+    <div class="py-5 text-center">
+        <h1>Add a staff member</h1>
+    </div>
     <form id="StaffForm" method="post" action="/LMS/add_staff/">
         {% csrf_token %}
-        {{ staff_form.as_p }} 
-        {{ profile_form.as_p }}
+        {% for field in staff_form %}
+            <div class="form-group row">
+                <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
+                <div class="col-5">
+                    {{field}}
+                    <div class="invalid-feedback">{{ field.errors }}</div>
+                </div>
+            </div>
+        {% endfor %}
+        {% for field in profile_form %}
+                <div class="form-group row">
+                    <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
+                    <div class="col-5">
+                        {{field}}
+                        <div class="invalid-feedback">{{ field.errors }}</div>
+                    </div>
+                </div>
+        {% endfor %}
         {% if staff_form.errors %}
-            {% for field in form %}
+            {% for field in staff_form %}
                 {% for error in field.errors %}
                 <div class="alert alert-danger">
                     <strong>{{ error }}</strong>
@@ -20,14 +37,9 @@
                 {% endfor %}
             {% endfor %}
         {% endif %}
-        <input type="submit" name="submit" class="btn btn-primary" value="Add Staff" /> 
+        <input type="submit" name="submit" class="btn btn-primary" value="Add Staff Member" /> 
+        <a href="{% url 'LMS:staff_page' %}" class="btn btn-primary">Staff Page</a>
     </form> 
     <br/>
-    <form>
-        <div class="mb-3 ml-3 col">
-            <button formaction="{% url 'LMS:staff_page' %}" class="btn btn-primary">Staff Page</button>
-        </div>
-    </form>
-</div>
 {% endblock %}
     

@@ -37,6 +37,12 @@ class StaffForm(forms.ModelForm):
     username = forms.CharField(max_length=128,
         help_text="Please enter the name of the staff member.")
     
+    def __init__(self, *args, **kwargs):
+        super(StaffForm, self).__init__(*args, **kwargs)
+        
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
+
     class Meta:
         model = User
         fields = ('username','password', 'email')
@@ -46,6 +52,13 @@ class StaffProfileForm(forms.ModelForm):
         help_text="Please enter their role.")
     phone = forms.CharField(max_length=128,
         help_text="Please enter their phone number.")
+
+    def __init__(self, *args, **kwargs):
+        super(StaffProfileForm, self).__init__(*args, **kwargs)
+        
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
+
     class Meta:
         model = Staff
         fields = ('role', 'phone',)

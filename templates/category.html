@@ -17,7 +17,7 @@
             {% if books %}
                 <ul>
                 {% for book in books %}
-                    <li>{{ book.isbn.title }}</a></li>
+                    <li><a href="{% url 'LMS:isbn_num' book.isbn.ISBN %}">{{ book.isbn.title }}</a></li>
                 {% endfor %}
                 </ul>
             {% else %}

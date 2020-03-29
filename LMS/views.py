@@ -55,12 +55,10 @@ def user_login(request):
     context = {"login_errors": []}
 
     if request.method == 'POST':
-        print("post")
         form = LoginForm(request=request, data=request.POST)
         context["form"] = form
 
         if form.is_valid():
-            print("valid")
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
@@ -182,7 +180,23 @@ def add_staff(request):
 
 @login_required
 def returns(request):
-    return render(request, 'returns.html')
+    context_dict = {}
+    try:
+        context_dict['books'] = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
+    except:
+        context_dict['books'] = None
+    if request.method == 'POST':
+        book = None
+        for key in request.POST.keys():
+            if key.startswith('return:'):
+                book = key[7:]
+                break
+        if book:
+            book = Book.objects.get(pk_num=book)
+            book.taken_out = None
+            book.save()
+            context_dict['returned'] = book.location
+    return render(request, 'returns.html', context=context_dict)
 
 @login_required
 def staff_page(request):
@@ -199,6 +213,15 @@ def show_category(request, category_name_slug):
         context_dict['category'] = None
         context_dict['books'] = None
     return render(request, 'category.html', context=context_dict)
+
+def show_isbn(request, isbn):
+    context_dict = {}
+    try:
+        isbn = ISBN.objects.get(ISBN=isbn)
+        context_dict['isbn'] = isbn
+    except:
+        context_dict['isbn'] = None
+    return render(request, 'isbn.html', context=context_dict)
 
 @login_required
 def user_logout(request):

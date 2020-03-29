@@ -18,4 +18,5 @@ urlpatterns = [
     path('logout/', views.user_logout, name='logout'),
     path('change_password/', views.change_password, name='change_password'),
     path('category/<slug:category_name_slug>/', views.show_category, name='show_category'),
+    path('<int:isbn>',views.show_isbn, name='isbn_num'),
 ]
