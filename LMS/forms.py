@@ -71,3 +71,6 @@ class UserProfileForm(UserForm):
         model = Member
         fields = ('username','password', 'email', 'reg_library')
         
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=128)
+    options = forms.ChoiceField(choices=[("1","Genre"), ("2","Title"), ("3","Author",), ("4","ISBN")], help_text="Choose what to search.")

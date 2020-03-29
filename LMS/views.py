@@ -1,5 +1,5 @@
 from LMS.models import Library, Member, Staff, Category, ISBN, Book
-from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm, UserProfileForm, StaffProfileForm
+from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm, UserProfileForm, StaffProfileForm, SearchForm
 from django.shortcuts import render, reverse, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView
@@ -81,7 +81,24 @@ def browse(request):
     return response
 
 def search(request):
-    return render(request, 'search.html')
+    if request.method == 'POST':
+        search_form = SearchForm(request.POST)
+        if search_form.is_valid():
+            data = search_form.cleaned_data['search']
+            option = search_form.cleaned_data['options']
+            if option == "1":
+                results = ISBN.objects.filter(genre__icontains=data)
+            elif option == "2":
+                results = ISBN.objects.filter(title__icontains=data)
+            elif option == "3":
+                results = ISBN.objects.filter(author__icontains=data)
+            elif option == "4":
+                results = ISBN.objects.filter(ISBN__icontains=data)
+                return render(request, 'search.html', {'search_form': search_form, 'results': results})
+    else:
+        results = []
+        search_form = SearchForm()
+    return render(request, 'search.html', context = {'search_form': search_form, 'results': results})
 
 @login_required
 def change_password(request):
@@ -132,8 +149,6 @@ def add_book(request):
 
 @login_required
 def add_staff(request):
-    form = StaffForm()
-
     if request.method == 'POST':
         staff_form = StaffForm(request.POST)
         profile_form = StaffProfileForm(request.POST)
@@ -179,4 +194,3 @@ def show_category(request, category_name_slug):
 def user_logout(request):
     logout(request)
     return redirect(reverse('home'))
-    

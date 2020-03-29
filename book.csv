@@ -22,29 +22,6 @@ isbn,categoryid,title,author,genre,category
 1720255871,0,"Approaching Literature: Writing, Reading, Thinking",Peter Schakel,Nonfiction Writing - General & Miscellaneous,General Works
 9539748437,0,In Our Own Words: Student Writers at Work,Rebecca Mlynarczyk,Nonfiction Writing - General & Miscellaneous,General Works
 8693806975,0,Tuscany in Mind,Alice Leccese Powers,Northern Italy - Tuscany - Travel,General Works
-7625010256,0,"10 Years of the Caine Prize for African Writing: Plus Coetzee, Gordimer, Achebe, Okri",The Caine The Caine Prize for African Writing,Literary Collections,General Works
-5275799795,0,Up the Down Escalator,Linda Rode,Literary Collections,General Works
-9798513074,0,The Daily Show with Jon Stewart Presents Earth (the Book): A Visitor's Guide to the Human Race,Jon Stewart,Literary Collections,General Works
-9053209015,0,The Portable Beat Reader,Various,Literary Collections,General Works
-2460070019,0,One Hundred and One Famous Poems (Barnes &amp; Noble Library of Essential Reading),Roy J. Cook,Literary Collections,General Works
-1215633020,0,Literature: A Pocket Anthology,R. S. Gwynn,Literary Collections,General Works
-3639032237,0,Anthology of American Literature Volume II,George McMichael,Literary Collections,General Works
-9242148838,0,The Norton Anthology of African American Literature,Henry Louis Gates Jr.,Literary Collections,General Works
-8921542204,0,"To The Shore Once More, Volume II: A Journey Down The Jersey Shore; Prose, Poetry, And Works Of Art",Frank Finale,Literary Collections,General Works
-7087710623,0,Literature and the Environment: A Reader on Nature and Culture,Lorraine Anderson,Literary Collections,General Works
-2516034345,0,Immigrant Women,Maxine Schwartz Seller,Literary Collections,General Works
-8110654116,0,A Place Apart: A Cape Cod Reader,Robert Finch,Literary Collections,General Works
-4451541059,0,I Thought My Father Was God: And Other True Tales from NPR's National Story Project,Paul Auster,Literary Collections,General Works
-5177007605,0,81 Famous Poems,Alexander Scourby,Literary Collections,General Works
-9019935844,0,Thousand and One Afternoons in Chicago,Ben Hecht,Literary Collections,General Works
-1134107072,0,Philadelphia Stories: America's Literature of Race and Freedom,Samuel Otter,Literary Collections,General Works
-7158052036,0,"Voices of Black America: Historical Recordings of Poetry, Humor and Drama, 1908-1947",Washington,Literary Collections,General Works
-7739849457,0,Shadowed Dreams: Women's Poetry of the Harlem Renaissance,Maureen Honey,Literary Collections,General Works
-6797331810,0,Latinos in Lotusland: An Anthology of Contemporary Southern California Literature,Daniel A. Olivas,Literary Collections,General Works
-9692735722,0,First Thought Best Thought,Allen Ginsberg,Literary Collections,General Works
-7514195783,0,"Approaching Literature: Writing, Reading, Thinking",Peter Schakel,Nonfiction Writing - General & Miscellaneous,General Works
-6152196704,0,In Our Own Words: Student Writers at Work,Rebecca Mlynarczyk,Nonfiction Writing - General & Miscellaneous,General Works
-4659663932,0,Tuscany in Mind,Alice Leccese Powers,Northern Italy - Tuscany - Travel,General Works
 6336825206,1,The American Aeneas: Classical Origins of the American Self,John C. Shields,Classicism,Philosophy
 5272407066,1,In Fact: The Best of Creative Nonfiction,Lee Gutkind,Journalism - Collections & History,Philosophy
 1156468862,1,Literary Journalism: A New Collection of the Best American Nonfiction,Mark Kramer,Journalism - Collections & History,Philosophy
@@ -52,23 +29,11 @@ isbn,categoryid,title,author,genre,category
 8714099112,1,Written by Herself: Autobiographies of American Women,Jill Ker Conway,Literary Figures - Women's Biography,Philosophy
 9420751788,1,Postmodern American Fiction: A Norton Anthology,Paula Geyh,Postmodernism - Literary Movements,Philosophy
 6822539572,1,New Orleans Stories: Great Writers on the City,John Miller,Urban Sociology,Philosophy
-6974860711,1,The American Aeneas: Classical Origins of the American Self,John C. Shields,Classicism,Philosophy
-2813812748,1,In Fact: The Best of Creative Nonfiction,Lee Gutkind,Journalism - Collections & History,Philosophy
-7515310865,1,Literary Journalism: A New Collection of the Best American Nonfiction,Mark Kramer,Journalism - Collections & History,Philosophy
-4762517688,1,"In So Many More Words: Arguments and Adventures, Second Edition",Robert Schmuhl,Journalism - Collections & History,Philosophy
-9085231949,1,Written by Herself: Autobiographies of American Women,Jill Ker Conway,Literary Figures - Women's Biography,Philosophy
-2009805346,1,Postmodern American Fiction: A Norton Anthology,Paula Geyh,Postmodernism - Literary Movements,Philosophy
-3835767872,1,New Orleans Stories: Great Writers on the City,John Miller,Urban Sociology,Philosophy
 9405581666,2,Listening For God Rdr Vol 4,Paula J. Carlson,Faith,Religion
 8981381495,2,"Listening For God Reader, Vol 1",Paula J. Carlson,Faith,Religion
 7288479921,2,Listening For God Reader Volume 3,Paula J. Carlson,Faith,Religion
 6796060803,2,Listening for God: Contemporary Literature And The Life Of Faith: Volume 2,Paula J. Carlson,Faith,Religion
 4282842579,2,A Kentucky Christmas,George Ella Lyon,Religion,Religion
-2297381002,2,Listening For God Rdr Vol 4,Paula J. Carlson,Faith,Religion
-3984047927,2,"Listening For God Reader, Vol 1",Paula J. Carlson,Faith,Religion
-2424532561,2,Listening For God Reader Volume 3,Paula J. Carlson,Faith,Religion
-7486501863,2,Listening for God: Contemporary Literature And The Life Of Faith: Volume 2,Paula J. Carlson,Faith,Religion
-3015977648,2,A Kentucky Christmas,George Ella Lyon,Religion,Religion
 6355489662,3,The Best American Short Plays 2003-2004,Glenn Young,Drama,Social Sciences
 7747999557,3,New Playwrights: The Best Plays of 2007,Lawrence Harbison,Drama,Social Sciences
 9440116371,3,Thom Pain (based on nothing),Will Eno,Drama,Social Sciences
@@ -112,49 +77,6 @@ isbn,categoryid,title,author,genre,category
 2005401246,3,The Lowell Offering: Writings by New England Mill Women (1840-1845),Benita Eisler,Social Sciences,Social Sciences
 7317875742,3,More New York Stories: The Best of the City Section of The New York Times,Constance Rosenblum,Social Sciences - General & Miscellaneous,Social Sciences
 2184658954,3,Imagination And Spirit,J. Brent Bill,Society of Friends (Quakers),Social Sciences
-7199046201,3,The Best American Short Plays 2003-2004,Glenn Young,Drama,Social Sciences
-9202442094,3,New Playwrights: The Best Plays of 2007,Lawrence Harbison,Drama,Social Sciences
-3679110399,3,Thom Pain (based on nothing),Will Eno,Drama,Social Sciences
-9458330149,3,Women Heroes: Six Short Plays from the Women's Project,Julia Miles,Drama,Social Sciences
-8879211376,3,New Playwrights: The Best Plays of 2004,D. L. Lepidus,Drama,Social Sciences
-3953950993,3,"Off Off Broadway Festival Plays, 34th Series",Various,Drama,Social Sciences
-5671202827,3,"Roots of African American Drama: An Anthology of Early Plays, 1858-1938",Leo Hamalian,Drama,Social Sciences
-7156291827,3,Classic Plays from the Negro Ensemble Company,Paul Carter Harrison,Drama,Social Sciences
-3228141162,3,The Best American Short Plays 2008-2009,Barbara Parisi,Drama Anthologies,Social Sciences
-5613698877,3,Touch,Toni Press-Coffman,Drama Anthologies,Social Sciences
-9142107440,3,The Best American Short Plays 2006-2007,Barbara Parisi,Drama Anthologies,Social Sciences
-9370153719,3,The Best New Playwrights 2009,Lawrence Harbison,Drama Anthologies,Social Sciences
-5509367228,3,2007: The Best Ten-Minute Plays for Two Actors,Lawrence Harbison,Drama Anthologies,Social Sciences
-2323239615,3,Nickel and Dimed,Joan Holden,Drama Anthologies,Social Sciences
-3402504108,3,"The Women's Project and Productions: The Best One-Act Plays, 1975-1999",Julia Miles,Drama Anthologies,Social Sciences
-6590906085,3,New Playwrights: The Best Plays of 2008,Lawrence Harbison,Drama Anthologies,Social Sciences
-2828661292,3,New Playwrights: The Best Plays of 2006,D. L. Lepidus,Drama Anthologies,Social Sciences
-1950445674,3,American Political Plays after 9/11,Allan Havis,Drama Anthologies,Social Sciences
-1351364337,3,"Best Plays of the Early American Theatre, 1787-1911",John Gassner,Drama Anthologies,Social Sciences
-1149041026,3,"Twenty One-Acts from the Twenty Years at the Humana Festival, 1975-1995",Michele Volansky,Drama Anthologies,Social Sciences
-1416369619,3,Plays and Playwrights 2002,Martin Denton,Drama Anthologies,Social Sciences
-7614457926,3,Plays and Playwrights 2009,Martin Denton,Drama Anthologies,Social Sciences
-5124947614,3,The Best Plays Theater Yearbook 2007-2008,Jeffrey Eric Jenkins,Drama Anthologies,Social Sciences
-6217458604,3,New Playwrights: The Best Plays of 2000,D. L. Lepidus,Drama Anthologies,Social Sciences
-3122270325,3,Salaam. Peace: An Anthology of Middle Eastern-American Drama,Holly Hill,Drama Anthologies,Social Sciences
-4807125289,3,Plays and Playwrights 2008,Robert Attweiler,Drama Anthologies,Social Sciences
-9944692715,3,Death Defying Acts,Woody Allen,Drama Anthologies,Social Sciences
-2400462789,3,New Playwrights: The Best Plays of 2001,D. L. Lepidus,Drama Anthologies,Social Sciences
-3759705118,3,New Playwrights: The Best Plays of 2005,D. L. Lepidus,Drama Anthologies,Social Sciences
-2662671767,3,The Flu Season and Other Plays,Will Eno,Drama Anthologies,Social Sciences
-3558799644,3,The Best American Short Plays 2004-2005,Barbara Parisi,Drama Anthologies,Social Sciences
-3184006315,3,New Playwrights: The Best Plays of 2003,D. L. Lepidus,Drama Anthologies,Social Sciences
-3175102308,3,Wines in the Wilderness: Plays by African American Women from the Harlem Renaissance to the Present,Elizabeth Brown-Guillory,Drama Anthologies,Social Sciences
-7258678079,3,Uncle Remus: His Songs and His Sayings,Joel Chandler Harris,North American Folklore & Mythology,Social Sciences
-2443750291,3,Early African American Classics (Barnes &amp; Noble Classics Series),Barnes &amp; Noble,Slavery - Social Sciences,Social Sciences
-9098455891,3,"Classic Slave Narratives: The Life of Olaudah Equiano, The History of Mary Prince, Narrative of the Life of Frederick Douglass, Incidents in the Life of a Slave Girl",Henry Louis Gates Jr.,Slavery - Social Sciences,Social Sciences
-2582235361,3,Running a Thousand Miles for Freedom: The Escape of William and Ellen Craft from Slavery,Craft,Slavery - Social Sciences,Social Sciences
-5809042035,3,"Slave Narratives: James Albert Ukawsaw Gronniosaw, Olaudah Equiano, Nat Turner, Frederick Douglass, William Wells Brown, Henry Bibb, Sojourner Truth, William and Ellen Craft, Harriet A. Jacobs, Jacob D. Green (Library of America)",William L. Andrews,Slavery - Social Sciences,Social Sciences
-6626305393,3,Women Writing Africa: The Eastern Region,Amandina Lihamba,Social Sciences,Social Sciences
-7633161642,3,Of Suffocated Hearts And Tortured Souls,Valerie Key Orlando,Social Sciences,Social Sciences
-3169278714,3,The Lowell Offering: Writings by New England Mill Women (1840-1845),Benita Eisler,Social Sciences,Social Sciences
-6563872302,3,More New York Stories: The Best of the City Section of The New York Times,Constance Rosenblum,Social Sciences - General & Miscellaneous,Social Sciences
-7406988470,3,Imagination And Spirit,J. Brent Bill,Society of Friends (Quakers),Social Sciences
 1876853913,4,Nine Plays of the Modern Theater: Waiting for Godot; The Visit; Tango; The Caucasian Chalk Circle; The Balcony; Rhinoceros; American Buffalo; The Birthday Party; Rosencrantz and Guildenstern are Dead,Harold Clurman,English,Culture
 7554503667,4,"Halloween Reader: Poems, Stories, and Plays from Halloweens Past",Lesley Pratt Bannatyne,English & Irish Literature Anthologies,Culture
 1769085084,4,Literature and Science in the Nineteenth Century: An Anthology,Laura Otis,English & Irish Literature Anthologies,Culture
@@ -169,7 +91,6 @@ isbn,categoryid,title,author,genre,category
 9534327332,4,Latina,Lillian Castillo-speed,Latinos - General,Culture
 2082953155,4,Oral Epics from Africa,John William Johnson,Literary Criticism,Culture
 3749992667,4,African Fundamentalism: A Literary and Cultural Anthology of Garvey's Harlem Renaissance,Tony Martin,Literary Criticism,Culture
-5600739245,4,An Anthology of Interracial Literature: Black-White Contacts in the Old World and the New,Werner Sollors,Literary Criticism,Culture
 9706586310,4,Multicultural Children's Literature: Through the Eyes of Many Children,Donna E. Norton,Literary Criticism,Culture
 6129443105,4,"The Norton Anthology of Literature by Women: The Traditions in English, Vol. 2",Sandra M. Gilbert,Literary Criticism,Culture
 2105563061,4,Finding Freedom: Writings from Death Row,Jarvis Jay Masters,Literary Criticism,Culture
@@ -228,79 +149,6 @@ isbn,categoryid,title,author,genre,category
 4163891338,4,30 Satires,Lewis H. Lapham,Political Science,Culture
 1224961543,4,African Folktales,Roger D. Abrahams,Travel,Culture
 4326956986,4,Literary Savannah,Patrick Allen,Travel,Culture
-6179644925,4,Nine Plays of the Modern Theater: Waiting for Godot; The Visit; Tango; The Caucasian Chalk Circle; The Balcony; Rhinoceros; American Buffalo; The Birthday Party; Rosencrantz and Guildenstern are Dead,Harold Clurman,English,Culture
-9015318766,4,"Halloween Reader: Poems, Stories, and Plays from Halloweens Past",Lesley Pratt Bannatyne,English & Irish Literature Anthologies,Culture
-2799789662,4,Literature and Science in the Nineteenth Century: An Anthology,Laura Otis,English & Irish Literature Anthologies,Culture
-5453889541,4,"Living Literature: An Introduction to Fiction, Poetry, Drama",John Brereton,English Language Readers,Culture
-5009708645,4,Inside Out/Outside In: Exploring American Literature,Victoria Holder,English Language Readers,Culture
-1257211336,4,An Anthology of Interracial Literature: Black-White Contacts in the Old World and the New,Werner Sollors,Language Arts,Culture
-5280147839,4,Making Literature Matter: An Anthology for Readers and Writers,John Schilb,Language Arts,Culture
-1125059311,4,Our Own Stories: Readings for Cross-Cultural Communication,Norine Dresser,Language Arts,Culture
-6223132470,4,Hispanic-American Literature: A Brief Introduction and Anthology,Nicolas Kanellos,Latinos,Culture
-6747611845,4,"Imagined Transnationalism: U. S. Latino/A Literature, Culture, and Identity",Kevin Concannon,Latinos,Culture
-9498938519,4,U.S. Latino Literature Today,Gabriela Baeza Ventura,Latinos - General,Culture
-2229107960,4,Latina,Lillian Castillo-speed,Latinos - General,Culture
-1277004705,4,Oral Epics from Africa,John William Johnson,Literary Criticism,Culture
-7130735217,4,African Fundamentalism: A Literary and Cultural Anthology of Garvey's Harlem Renaissance,Tony Martin,Literary Criticism,Culture
-8350045744,4,An Anthology of Interracial Literature: Black-White Contacts in the Old World and the New,Werner Sollors,Literary Criticism,Culture
-1491945081,4,Multicultural Children's Literature: Through the Eyes of Many Children,Donna E. Norton,Literary Criticism,Culture
-6541056501,4,"The Norton Anthology of Literature by Women: The Traditions in English, Vol. 2",Sandra M. Gilbert,Literary Criticism,Culture
-8149955267,4,Finding Freedom: Writings from Death Row,Jarvis Jay Masters,Literary Criticism,Culture
-3152664907,4,Early American Writing,Various,Literary Criticism,Culture
-1857880240,4,"The Norton Anthology of Literature by Women: The Traditions in English, Vol. 1",Sandra M. Gilbert,Literary Criticism,Culture
-4142300054,4,Concise Anthology of American Literature,George McMichael,Literary Criticism,Culture
-3773839454,4,"To the Shore Once More: A Portrait Of The Jersey Shore; Prose, Poetry, and Works of Art",Frank Finale,Literary Criticism,Culture
-2941468740,4,A Companion to African American Literature,Gene A. Jarrett,Literary Criticism,Culture
-2082962480,4,Conversations with Mexican American Writers: Languages and Literatures in the Borderlands,Elisabeth Mermann-Jozwiak,Literary Criticism,Culture
-4742771700,4,"Show &amp; Tell: Writers on Writing, Sixth Edition",Dept of Creative Writing,Literary Criticism,Culture
-6447822251,4,Twentieth-Century American Poetry,Dana Gioia,Literary Criticism,Culture
-8758929172,4,"Blacklegs, Card Sharps, and Confidence Men",Thomas Ruys Smith,Literary Criticism,Culture
-1816985089,4,A Beginner's Guide to Critical Reading: An Anthology of Literary Texts,Richard Jacobs,Literary Criticism,Culture
-5320069098,4,Solomon Northup's Twelve Years a Slave: And Plantation Life in the Antebellum South,Solomon Northup,Literary Criticism,Culture
-4476725212,4,Bamboo among the Oaks: Contemporary Writing by Hmong Americans,Mai Neng Moua,Literary Criticism,Culture
-3679786335,4,Literary Nashville,Patrick Allen,Literary Criticism,Culture
-4577611512,4,Mississippi Writers: An Anthology,Dorothy Abbott,Literary Criticism,Culture
-5531720651,4,Stand Up Poetry: An Expanded Anthology,Charles Harper Webb,Literary Criticism,Culture
-7406756323,4,For She Is the Tree of Life: Grandmothers Through the Eyes of Women Writers,Valerie Kack-Brice,Literary Criticism,Culture
-3288534311,4,Women Writing Africa: West Africa and the Sahel,Esi Sutherland-Addy,Literary Criticism - General & Miscellaneous,Culture
-8801404191,4,Violence in Francophone African and Caribbean Women's Literature,Marie-Chantal Kalisa,Literary Criticism - General & Miscellaneous,Culture
-3148507496,4,Less Than One and Double: A Feminist Reading of African Women's Writing,Kenneth W. Harrow,Literary Criticism - General & Miscellaneous,Culture
-2140835637,4,Tales for Little Rebels: A Collection of Radical Children's Literature,Philip Nel,Literary Criticism - General & Miscellaneous,Culture
-9122281318,4,Xerophilia: Ecocritical Explorations in Southwestern Literature,Tom Lynch,Literary Criticism - General & Miscellaneous,Culture
-3158569350,4,American Working-Class Literature: An Anthology,Nicholas Coles,Literature Anthologies - General & Miscellaneous,Culture
-6723847867,4,"Titanica: The Disaster of the Century in Poetry, Song and Prose",Steven Biel,Literature Anthologies - General & Miscellaneous,Culture
-9010520548,4,Fire and Ink: An Anthology of Social Action Writing,Frances Payne Adler,Literature Anthologies - General & Miscellaneous,Culture
-6162043081,4,Step into a World: A Global Anthology of the New Black Literature,Kevin Powell,Peoples & Cultures - American Anthologies,Culture
-1449008377,4,"The Norton Anthology of African American Literature, Vol. 2",Henry Louis Gates Jr.,Peoples & Cultures - American Anthologies,Culture
-4789180713,4,Coming of Age in America: A Multicultural Anthology,Mary Frosch,Peoples & Cultures - American Anthologies,Culture
-7988560804,4,The Latino Reader: An American Literary Tradition from 1542 to the Present,Margarite Fernandez Olmos,Peoples & Cultures - American Anthologies,Culture
-2500568231,4,"Luis Valdez - Early Works: Actos, Bernabe and Pensamiento Serpentino",Luis Valdez,Peoples & Cultures - American Anthologies,Culture
-4652688894,4,African American Literature (Penguin Academics Series),Keith Gilyard,Peoples & Cultures - American Anthologies,Culture
-4607100962,4,"Black Theatre USA, V2: Plays by African Americans 1935-Today, Vol. 2",Ted Shine,Peoples & Cultures - American Anthologies,Culture
-7223604278,4,Black Voices: An Anthology of African-American Literature,Various,Peoples & Cultures - American Anthologies,Culture
-5884318786,4,Bordering Fires: The Vintage Book of Contemporary Mexican and Chicano/a Literature,Cristina Garcia,Peoples & Cultures - American Anthologies,Culture
-2399437020,4,Coming of Age in the 21st Century,Mary Frosch,Peoples & Cultures - American Anthologies,Culture
-3491892839,4,Voices in Our Blood: America's Best on the Civil Rights Movement,Jon Meacham,Peoples & Cultures - American Anthologies,Culture
-7662713953,4,La Llorona on the Longfellow Bridge: Poetry Y Otras Movidas,Alicia Gaspar De Alba,Peoples & Cultures - American Anthologies,Culture
-2079837472,4,Crossing the Danger Water: Three Hundred Years of African-American Writing,Deirdre Mullane,Peoples & Cultures - American Anthologies,Culture
-1954197728,4,Latino Boom: An Anthology of U. S. Latino Literature,John Christie,Peoples & Cultures - American Anthologies,Culture
-8594829459,4,Brotherman: The Odyssey of Black Men in America--an Anthology,Robert Allen,Peoples & Cultures - American Anthologies,Culture
-2497998176,4,"Richard Wright: Later Works (Black Boy, American Hunger, The Outsider)",Richard Wright,Peoples & Cultures - American Anthologies,Culture
-8287540182,4,"Glances Backward: An Anthology of American Homosexual Writing, 1830-1920",James J. Gifford,Peoples & Cultures - American Anthologies,Culture
-2780932399,4,Deaf Way II Anthology: A Literary Collection of Deaf and Hard of Hearing Writers,Tonya M. Stremlau,Peoples & Cultures - American Anthologies,Culture
-9805568909,4,The Black Woman: An Anthology,Toni Cade Bambara,Peoples & Cultures - American Anthologies,Culture
-6179328788,4,The Civil Rights Reader: American Literature from Jim Crow to Reconciliation,Julie Buckner Armstrong,Peoples & Cultures - American Anthologies,Culture
-3869824337,4,Asian-American Literature: A Brief Introduction and Anthology,Shawn Wong,Peoples & Cultures - American Anthologies,Culture
-6875242503,4,The Prentice Hall Anthology of Latino Literature,Eduardo del Rio,Peoples & Cultures - American Anthologies,Culture
-3698052166,4,So Fey,Steve Berman,Peoples & Cultures - American Anthologies,Culture
-2099198923,4,Call and Response: The Riverside Anthology of the African American Literary Tradition CD,Patricia Liggins Hill,Peoples & Cultures - American Anthologies,Culture
-6017837266,4,En Otra Voz: Antolog&#237;a de Literatura Hispana de los Estados Unidos,Nicolas Kanellos,Peoples & Cultures - American Anthologies,Culture
-8607775046,4,African-American Literature: A Brief Introduction and Anthology,Al Young,Peoples & Cultures - American Anthologies,Culture
-9005043349,4,The Floating Borderlands: Twenty-Five Years of U.S. Hispanic Literature,Lauro Flores,Peoples & Cultures - American Anthologies,Culture
-1708986798,4,American Protest Literature,Zoe Trodd,Political Protest & Dissent,Culture
-2031896423,4,30 Satires,Lewis H. Lapham,Political Science,Culture
-8393909676,4,African Folktales,Roger D. Abrahams,Travel,Culture
-3116204837,4,Literary Savannah,Patrick Allen,Travel,Culture
 2909518283,5,Literature and Aging: An Anthology,Martin Kohn,Aging - General & Miscellaneous,Natural Sciences
 7210824715,5,Inherit the Atchafalaya,Greg Guirard,Nature,Natural Sciences
 8534921142,5,A River Through Illinois,Daniel V. Overturf,Nature,Natural Sciences
@@ -310,15 +158,6 @@ isbn,categoryid,title,author,genre,category
 5865406005,5,Mother California: A Story of Redemption Behind Bars,Kenneth E. Hartman,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
 2412323132,5,Forced Passages: Imprisoned Radical Intellectuals and the U.S. Prison Regime,Dylan Rodriguez,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
 2154277798,5,"B. O. O. B. S.: A Bunch of Outrageous Breast-Cancer Survivors Tell Their Stories of Courage, Hope and Healing",Ann Kempner Fisher,Women's Diseases & Disorders,Natural Sciences
-9465788440,5,Literature and Aging: An Anthology,Martin Kohn,Aging - General & Miscellaneous,Natural Sciences
-6209589183,5,Inherit the Atchafalaya,Greg Guirard,Nature,Natural Sciences
-4855596116,5,A River Through Illinois,Daniel V. Overturf,Nature,Natural Sciences
-7180921270,5,At Home on the Earth: Becoming Native to Our Place,David Landis Barnhill,Nature,Natural Sciences
-8088853416,5,Elements of Evolutionary Genetics,Brian Charlesworth,Organic Chemistry,Natural Sciences
-9314712548,5,I'll Fly Away: Further Testimonies from the Women of York Prison,Wally Lamb,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
-4717172447,5,Mother California: A Story of Redemption Behind Bars,Kenneth E. Hartman,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
-3892058130,5,Forced Passages: Imprisoned Radical Intellectuals and the U.S. Prison Regime,Dylan Rodriguez,Penology & Correctional Studies - General & Miscellaneous,Natural Sciences
-4431466838,5,"B. O. O. B. S.: A Bunch of Outrageous Breast-Cancer Survivors Tell Their Stories of Courage, Hope and Healing",Ann Kempner Fisher,Women's Diseases & Disorders,Natural Sciences
 8263412468,6,Califauna: A Literary Field Guide,Terry Beers,Animals - General,Applied Sciences
 5277914771,6,Transforming a Rape Culture,Emilie Buchwald,Criminology - Bias Crimes,Applied Sciences
 4602519238,6,Motherland: Writings by Irish American Women about Mothers and Daughters,Caledonia Kearns,Family - Assorted Topics,Applied Sciences
@@ -331,28 +170,14 @@ isbn,categoryid,title,author,genre,category
 4943383927,6,"Drinking, Smoking and Screwing: Great Writers on Good Times",Sara Nickles,Sexology & Sexual Behavior - General & Miscellaneous,Applied Sciences
 3188103880,6,White Lines: Writers on Cocaine,Geno Zanetti,Substance Use & Abuse - Medical Aspects,Applied Sciences
 9794832734,6,"Three African-American Classics: Up from Slavery, The Souls of Black Folk and Narrative of the Life of Frederick Douglass",Booker T. Washington,Teachers - General & Miscellaneous - Biography,Applied Sciences
-4547984891,6,Califauna: A Literary Field Guide,Terry Beers,Animals - General,Applied Sciences
-2696082104,6,Transforming a Rape Culture,Emilie Buchwald,Criminology - Bias Crimes,Applied Sciences
-8937585215,6,Motherland: Writings by Irish American Women about Mothers and Daughters,Caledonia Kearns,Family - Assorted Topics,Applied Sciences
-9724595343,6,Love and Marriage in Early African America,Frances Smith Foster,Marriage,Applied Sciences
-7071340479,6,Literary Mama: Reading for the Maternally Inclined,Andrea J. Buchanan,Motherhood,Applied Sciences
-3291584411,6,American Dreams,Sapphire,Multicultural Aspects/Gay & Lesbian Communities,Applied Sciences
-9473855606,6,Out on the Porch: An Evocation in Words and Pictures,Reynolds Price,Outdoor & Recreational Areas,Applied Sciences
-4910141417,6,All Things Censored [With CD],Mumia Abu-Jamal,Prisoners & Accused Persons - Biography,Applied Sciences
-3167824114,6,Prison Writings in 20th-Century America,H. Bruce Franklin,Prisons & Prison Life,Applied Sciences
-4091058979,6,"Drinking, Smoking and Screwing: Great Writers on Good Times",Sara Nickles,Sexology & Sexual Behavior - General & Miscellaneous,Applied Sciences
-4072916835,6,White Lines: Writers on Cocaine,Geno Zanetti,Substance Use & Abuse - Medical Aspects,Applied Sciences
-5102809944,6,"Three African-American Classics: Up from Slavery, The Souls of Black Folk and Narrative of the Life of Frederick Douglass",Booker T. Washington,Teachers - General & Miscellaneous - Biography,Applied Sciences
 3090417982,7,Baseball: A Literary Anthology,Nicholas Dawidoff,Baseball & Softball,Recreation
 8362473870,7,Tenderheaded: A Comb-Bending Collection of Hair Stories,Juliette Harris,Beauty & Grooming,Recreation
 2610049690,7,American Food Writing: An Anthology with Classic Recipes,Molly O'Neill,Cooking,Recreation
-8977355489,7,American Food Writing: An Anthology with Classic Recipes,Molly O'Neill,Cooking Essays,Recreation
 7757115420,7,Queer Beats: How the Beats Turned America On to Sex,Regina Marler,Gay & Lesbian Literary Studies,Recreation
 2860332072,7,Voices from the Harlem Renaissance,Nathan Irvin Huggins,General & Miscellaneous American Art,Recreation
 9465546281,7,Decolonial Voices: Chicana and Chicano Cultural Studies in the 21st Century,Arturo J. Aldama,General & Miscellaneous American Art,Recreation
 4617679361,7,"I Am Not My Breast Cancer: Women Talk Openly about Love and Sex, Hair Loss and Weight Gain, Mothers and Daughters, and Being a Woman with Breast Cancer",Ruth Peltason,Health,Recreation
 9443137526,7,Christmas in Minnesota,Marilyn Ziebarth,Holidays,Recreation
-8037353427,7,The Daily Show with Jon Stewart Presents Earth (the Book): A Visitor's Guide to the Human Race,Jon Stewart,Humor,Recreation
 9762396034,7,Humor Me: An Anthology of Funny Contemporary Writing (Plus Some Great Old Stuff Too),Ian Frazier,Humor,Recreation
 4605699421,7,Mental Floss: Scatterbrained,Editors Of Mental Floss,Humor,Recreation
 4051268475,7,Fierce Pajamas: An Anthology of Humor Writing from the New Yorker,David Remnick,Humor,Recreation
@@ -362,31 +187,8 @@ isbn,categoryid,title,author,genre,category
 3030703787,7,Moment's Notice: Jazz in Poetry and Prose,Art Lange,Jazz - General & Miscellaneous,Recreation
 4615240458,7,The Best American Magazine Writing,Clay Felker,Other Media,Recreation
 8261095333,7,The Best American Short Plays 2007-2008,Barbara Parisi,Performing Arts,Recreation
-3988858402,7,The Best American Short Plays 2006-2007,Barbara Parisi,Performing Arts,Recreation
 9532576761,7,Sporting Lives: Metaphor and Myth in American Sports,James W. Pipkin,Regional Sports,Recreation
 7933848762,7,The Best American Sports Writing 2008,William Nack,Sports Essays,Recreation
-4021952690,7,Baseball: A Literary Anthology,Nicholas Dawidoff,Baseball & Softball,Recreation
-7201839628,7,Tenderheaded: A Comb-Bending Collection of Hair Stories,Juliette Harris,Beauty & Grooming,Recreation
-1060336826,7,American Food Writing: An Anthology with Classic Recipes,Molly O'Neill,Cooking,Recreation
-2402075111,7,American Food Writing: An Anthology with Classic Recipes,Molly O'Neill,Cooking Essays,Recreation
-3664914080,7,Queer Beats: How the Beats Turned America On to Sex,Regina Marler,Gay & Lesbian Literary Studies,Recreation
-4341357992,7,Voices from the Harlem Renaissance,Nathan Irvin Huggins,General & Miscellaneous American Art,Recreation
-8925211889,7,Decolonial Voices: Chicana and Chicano Cultural Studies in the 21st Century,Arturo J. Aldama,General & Miscellaneous American Art,Recreation
-4924952121,7,"I Am Not My Breast Cancer: Women Talk Openly about Love and Sex, Hair Loss and Weight Gain, Mothers and Daughters, and Being a Woman with Breast Cancer",Ruth Peltason,Health,Recreation
-3184282160,7,Christmas in Minnesota,Marilyn Ziebarth,Holidays,Recreation
-8205174491,7,The Daily Show with Jon Stewart Presents Earth (the Book): A Visitor's Guide to the Human Race,Jon Stewart,Humor,Recreation
-1004206040,7,Humor Me: An Anthology of Funny Contemporary Writing (Plus Some Great Old Stuff Too),Ian Frazier,Humor,Recreation
-4329167099,7,Mental Floss: Scatterbrained,Editors Of Mental Floss,Humor,Recreation
-9750319170,7,Fierce Pajamas: An Anthology of Humor Writing from the New Yorker,David Remnick,Humor,Recreation
-7982715757,7,Hokum: An Anthology of African-American Humor,Paul Beatty,Humor,Recreation
-8126712157,7,American Wits: An Anthology of Light Verse,VARIOUS,Humor,Recreation
-3178505245,7,American Satire,Nicholas Bakalar,Humor - History & Criticism,Recreation
-6631436444,7,Moment's Notice: Jazz in Poetry and Prose,Art Lange,Jazz - General & Miscellaneous,Recreation
-8562658651,7,The Best American Magazine Writing,Clay Felker,Other Media,Recreation
-7315792837,7,The Best American Short Plays 2007-2008,Barbara Parisi,Performing Arts,Recreation
-5576116736,7,The Best American Short Plays 2006-2007,Barbara Parisi,Performing Arts,Recreation
-3583012641,7,Sporting Lives: Metaphor and Myth in American Sports,James W. Pipkin,Regional Sports,Recreation
-5021338338,7,The Best American Sports Writing 2008,William Nack,Sports Essays,Recreation
 8760244557,8,"The Wadsworth Themes American Literature Series, 1945-Present, Theme 18: Class Conflicts and the American Dream",Jay Parini,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
 9962815162,8,Glencoe Literature: American Literature: The Reader's Choice,Jeffrey D. Wilhelm,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
 1756496359,8,Contemporary U. S. Latino a Literary Criticism,Lyn Di Iorio Sandin,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
@@ -424,7 +226,6 @@ isbn,categoryid,title,author,genre,category
 5349344993,8,Norton Anthology of Literature by Women: The Traditions in English,Sandra M. Gilbert,American Literature Anthologies,Fiction & Literature
 7025235205,8,The American Tradition in Literature (concise) book alone,George Perkins,American Literature Anthologies,Fiction & Literature
 1424703893,8,The Norton Anthology of American Literature: Volume C: 1865-1914,Arnold Krupat,American Literature Anthologies,Fiction & Literature
-1386309386,8,Concise Anthology of American Literature,James Leonard,American Literature Anthologies,Fiction & Literature
 2685941925,8,"The Heath Anthology of American Literature: Contemporary Period (1945 To The Present), Volume E",Paul Lauter,American Literature Anthologies,Fiction & Literature
 5412467287,8,"The Harper American Literature, Single Volume Edition",Donald McQuade,American Literature Anthologies,Fiction & Literature
 2050276118,8,Writing New York: A Literary Anthology,Phillip Lopate,American Literature Anthologies,Fiction & Literature
@@ -480,7 +281,6 @@ isbn,categoryid,title,author,genre,category
 2273392470,8,Basali!: Stories by and about Women in Lesotho,K. Limakatso Kendall,Anthologies,Fiction & Literature
 4727591169,8,How God Fix Jonah,Lorenz Graham,Bible - Stories,Fiction & Literature
 3330862030,8,Of Suffocated Hearts and Tortured Souls: Seeking Subjecthood through Madness in Francophone Women's,ValZrie Orlando,Caribbean Fiction & Prose Literature - Literary Criticism,Fiction & Literature
-2637422540,8,Uncle Remus: His Songs and His Sayings,Joel Chandler Harris,Children's Fiction,Fiction & Literature
 3857795528,8,American Fantastic Tales Boxed Set,Peter Straub,Fiction,Fiction & Literature
 2473946507,8,The Portable Jack Kerouac,Jack Kerouac,Fiction,Fiction & Literature
 1910937742,8,The Vietnam Reader: The Definitive Collection of American Fiction and Nonfiction on the War,Stewart O'Nan,Fiction,Fiction & Literature
@@ -527,7 +327,6 @@ isbn,categoryid,title,author,genre,category
 5697747645,8,"The New Anthology of American Poetry: Volume I: Traditions and Revolutions, Beginnings to 1900",Steven Gould Axelrod,Poetry,Fiction & Literature
 4963716883,8,Modern American Prose: Fifteen Writers + 15,John Clifford,Poetry,Fiction & Literature
 5852915067,8,For a Living: The Poetry of Work,Nicholas Coles,Poetry,Fiction & Literature
-5874613221,8,The Classic Hundred Poems: All-Time Favorites,William Harmon,Poetry,Fiction & Literature
 1777148249,8,Caroling Dusk,Countee Cullen,Poetry,Fiction & Literature
 3753122592,8,Starting Today: 100 Poems for Obama's First 100 Days,Rachel Zucker,Poetry,Fiction & Literature
 6613613992,8,The Book of American Negro Poetry,James Weldon Johnson,Poetry,Fiction & Literature
@@ -539,7 +338,6 @@ isbn,categoryid,title,author,genre,category
 4738637277,8,100 Best-Loved Poems,Philip Smith,Poetry Anthologies,Fiction & Literature
 9606976445,8,"African-American Poetry: An Anthology, 1773-1930",Joan R. Sherman,Poetry Anthologies,Fiction & Literature
 8925326767,8,"The Norton Anthology of Poetry, Shorter 5th Edition",Margaret Ferguson,Poetry Anthologies,Fiction & Literature
-8054427436,8,The Best American Poetry 2010,Amy Gerstler,Poetry Anthologies,Fiction & Literature
 3901283312,8,The Best Loved Poems of the American People,Hazel Felleman,Poetry Anthologies,Fiction & Literature
 8052470680,8,The Norton Anthology of Poetry,Margaret Ferguson,Poetry Anthologies,Fiction & Literature
 3461851873,8,"Poems, Poets, Poetry: An Introduction and Anthology",Helen Vendler,Poetry Anthologies,Fiction & Literature
@@ -550,7 +348,6 @@ isbn,categoryid,title,author,genre,category
 2644259476,8,Unsettling America: An Anthology of Contemporary Multicultural Poetry,Maria Mazziotti Gillan,Poetry Anthologies,Fiction & Literature
 7041273965,8,Black Nature,Camille T. Dungy,Poetry Anthologies,Fiction & Literature
 2461660108,8,Best Remembered Poems,Martin Gardner,Poetry Anthologies,Fiction & Literature
-9206102499,8,The Best American Poetry 2009,David Wagoner,Poetry Anthologies,Fiction & Literature
 6439242277,8,The Four Seasons: Poems,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
 2785268309,8,The Top 500 Poems,William Harmon,Poetry Anthologies,Fiction & Literature
 4708940321,8,Poems of New York,Elizabeth Schmidt,Poetry Anthologies,Fiction & Literature
@@ -581,7 +378,6 @@ isbn,categoryid,title,author,genre,category
 2421740988,8,Poets of the Civil War,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
 9067429348,8,The Best American Poetry 2005,Paul Muldoon,Poetry Anthologies,Fiction & Literature
 8310826644,8,Every Shut Eye Ain't Asleep; An Anthology of Poetry by African Americans since 1945,Michael S. Harper,Poetry Anthologies,Fiction & Literature
-9659644283,8,Thom Pain (based on nothing),Will Eno,Scenes and Monologues,Fiction & Literature
 9713052333,8,Bandana Republic: A Literary Anthology by Gang Members and Their Affliliates,Louis Reyes Rivera,Settings & Atmosphere - Fiction,Fiction & Literature
 6785064009,8,The Caine Prize for African Writing 2010: 11th Annual Collection,The Caine Prize for African Writing,Short Story Anthologies,Fiction & Literature
 2902940211,8,The Caine Prize 2009: The Caine Prize for African Writing 10th Annual Collection,New Internationalist,Short Story Anthologies,Fiction & Literature
@@ -589,7 +385,6 @@ isbn,categoryid,title,author,genre,category
 7084817599,8,Jambula Tree and other stories: The Caine Prize for African Writing 8th Annual Collection,Monica Arac de Nyeko,Short Story Anthologies,Fiction & Literature
 7333276828,8,The Best American Nonrequired Reading 2009,Dave Eggers,Short Story Anthologies,Fiction & Literature
 8457442863,8,The Gift of Love,Lori Foster,Short Story Anthologies,Fiction & Literature
-4810246279,8,I Thought My Father Was God: And Other True Tales from NPR's National Story Project,Paul Auster,Short Story Anthologies,Fiction & Literature
 1989029985,8,American Short Stories,Bert Hitchcock,Short Story Anthologies,Fiction & Literature
 8367631448,8,Sudden Fiction Latino: Short-Short Stories from the United States and Latin America,Robert Shapard,Short Story Anthologies,Fiction & Literature
 7196829576,8,The Signet Classic Book of American Short Stories,Burton Raffel,Short Story Anthologies,Fiction & Literature
@@ -611,230 +406,6 @@ isbn,categoryid,title,author,genre,category
 1950726429,8,Women's Worlds: The Mcgraw-Hill Anthology of Women's Writing,Robyn Warhol-Down,Women Authors - Literature Anthologies,Fiction & Literature
 7496175023,8,Montana Women Writers: A Geography of the Heart,Farcountry Press,Women Authors - Literature Anthologies,Fiction & Literature
 3508448666,8,"Damage Control: Women on the Therapists, Beauticians, and Trainers Who Navigate Their Bodies",Emma Forrest,Women Authors - Literature Anthologies,Fiction & Literature
-8866734234,8,"The Wadsworth Themes American Literature Series, 1945-Present, Theme 18: Class Conflicts and the American Dream",Jay Parini,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
-8307061057,8,Glencoe Literature: American Literature: The Reader's Choice,Jeffrey D. Wilhelm,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
-2207082582,8,Contemporary U. S. Latino a Literary Criticism,Lyn Di Iorio Sandin,20th Century American Literature - General & Miscellaneous - Literary Criticism,Fiction & Literature
-7302485624,8,Paradise Road: Jack Kerouac's Lost Highway and My Search for America,Jay Atkinson,20th Century American Literature - Post WWII - Literary Criticism,Fiction & Literature
-8506673492,8,Land Apart: A South African Reader,Various,African Literature Anthologies,Fiction & Literature
-3857854569,8,Love Child,Gcina Mhlophe,African Literature Anthologies,Fiction & Literature
-1360413087,8,The Rienner Anthology of African Literature,Anthonia C. Kalu,African Literature Anthologies,Fiction & Literature
-2001240870,8,Glass Jars among Trees,Arja Salafranca,African Literature Anthologies,Fiction & Literature
-4273559934,8,Running Towards Us: New Writing from South Africa,Isabel Balseiro,African Literature Anthologies,Fiction & Literature
-9061757638,8,Among the Blacks,Ron Padgett,African Literature Anthologies,Fiction & Literature
-1831818989,8,The Lost Algonquin Round Table,Nat Benchley,American & Canadian Literature,Fiction & Literature
-9900902039,8,"Women of the Beat Generation: The Writers, Artists and Muses at the Heart of a Revolution",Brenda Knight,American & Canadian Literature,Fiction & Literature
-3557394747,8,American Gothic: An Anthology 1787-1916 (Blackwell Anthologies Series),Crow,American & Canadian Literature,Fiction & Literature
-7628503844,8,The Best American Essays 2009,Mary Oliver,American Essays,Fiction & Literature
-1680411513,8,The Best American Essays of the Century,Joyce Carol Oates,American Essays,Fiction & Literature
-9958684272,8,The Best American Essays 2008,Adam Gopnik,American Essays,Fiction & Literature
-1933600451,8,The Best American Nonrequired Reading 2007,Dave Eggers,American Essays,Fiction & Literature
-4013525553,8,Sticks and Stones and Other Student Essays,Ruthe Thompson,American Essays,Fiction & Literature
-8862779049,8,Brooklyn Was Mine,Chris Knutsen,American Essays,Fiction & Literature
-6729248400,8,Selected Works,Ralph Waldo Emerson,American Essays,Fiction & Literature
-9804977790,8,Florida Frenzy,Harry E. Crews,American Essays,Fiction & Literature
-6890661468,8,The Best American Short Stories 2003,Walter Mosley,American Fiction,Fiction & Literature
-6978491618,8,The Best American Short Stories 2004,Lorrie Moore,American Fiction,Fiction & Literature
-7522875465,8,The Best American Short Stories 2005,Michael Chabon,American Fiction,Fiction & Literature
-7021941414,8,The Complete Works of Kate Chopin,Kate Chopin,American Fiction,Fiction & Literature
-6775718602,8,The Best American Short Stories 2001,Barbara Kingsolver,American Fiction,Fiction & Literature
-6727153975,8,The Best American Short Stories 2002,Sue Miller,American Fiction,Fiction & Literature
-2791750565,8,"Writings: The Autobiography of an Ex-Colored Man, Along This Way, Essays and Editorials, Selected Poems",James Weldon Johnson,American Fiction,Fiction & Literature
-1850387543,8,The Portable Sixties Reader,Ann Charters,American Fiction & Literature Classics,Fiction & Literature
-9906549381,8,The Best American Nonrequired Reading 2010,Dave Eggers,American Literature Anthologies,Fiction & Literature
-7929886866,8,"The Norton Anthology of American Literature, Shorter Seventh Edition, One-Volume Paperback",Wayne Franklin,American Literature Anthologies,Fiction & Literature
-3524330793,8,"The Norton Anthology of American Literature, Package 2: Volumes C, D, and E",Jerome Klinkowitz,American Literature Anthologies,Fiction & Literature
-2845914774,8,Couldn't Keep It to Myself: Testimonies from Our Imprisoned Sisters,Wally Lamb,American Literature Anthologies,Fiction & Literature
-9974129785,8,The Norton Anthology of American Literature: Volume A: Beginnings to 1820,Wayne Franklin,American Literature Anthologies,Fiction & Literature
-1005765453,8,Norton Anthology of Literature by Women: The Traditions in English,Sandra M. Gilbert,American Literature Anthologies,Fiction & Literature
-8115985957,8,The American Tradition in Literature (concise) book alone,George Perkins,American Literature Anthologies,Fiction & Literature
-7530327628,8,The Norton Anthology of American Literature: Volume C: 1865-1914,Arnold Krupat,American Literature Anthologies,Fiction & Literature
-8509650025,8,Concise Anthology of American Literature,James Leonard,American Literature Anthologies,Fiction & Literature
-4399823636,8,"The Heath Anthology of American Literature: Contemporary Period (1945 To The Present), Volume E",Paul Lauter,American Literature Anthologies,Fiction & Literature
-5091150995,8,"The Harper American Literature, Single Volume Edition",Donald McQuade,American Literature Anthologies,Fiction & Literature
-6331500760,8,Writing New York: A Literary Anthology,Phillip Lopate,American Literature Anthologies,Fiction & Literature
-1219098705,8,The Norton Anthology of American Literature: Volume D: 1914-1945,Jerome Klinkowitz,American Literature Anthologies,Fiction & Literature
-5306878120,8,"The American Tradition in Literature, Volume 1(book alone)",George Perkins,American Literature Anthologies,Fiction & Literature
-8685360576,8,The Outlaw Bible of American Literature,Alan Kaufmann,American Literature Anthologies,Fiction & Literature
-2747109931,8,Spider Woman's Granddaughters: Traditional Tales and Contemporary Writing by Native American Women,Paula Gunn Allen,American Literature Anthologies,Fiction & Literature
-6604123788,8,True Crime: An American Anthology,Harold Schechter,American Literature Anthologies,Fiction & Literature
-7042330070,8,"Anthology of American Literature, Volume I",George McMichael,American Literature Anthologies,Fiction & Literature
-1657452452,8,"The Heath Anthology of American Literature: Modern Period (1910?1945), Volume D",Kirk Curnutt,American Literature Anthologies,Fiction & Literature
-3263981770,8,The American Transcendentalists: Essential Writings,Lawrence Buell,American Literature Anthologies,Fiction & Literature
-9392360184,8,"The American Tradition in Literature, Volume 2 (book alone)",George Perkins,American Literature Anthologies,Fiction & Literature
-5099273465,8,The Butterfly's Way: Voices from the Haitian Dyaspora in the United States,Edwidge Danticat,American Literature Anthologies,Fiction & Literature
-3781941881,8,Bedford Anthology of American Literature: Volume Two: 1865 to Present,Susan Belasco,American Literature Anthologies,Fiction & Literature
-1338389097,8,"The Vietnam War in American Stories, Songs, and Poems",H. Bruce Franklin,American Literature Anthologies,Fiction & Literature
-8601845352,8,"American Literature, Volume II (Penguin Academics Series)",William E. Cain,American Literature Anthologies,Fiction & Literature
-4498032180,8,Boricuas: Influential Puerto Rican Writings--- An Anthology,Roberto Santiago,American Literature Anthologies,Fiction & Literature
-1836586501,8,Short Story Masterpieces,Robert Penn Warren,American Literature Anthologies,Fiction & Literature
-3504185503,8,"The Heath Anthology of American Literature, Concise Edition",Paul Lauter,American Literature Anthologies,Fiction & Literature
-5500446661,8,Out of Her Mind: Women Writing on Madness,Rebecca Shannonhouse,American Literature Anthologies,Fiction & Literature
-2990319481,8,Growing Up in the South: An Anthology of Modern Southern Literature,Suzanne Jones,American Literature Anthologies,Fiction & Literature
-5815542662,8,The Norton Anthology of American Literature: Volume E: 1945 to the Present,Jerome Klinkowitz,American Literature Anthologies,Fiction & Literature
-8476349304,8,Witnessing Lynching: American Writers Respond,Anne P. Rice,American Literature Anthologies,Fiction & Literature
-8090399145,8,Literary Nevada: Writings from the Silver State,Cheryll Glotfelty,American Literature Anthologies,Fiction & Literature
-8076455595,8,The Heath Anthology of American Literature: Volume B: Early Nineteenth Century (1800-1865),Paul Lauter,American Literature Anthologies,Fiction & Literature
-8457336891,8,"Love, Castro Street: Reflections of San Francisco",Katherine V. Forrest,American Literature Anthologies,Fiction & Literature
-6295198409,8,Rising Voices,Arlene Hirschfelder,American Literature Anthologies,Fiction & Literature
-5041475620,8,"American Literature (Penguin Academics Series), Vol. 1",William E. Cain,American Literature Anthologies,Fiction & Literature
-4010776485,8,A Hallowe'en Anthology: Literary and Historical Writings over the Centuries,Lisa Morton,American Literature Anthologies,Fiction & Literature
-7166023381,8,The Last Best Place: A Montana Anthology,William Kittredge,American Literature Anthologies,Fiction & Literature
-2034413102,8,Growing up Poor: A Literary Anthology,Robert Coles,American Literature Anthologies,Fiction & Literature
-2148320982,8,The Beat Book: Writings from the Beat Generation,Anne Waldman,American Literature Anthologies,Fiction & Literature
-8490718045,8,No Walls of Stone: An Anthology of Literature by Deaf and Hard of Hearing Writers,Jill Jepson,American Literature Anthologies,Fiction & Literature
-1243059435,8,Riding Low on Streets of Gold,Judith Ortiz Cofer,American Literature Anthologies,Fiction & Literature
-8501750739,8,Voices in First Person: Reflections on Latino Identity,Lori Marie Carlson,American Literature Anthologies,Fiction & Literature
-9106694915,8,Writing Los Angeles: A Literary Anthology,David L. Ulin,American Literature Anthologies,Fiction & Literature
-9426806255,8,American Austen: The Forgotten Writing of Agnes Repplier,Agnes Repplier,American Literature Anthologies,Fiction & Literature
-7665451527,8,Bold Words: A Century of Asian American Writing,Rajini Srikanth,American Literature Anthologies,Fiction & Literature
-7946685337,8,Through the Eye of the Deer: An Anthology of Native American Women Writers,Carolyn Dunn,American Literature Anthologies,Fiction & Literature
-1285151389,8,Daughters Of Decadence,Elaine Showalter,American Literature Anthologies,Fiction & Literature
-5850665270,8,"American Tradition in Literature : With American Ariel, Vol. 2",George Perkins,American Literature Anthologies,Fiction & Literature
-3557267948,8,"Literatura Chicana, 1965-1995: An Anthology in Spanish, English, and Calo, Vol. 191",Garland,American Literature Anthologies,Fiction & Literature
-8791315445,8,"Richard Wright: Early Works (Lawd Today!, Uncle Tom's Children, Native Son)",Richard Wright,American Literature Anthologies,Fiction & Literature
-9095516399,8,The Heath Anthology of American Literature: Volume E: Contemporary Period (1945 to the Present),Paul Lauter,American Literature Anthologies,Fiction & Literature
-2647632058,8,The Best of Bamboo Ridge,Eric Chock,American Literature Anthologies,Fiction & Literature
-1526424352,8,Listen Here: Women Writing in Appalachia,Sandra L. Ballard,American Literature Anthologies,Fiction & Literature
-2781950391,8,This Bridge We Call Home: Radical Visions for Transformation,Gloria E. Anzaldua,American Literature Anthologies,Fiction & Literature
-3680555612,8,Santa Fe Nativa: A Collection of Nuevomexicano Writing,Rosalie C. Otero,American Literature Anthologies,Fiction & Literature
-8215052780,8,Crazy Woman Creek: Women Rewrite the American West,Nancy Curtis,American Literature Anthologies,Fiction & Literature
-9059274532,8,Circle of Women: An Anthology of Contemporary Western Women Writers,Kim Barnes,American Literature Anthologies,Fiction & Literature
-7551520518,8,American Reader,Kathy-jo Wargin,American Literature Anthologies,Fiction & Literature
-2794240041,8,"Traditions in World Literature: Literature of Africa, Softcover Student Edition",McGraw-Hill,Anthologies,Fiction & Literature
-5165061205,8,Basali!: Stories by and about Women in Lesotho,K. Limakatso Kendall,Anthologies,Fiction & Literature
-4568841187,8,How God Fix Jonah,Lorenz Graham,Bible - Stories,Fiction & Literature
-2821500641,8,Of Suffocated Hearts and Tortured Souls: Seeking Subjecthood through Madness in Francophone Women's,ValZrie Orlando,Caribbean Fiction & Prose Literature - Literary Criticism,Fiction & Literature
-1458619699,8,Uncle Remus: His Songs and His Sayings,Joel Chandler Harris,Children's Fiction,Fiction & Literature
-5587513354,8,American Fantastic Tales Boxed Set,Peter Straub,Fiction,Fiction & Literature
-6346808210,8,The Portable Jack Kerouac,Jack Kerouac,Fiction,Fiction & Literature
-9825903899,8,The Vietnam Reader: The Definitive Collection of American Fiction and Nonfiction on the War,Stewart O'Nan,Fiction,Fiction & Literature
-5009991841,8,Reinventing the Enemy's Language: Contemporary Native Women's Writings of North America,Gloria Bird,Fiction,Fiction & Literature
-4257372197,8,Longman Anthology of Women's Literature,Mary K. DeShazer,Fiction,Fiction & Literature
-7904576663,8,The Best of the West: An Anthology of Classic Writing from the American West,Tony Hillerman,Fiction,Fiction & Literature
-8375371379,8,Atop an Underwood: Early Stories and Other Writings,Jack Kerouac,Fiction,Fiction & Literature
-2378489594,8,American Fantastic Tales: Terror and the Uncanny from Poe to the Pulps,Peter Straub,Fiction,Fiction & Literature
-9359421761,8,"Freedom in This Village: Twenty-Five Years of Black Gay Men's Writing, 1979 to the Present",E. Lynn Harris,Fiction,Fiction & Literature
-7187138851,8,Don't Squat With Yer Spurs On!: A Cowboy's Guide to Life,Texas Bix Bender,Fiction,Fiction & Literature
-1367463477,8,Word Virus,William S. Burroughs,Fiction,Fiction & Literature
-9506518848,8,American Fantastic Tales: Terror and the Uncanny from the 1940s to Now,Peter Straub,Fiction,Fiction & Literature
-8806475288,8,"Friction, Volume 7: Best Gay Erotic Fiction",Jesse Grant,Fiction,Fiction & Literature
-9836977425,8,Impossible Princess,Kevin Killian,Fiction,Fiction & Literature
-8441453495,8,More Mirth of a Nation: The Best Contemporary Humor,Michael J. Rosen,Fiction,Fiction & Literature
-5201190813,8,Modernism: An Anthology,Lawrence Rainey,Modernism - Literary Movements,Fiction & Literature
-6704374654,8,Ethnic Modernism,Werner Sollors,Modernism - Literary Movements,Fiction & Literature
-2215400888,8,American Earth: Environmental Writing Since Thoreau,Bill McKibben,Natural Literature & History,Fiction & Literature
-2079031680,8,Down Time: Great Writers on Diving,Ed Kittrell,Nautical & Maritime Fiction,Fiction & Literature
-7628063191,8,The Poets Laureate Anthology,Elizabeth Hun Schmidt,Poetry,Fiction & Literature
-2970791413,8,Best Poems of the English Language: From Chaucer Through Robert Frost,Harold Bloom,Poetry,Fiction & Literature
-6383892121,8,Six American Poets: An Anthology,Joel Conarroe,Poetry,Fiction & Literature
-2173644130,8,Great Love Poems,Shane Weller,Poetry,Fiction & Literature
-8280325818,8,I Am the Darker Brother: An Anthology of Modern Poems by African Americans,Arnold Adoff,Poetry,Fiction & Literature
-4964563521,8,Bum Rush the Page: A Def Poetry Jam,Tony Medina,Poetry,Fiction & Literature
-9285405680,8,The Unswept Path: Contemporary American Haiku,John Brandi,Poetry,Fiction & Literature
-7686927212,8,Poems from the Women's Movement,Honor Moore,Poetry,Fiction & Literature
-1371702282,8,The Classic Hundred Poems: All-Time Favorites,William Harmon,Poetry,Fiction & Literature
-5783252483,8,Three Centuries of American Poetry,Allen Mandelbaum,Poetry,Fiction & Literature
-3760114541,8,The Palm of My Heart: Poetry by African American Children,Davida Adedjouma,Poetry,Fiction & Literature
-5400110095,8,Postmodern American Poetry: A Norton Anthology,Paul Hoover,Poetry,Fiction & Literature
-6716038036,8,The New Anthology of American Poetry: Volume II: Modernisms: 1900-1950,Steven Gould Axelrod,Poetry,Fiction & Literature
-8394603406,8,The Color of Gratitude: And Other Spiritual Surprises,Robert Morneau,Poetry,Fiction & Literature
-3922612876,8,The Best American Erotic Poems: From 1800 to the Present,David Lehman,Poetry,Fiction & Literature
-4050182490,8,Best New Poets: 50 Poems from Emerging Writers,Kim Addonizio,Poetry,Fiction & Literature
-9955412650,8,The Best American Poetry 2007,Heather McHugh,Poetry,Fiction & Literature
-9019244938,8,The Best American Poetry 2006,Billy Collins,Poetry,Fiction & Literature
-1017707722,8,The Best American Poetry 2010,Amy Gerstler,Poetry,Fiction & Literature
-1295193249,8,American Negro Poetry,Arna Bontemps,Poetry,Fiction & Literature
-2446268971,8,100 Poems by 100 Poets,Harold Pinter,Poetry,Fiction & Literature
-1124225082,8,American Sonnets: An Anthology,David Bromwich,Poetry,Fiction & Literature
-4667938159,8,The Best American Poetry 2009,David Wagoner,Poetry,Fiction & Literature
-6850303540,8,Another Way to Dance: Contemporqary Asian Poetry from Canada and the United States,Cyril Dabydeen,Poetry,Fiction & Literature
-3948063393,8,"The New Anthology of American Poetry: Volume I: Traditions and Revolutions, Beginnings to 1900",Steven Gould Axelrod,Poetry,Fiction & Literature
-8947825842,8,Modern American Prose: Fifteen Writers + 15,John Clifford,Poetry,Fiction & Literature
-6019550413,8,For a Living: The Poetry of Work,Nicholas Coles,Poetry,Fiction & Literature
-9761137970,8,The Classic Hundred Poems: All-Time Favorites,William Harmon,Poetry,Fiction & Literature
-6810589315,8,Caroling Dusk,Countee Cullen,Poetry,Fiction & Literature
-7420960977,8,Starting Today: 100 Poems for Obama's First 100 Days,Rachel Zucker,Poetry,Fiction & Literature
-2352267304,8,The Book of American Negro Poetry,James Weldon Johnson,Poetry,Fiction & Literature
-5983939652,8,Common Wealth,Marjorie Maddox,Poetry,Fiction & Literature
-5284495976,8,El Coro,Martin Espada,Poetry,Fiction & Literature
-5062916349,8,A Loving Voice II: A Caregiver's Book of More Read-Aloud Stories for the Elderly,Carolyn Banks,Poetry - General & Miscellaneous,Fiction & Literature
-4644328233,8,A Loving Voice: A Caregiver's Book of Read-Aloud Stories for the Elderly,Carolyn Banks,Poetry - General & Miscellaneous,Fiction & Literature
-6995340716,8,Georgia Cowboy Poets,David Fillingim,Poetry - General & Miscellaneous,Fiction & Literature
-7476918644,8,100 Best-Loved Poems,Philip Smith,Poetry Anthologies,Fiction & Literature
-3173317502,8,"African-American Poetry: An Anthology, 1773-1930",Joan R. Sherman,Poetry Anthologies,Fiction & Literature
-6203070769,8,"The Norton Anthology of Poetry, Shorter 5th Edition",Margaret Ferguson,Poetry Anthologies,Fiction & Literature
-2286093306,8,The Best American Poetry 2010,Amy Gerstler,Poetry Anthologies,Fiction & Literature
-4506629101,8,The Best Loved Poems of the American People,Hazel Felleman,Poetry Anthologies,Fiction & Literature
-6722718168,8,The Norton Anthology of Poetry,Margaret Ferguson,Poetry Anthologies,Fiction & Literature
-1806655841,8,"Poems, Poets, Poetry: An Introduction and Anthology",Helen Vendler,Poetry Anthologies,Fiction & Literature
-3199292150,8,The Vintage Book of Contemporary American Poetry,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
-9782772091,8,100 Best African American Poems with CD,Nikki Giovanni,Poetry Anthologies,Fiction & Literature
-4353166676,8,The Voice That Is Great within Us: American Poetry of the Twentieth Century,Hayden Carruth,Poetry Anthologies,Fiction & Literature
-4451945313,8,Poems That Touch the Heart,A.L. Alexander,Poetry Anthologies,Fiction & Literature
-2684013308,8,Unsettling America: An Anthology of Contemporary Multicultural Poetry,Maria Mazziotti Gillan,Poetry Anthologies,Fiction & Literature
-8066571646,8,Black Nature,Camille T. Dungy,Poetry Anthologies,Fiction & Literature
-3306278783,8,Best Remembered Poems,Martin Gardner,Poetry Anthologies,Fiction & Literature
-9561608163,8,The Best American Poetry 2009,David Wagoner,Poetry Anthologies,Fiction & Literature
-4126305077,8,The Four Seasons: Poems,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
-8064946946,8,The Top 500 Poems,William Harmon,Poetry Anthologies,Fiction & Literature
-3084344282,8,Poems of New York,Elizabeth Schmidt,Poetry Anthologies,Fiction & Literature
-8285900942,8,Native American Songs and Poems: An Anthology,Brian Swann,Poetry Anthologies,Fiction & Literature
-6483496598,8,The Stuffed Owl: An Anthology of Bad Verse,D.B. Wyndham Lewis,Poetry Anthologies,Fiction & Literature
-7351689666,8,The Best American Poetry 2008,Charles Wright,Poetry Anthologies,Fiction & Literature
-2275038120,8,After Frost: Anthol Poetry From N E,Henry Lyman,Poetry Anthologies,Fiction & Literature
-8160198630,8,Rag and Bone Shop of the Heart: A Poetry Anthology,Robert Bly,Poetry Anthologies,Fiction & Literature
-5177092258,8,Oxford Book of American Poetry,David Lehman,Poetry Anthologies,Fiction & Literature
-8532640038,8,Soulscript: A Collection of Classic African American Poetry,June Jordan,Poetry Anthologies,Fiction & Literature
-2592369600,8,The Vintage Book of African American Poetry,Michael S. Harper,Poetry Anthologies,Fiction & Literature
-4395495820,8,Blues Poems (Everyman's Library Pocket Poets),Kevin Young,Poetry Anthologies,Fiction & Literature
-4984237698,8,Anthology of Modern American Poetry,Cary Nelson,Poetry Anthologies,Fiction & Literature
-2228268389,8,"A Patriot'S Handbook: Songs, Poems, Stories, And Speeches Celebrating The Land We Love",Caroline Kennedy,Poetry Anthologies,Fiction & Literature
-8934390478,8,The Columbia Anthology of American Poetry,Jay Parini,Poetry Anthologies,Fiction & Literature
-4951241485,8,The Jazz Poetry Anthology,Sascha Feinstein,Poetry Anthologies,Fiction & Literature
-3979956240,8,Nineteenth-Century American Poetry,Various,Poetry Anthologies,Fiction & Literature
-6565861990,8,Beat Poets,Carmela Ciuraru,Poetry Anthologies,Fiction & Literature
-9196698204,8,Great American Prose Poems,David Lehman,Poetry Anthologies,Fiction & Literature
-8558735648,8,Poets of World War II,Various,Poetry Anthologies,Fiction & Literature
-7862062020,8,Orpheus and Company: Contemporary Poems on Greek Mythology,Deborah De Nicola,Poetry Anthologies,Fiction & Literature
-4091146366,8,Poems That Live Forever,Hazel Felleman,Poetry Anthologies,Fiction & Literature
-5206839883,8,Oxford Anthology of African American Poetry,Arnold Rampersad,Poetry Anthologies,Fiction & Literature
-1477897648,8,The Wind Shifts: New Latino Poetry,Francisco Arag&#243;n,Poetry Anthologies,Fiction & Literature
-4233538100,8,Slamma Lamma Ding Dong: An Anthology by Nebraska's Slam Poets,J. M. Huscher,Poetry Anthologies,Fiction & Literature
-3218911845,8,The Best American Poetry 2003,Yusef Komunyakaa,Poetry Anthologies,Fiction & Literature
-7070657075,8,"New Oxford Book of American Verse, Vol. 1",Richard Ellmann,Poetry Anthologies,Fiction & Literature
-9852774743,8,Poets of the Civil War,J. D. McClatchy,Poetry Anthologies,Fiction & Literature
-1471800168,8,The Best American Poetry 2005,Paul Muldoon,Poetry Anthologies,Fiction & Literature
-4920569439,8,Every Shut Eye Ain't Asleep; An Anthology of Poetry by African Americans since 1945,Michael S. Harper,Poetry Anthologies,Fiction & Literature
-2878494443,8,Thom Pain (based on nothing),Will Eno,Scenes and Monologues,Fiction & Literature
-8380767131,8,Bandana Republic: A Literary Anthology by Gang Members and Their Affliliates,Louis Reyes Rivera,Settings & Atmosphere - Fiction,Fiction & Literature
-4701680039,8,The Caine Prize for African Writing 2010: 11th Annual Collection,The Caine Prize for African Writing,Short Story Anthologies,Fiction & Literature
-4628836072,8,The Caine Prize 2009: The Caine Prize for African Writing 10th Annual Collection,New Internationalist,Short Story Anthologies,Fiction & Literature
-7422202960,8,Seventh Street Alchemy 2004: A Selection of Works from the Caine Prize for African Writing,Jacana Media,Short Story Anthologies,Fiction & Literature
-2329123375,8,Jambula Tree and other stories: The Caine Prize for African Writing 8th Annual Collection,Monica Arac de Nyeko,Short Story Anthologies,Fiction & Literature
-9223501694,8,The Best American Nonrequired Reading 2009,Dave Eggers,Short Story Anthologies,Fiction & Literature
-3618833974,8,The Gift of Love,Lori Foster,Short Story Anthologies,Fiction & Literature
-7782060453,8,I Thought My Father Was God: And Other True Tales from NPR's National Story Project,Paul Auster,Short Story Anthologies,Fiction & Literature
-4390225979,8,American Short Stories,Bert Hitchcock,Short Story Anthologies,Fiction & Literature
-2246780952,8,Sudden Fiction Latino: Short-Short Stories from the United States and Latin America,Robert Shapard,Short Story Anthologies,Fiction & Literature
-5693446123,8,The Signet Classic Book of American Short Stories,Burton Raffel,Short Story Anthologies,Fiction & Literature
-1096941691,8,Erotique Noire: Black Erotica,Miriam Decosta-Willis,Short Story Anthologies,Fiction & Literature
-1559795760,8,The Haves and Have Nots: 30 Stories about Money and Class in America,Barbara H. Solomon,Short Story Anthologies,Fiction & Literature
-7828547712,8,Up All Night: Adventures in Lesbian Sex,Stacy Bias,Short Story Anthologies,Fiction & Literature
-3968373762,8,American Short Story and Its Writer: An Anthology,Ann Charters,Short Story Anthologies,Fiction & Literature
-4796648689,8,The Best American Nonrequired Reading 2008,Dave Eggers,Short Story Anthologies,Fiction & Literature
-7442872367,8,On Grandma's Porch: Stories and True Facts about Growing up Southern in the Good Old Days,Sandra Chastain,Short Story Anthologies,Fiction & Literature
-5956852607,8,Best American Nonrequired Reading 2005,Dave Eggers,Short Story Anthologies,Fiction & Literature
-9560036435,8,Black Silk: A Collection of African-American Erotica,Retha Powers,Short Story Anthologies,Fiction & Literature
-5019766384,8,Brother to Brother: New Writings by Black Gay Men,Essex Hemphill,Short Story Anthologies,Fiction & Literature
-1176751769,8,New Stories from the Southwest,D. Seth Horton,Short Story Anthologies,Fiction & Literature
-2373489551,8,Loving in the War Years: Lo que nunca paso por sus labios,Cherrie Moraga,Short Story Collections (Single Author),Fiction & Literature
-6410388426,8,A Whole Other Ball Game: Women's Literature on Women's Sport,Joli Sandoz,Women Authors - Literature Anthologies,Fiction & Literature
-7406960815,8,If I Had My Life to Live Over,Sandra Martz,Women Authors - Literature Anthologies,Fiction & Literature
-3803954998,8,Sisters of the Earth: Women's Prose and Poetry About Nature,Lorraine Anderson,Women Authors - Literature Anthologies,Fiction & Literature
-1826555700,8,Infinite Divisions: An Anthology of Chicana Literature,Tey Diana Rebolledo,Women Authors - Literature Anthologies,Fiction & Literature
-3566151873,8,Women's Worlds: The Mcgraw-Hill Anthology of Women's Writing,Robyn Warhol-Down,Women Authors - Literature Anthologies,Fiction & Literature
-6075963451,8,Montana Women Writers: A Geography of the Heart,Farcountry Press,Women Authors - Literature Anthologies,Fiction & Literature
-9584463893,8,"Damage Control: Women on the Therapists, Beauticians, and Trainers Who Navigate Their Bodies",Emma Forrest,Women Authors - Literature Anthologies,Fiction & Literature
 4171653574,9,Introduction to African Oral Literature and Performance,Bayo Ogunjimi,Africa - Anthropology & Sociology,History & Geography
 8514190121,9,Oral and Written Expressions of African Cultures,Toyin Falola,Africa - Anthropology & Sociology,History & Geography
 5423377833,9,Black on White: Black Writers on What It Means to Be White,David R. Roediger,African Americans - General & Miscellaneous,History & Geography
@@ -848,10 +419,8 @@ isbn,categoryid,title,author,genre,category
 5346478258,9,Asian American Studies: A Reader,Jean Yu-wen Shen Wu,Asian American Studies - General & Miscellaneous,History & Geography
 8514369988,9,Screaming Monkeys: Critiques of Asian American Images,M. Evelina Galang,Asian American Studies - General & Miscellaneous,History & Geography
 7948984865,9,The Oxford Book of American Short Stories,Joyce Carol Oates,Biographies,History & Geography
-7593206544,9,Mother California: A Story of Redemption Behind Bars,Kenneth E. Hartman,Biographies,History & Geography
 1263829786,9,Death Blossoms: Reflections from a Prisoner of Conscience,Mumia Abu-Jamal,Biographies,History & Geography
 3246594792,9,Queer 13: Lesbian and Gay Writers Recall Seventh Grade,Clifford Chase,Biographies,History & Geography
-6257093703,9,Running a Thousand Miles for Freedom: The Escape of William and Ellen Craft from Slavery,William Craft,Biographies,History & Geography
 7159758393,9,Sky Begins at Your Feet,Caryn Mirriam-Goldberg,Cancer Patients - Biography,History & Geography
 6144042566,9,Message to Aztlan: Selected Readings,Rodolfo Gonzales,Civil Rights - United States,History & Geography
 6675957188,9,Americans in Paris: A Literary Anthology,Adam Gopnik,Europe - Travel Essays & Descriptions,History & Geography
@@ -906,74 +475,3 @@ isbn,categoryid,title,author,genre,category
 6133337273,9,American Studies Anthology,Richard P. Horwitz,United States History - Social Aspects,History & Geography
 2864112446,9,In a Narrow Grave: Essays on Texas,Larry McMurtry,United States History - Southern Region,History & Geography
 8056184773,9,"The New World Border: Prophecies, Poems, and Loqueras for the End of the Century",Guillermo Gomez-Pena,United States Studies - General & Miscellaneous,History & Geography
-8423335759,9,Introduction to African Oral Literature and Performance,Bayo Ogunjimi,Africa - Anthropology & Sociology,History & Geography
-9833433189,9,Oral and Written Expressions of African Cultures,Toyin Falola,Africa - Anthropology & Sociology,History & Geography
-8715626762,9,Black on White: Black Writers on What It Means to Be White,David R. Roediger,African Americans - General & Miscellaneous,History & Geography
-3115587496,9,"Pamphlets of Protest: An Anthology of Early African American Protest Literature, 1790-1860",Richard G. Newman,African Americans - General & Miscellaneous,History & Geography
-4599873468,9,Denali: A Literary Anthology,Bill Sherwonit,Alaska - State & Local History,History & Geography
-2778394578,9,Don't Squat With Your Spurs On: A Cowboy's Guide to Life,Texas Bix Bender,American Humor - Peoples & Cultures,History & Geography
-8819555498,9,"Don't Squat With Yer Spurs On! II, Vol. 2",Texas Bix Bender,American Humor - Peoples & Cultures,History & Geography
-2974696003,9,"Who's to Say What's Obscene?: Politics, Culture, and Comedy in America Today",Paul Krassner,American Humor - Peoples & Cultures,History & Geography
-4192131135,9,New York Stories: The Best of the City Section of the New York Times,Constance Rosenblum,Americans - Regional Biography,History & Geography
-9872957275,9,Asian American Studies Now: A Critical Reader,Jean Yu-wen Shen Wu,Asian American Studies - General & Miscellaneous,History & Geography
-5189122963,9,Asian American Studies: A Reader,Jean Yu-wen Shen Wu,Asian American Studies - General & Miscellaneous,History & Geography
-4362574023,9,Screaming Monkeys: Critiques of Asian American Images,M. Evelina Galang,Asian American Studies - General & Miscellaneous,History & Geography
-3487970956,9,The Oxford Book of American Short Stories,Joyce Carol Oates,Biographies,History & Geography
-6723036075,9,Mother California: A Story of Redemption Behind Bars,Kenneth E. Hartman,Biographies,History & Geography
-9634489500,9,Death Blossoms: Reflections from a Prisoner of Conscience,Mumia Abu-Jamal,Biographies,History & Geography
-8435718213,9,Queer 13: Lesbian and Gay Writers Recall Seventh Grade,Clifford Chase,Biographies,History & Geography
-1776367259,9,Running a Thousand Miles for Freedom: The Escape of William and Ellen Craft from Slavery,William Craft,Biographies,History & Geography
-7929242896,9,Sky Begins at Your Feet,Caryn Mirriam-Goldberg,Cancer Patients - Biography,History & Geography
-7210321549,9,Message to Aztlan: Selected Readings,Rodolfo Gonzales,Civil Rights - United States,History & Geography
-9474848528,9,Americans in Paris: A Literary Anthology,Adam Gopnik,Europe - Travel Essays & Descriptions,History & Geography
-2905915531,9,Quixotic Fictions of the USA 1792-1815,Sarah Florence Wood,General & Miscellaneous European Literature - Literary Criticism,History & Geography
-7512065052,9,Writing Off the Hyphen: New Perspectives on the Literature of the Puerto Rican Diaspora,Jose L. Torres-Padilla,General & Miscellaneous Latin American Literature - Literary Criticism,History & Geography
-7730652590,9,Opening Spaces: An Anthology of Contemporary African Women's Writing,Yvonne Vera,General & Miscellaneous Literature Anthologies,History & Geography
-2035983625,9,"New York Nocturne: The City After Dark in Literature, Painting, and Photography, 1850-1950",William Chapman Sharpe,General & Miscellaneous Photography,History & Geography
-4939502287,9,Winter Song: Christmas Readings,Madeleine L'Engle,General & Miscellaneous Religion,History & Geography
-8078701920,9,Recollections of the Early Republic: Selected Autobiographies,Joyce Appleby,Historical Biography - United States - 19th Century,History & Geography
-8625079033,9,Classic American Autobiographies,William L. Andrews,Historical Biography - United States - General & Miscellaneous,History & Geography
-8197729117,9,Modern American Memoirs,Annie Dillard,Historical Biography - United States - General & Miscellaneous,History & Geography
-6002221213,9,The Norton Book of American Autobiography,Jay Parini,Historical Biography - United States - General & Miscellaneous,History & Geography
-5919111242,9,The Hudson River Valley Reader,Edward C. Goodman,History,History & Geography
-6616158023,9,Hot Biscuits: Eighteen Stories by Women and Men of the Ranching West,Max Evans,History,History & Geography
-4425633160,9,Literary Austin,Don Graham,History,History & Geography
-2145866874,9,Becoming Americans: Four Centuries of Immigrant Writing,Ilan Stavans,Immigrants,History & Geography
-6572599175,9,Age Ain't Nothing But a Number: Black Women Explore Midlife,Carleen Brice,Middle Age,History & Geography
-6709525092,9,Sister Nations: Native American Women Writing on Community,Heid E. Erdrich,Native North American Peoples - General & Miscellaneous,History & Geography
-4718138730,9,Chattooga: Descending into the Myth of Deliverance River,John Lane,Natural Terrain - Rivers,History & Geography
-4360781289,9,Nobody Ever Said AIDS: Poems and Stories from Southern Africa,Nobantu Rasebotsa,Places - Literary Anthologies,History & Geography
-2055329172,9,Women Writing Africa: The Southern Region: Volume 1,Sheila Meintjes,Places - Literary Anthologies,History & Geography
-6597319921,9,The Portable Harlem Renaissance Reader,David Lewis,Places - Literary Anthologies,History & Geography
-1956982384,9,Empire City: New York Through the Centuries,Kenneth T. Jackson,Places - Literary Anthologies,History & Geography
-6884455060,9,New York Stories: The Best Writing from Four Decades of New York Magazine,Steve Fishman,Places - Literary Anthologies,History & Geography
-8295970790,9,Double-Take: A Revisionist Harlem Renaissance Anthology,Venetria Patton,Places - Literary Anthologies,History & Geography
-1395557130,9,Getting Home Alive,Aurora Levins Morales,Puerto Ricans - General & Miscellaneous,History & Geography
-6853040406,9,The American Puritans: Their Prose and Poetry,Perry Miller,Puritanism,History & Geography
-4281031938,9,"The Literature of California, Volume 1: Native American Beginnings to 1945",Jack Hicks,Regional American Anthologies,History & Geography
-2925079641,9,Essential Saroyan,William Saroyan,Regional American Anthologies,History & Geography
-6106487118,9,Transcendentalism: A Reader,Joel Myerson,Regional American Anthologies,History & Geography
-7713857695,9,"Appalachia Inside Out: Conflict and Change, Vol. 1",Robert J. Higgs,Regional American Anthologies,History & Geography
-8499638846,9,The New England Transcendentalists: Life of the Mind and of the Spirit (Perspectives on History Series),Ellen Hansen,Regional American Anthologies,History & Geography
-8051907642,9,Literature of the American South: A Norton Anthology,William L. Andrews,Regional American Anthologies,History & Geography
-9719109977,9,The Little Big Book of California,Natasha Tabori Fried,Regional American Anthologies,History & Geography
-2601295401,9,Inlandia,Gayle Wattawa,Regional American Anthologies,History & Geography
-9272250186,9,Literary Fort Worth,Judy Alter,Regional American Anthologies,History & Geography
-7490480568,9,Writing New England: An Anthology from the Puritans to the Present,Andrew Delbanco,Regional American Anthologies,History & Geography
-8077028624,9,The Portable Western Reader,Various,Regional American Anthologies,History & Geography
-5122741591,9,What's Nature Worth?: Narrative Expressions of Environmental Values,Terre Satterfield,U.S. & Canadian Authors - Interviews,History & Geography
-1834278295,9,The American Stage: Writing on Theater from Washington Irving to Tony Kushner,Lawrence Senelick,U.S. & Canadian Drama - Literary Criticism,History & Geography
-8799039221,9,Dream Me Home Safely: Writers on Growing Up in America,Susan Richards Shreve,U.S. Authors - 20th Century - Literary Biography,History & Geography
-6158515690,9,"Women and Children of the Mills: An Annotated Guide to Nineteenth-Century American Textile Factory Literature, Vol. 28",Judith Ranta,U.S. Literature - Reference,History & Geography
-8172965365,9,"Appalachia inside Out, Vol. 2",Robert J. Higgs,United States - Civilization,History & Geography
-3563724019,9,Feeling Italian: The Art of Ethnicity in America,Thomas Ferraro,United States - Ethnic & Race Relations,History & Geography
-3322536048,9,Bombshells: War Stories and Poems by Women on the Homefront,Missy Martin,United States - World War II - Homefront,History & Geography
-2647807469,9,Unchained Voices: An Anthology of Black Authors in the English-Speaking World of the Eighteenth Century,Vincent Carretta,United States History - African American History,History & Geography
-4539582993,9,"Pioneers of the Black Atlantic: Five Slave Narratives from the Enlightenment, 1772-1815",Henry Louis Gates Jr.,United States History - African American History,History & Geography
-9287343772,9,"Iowa, the Definitive Collection: Classic and Contemporary Readings by Iowans, for Iowans",Zachary Michael Jack,United States History - Midwestern Region,History & Geography
-5716042904,9,Bronx Accent: A Literary and Pictorial History of the Borough,Lloyd Ultan,United States History - Northeastern & Middle Atlantic Region,History & Geography
-5309047807,9,The Maine Reader: The Down East Experience from 1614 to the Present,Charles Shain,United States History - Northeastern & Middle Atlantic Region,History & Geography
-3271461388,9,The Lincoln Anthology: Great Writers on His Life and Legacy from 1860 to Now,Harold Holzer,United States History - Reference,History & Geography
-7653343247,9,American Studies Anthology,Richard P. Horwitz,United States History - Social Aspects,History & Geography
-6719268745,9,In a Narrow Grave: Essays on Texas,Larry McMurtry,United States History - Southern Region,History & Geography
-3816280253,9,"The New World Border: Prophecies, Poems, and Loqueras for the End of the Century",Guillermo Gomez-Pena,United States Studies - General & Miscellaneous,History & Geography

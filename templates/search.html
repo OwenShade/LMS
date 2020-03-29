@@ -6,5 +6,17 @@
 {% endblock %}
 
 {% block body_block %}
-Search
+<h1>Search</h1>
+<form id="SearchForm" method="post" action="/LMS/search/">
+    {% csrf_token %}
+    {{ search_form.as_p }}
+    <input type="submit" name="submit" class="btn btn-primary" value="Search" />
+    {% if results %}
+        <ul>
+            {% for book in results %}
+                <li>{{ book.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</form>
 {% endblock %}
