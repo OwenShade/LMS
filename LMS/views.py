@@ -104,6 +104,8 @@ def change_password(request):
             messages.error(request, 'Please correct errors.')
     else:
         form = PasswordChangeForm(request.user)
+        for field in form.fields:
+            form.fields[field].widget.attrs.update({'class' : 'form-control'})
     return render(request, 'change_password.html', {'form': form})
 
 @login_required
