@@ -214,6 +214,15 @@ def show_category(request, category_name_slug):
         context_dict['books'] = None
     return render(request, 'category.html', context=context_dict)
 
+def show_isbn(request, isbn):
+    context_dict = {}
+    try:
+        isbn = ISBN.objects.get(ISBN=isbn)
+        context_dict['isbn'] = isbn
+    except:
+        context_dict['isbn'] = None
+    return render(request, 'isbn.html', context=context_dict)
+
 @login_required
 def user_logout(request):
     logout(request)
