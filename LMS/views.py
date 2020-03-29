@@ -55,12 +55,10 @@ def user_login(request):
     context = {"login_errors": []}
 
     if request.method == 'POST':
-        print("post")
         form = LoginForm(request=request, data=request.POST)
         context["form"] = form
 
         if form.is_valid():
-            print("valid")
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
