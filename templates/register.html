@@ -6,31 +6,31 @@
 {% endblock %}
 
 {% block body_block %}
-<div class="py-5 text-center">
-    <h3>Register for Library</h3>
-</div>
-
-{% if registered %}
-    <p>Thank you for registering!
-    <a href="{% url 'LMS:login' %}">Log in</a></p>
-{% else %}
-    <div class="row">
-        <form id="UserForm" method="post" action="/LMS/register/" enctype="multipart/form-data" class="col-8">
-
-            {% csrf_token %}
-            {% for field in profile_form %}
-                <div class="form-group row">
-                    <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.help_text }}</label>
-                    <div class="col-5">
-                        {{field}}
-                        <div class="invalid-feedback">{{ field.errors }}</div>
-                    </div>
-                </div>
-            {% endfor %}
-
-            <input type="submit" name="submit" class="btn btn-primary" value="Register" />
-
-        </form>
+    <div class="py-5 text-center">
+        <h3>Register for Library</h3>
     </div>
-{% endif %} 
+
+    {% if registered %}
+        <p>Thank you for registering!
+        <a href="{% url 'LMS:login' %}">Log in</a></p>
+    {% else %}
+        <div class="row">
+            <form id="UserForm" method="post" action="/LMS/register/" enctype="multipart/form-data" class="col-8">
+
+                {% csrf_token %}
+                {% for field in profile_form %}
+                    <div class="form-group row">
+                        <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.help_text }}</label>
+                        <div class="col-5">
+                            {{field}}
+                            <div class="invalid-feedback">{{ field.errors }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <input type="submit" name="submit" class="btn btn-primary" value="Register" />
+
+            </form>
+        </div>
+    {% endif %} 
 {% endblock %}
