@@ -3,21 +3,8 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 
 # Create your models here.
-class Library(models.Model):
-    pk_num = models.IntegerField(unique=True)
-    name = models.CharField(max_length=128)
-    address = models.CharField(max_length=128)
-    
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name_plural = "Libraries"
-    
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
-    reg_library = models.ForeignKey(Library, on_delete=models.CASCADE, help_text="Registered Library")
     book_limit = models.IntegerField(default=10)
     date_reg = models.DateTimeField(auto_now_add=True)
     
@@ -26,8 +13,6 @@ class Member(models.Model):
 
 class Staff(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
-    reg_library = models.ForeignKey(Library, on_delete=models.CASCADE)
     role = models.CharField(max_length=128)
     phone = models.IntegerField()
     

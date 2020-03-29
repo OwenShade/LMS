@@ -150,7 +150,7 @@ def add_book(request):
 
         if form.is_valid():
             form.save(commit=True)
-            book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()))
+            book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['category'].value())
             book.save()
             return redirect('/LMS/')
     else:

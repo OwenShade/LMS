@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from LMS.models import Member, Category, Book, Staff, Library, ISBN
+from LMS.models import Member, Category, Book, Staff, ISBN
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 
 #Form for adding a category
@@ -20,7 +20,6 @@ class BookForm(forms.ModelForm):
     category = forms.ModelChoiceField(Category.objects.all(), help_text="Please select a category.")
     author = forms.CharField(max_length=128, help_text="Please enter the author of the book.")
     genre = forms.CharField(max_length=128, help_text="Please enter the genre.")
-    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     location = forms.CharField(max_length=16, help_text="Please enter the shelf that this book is on.")
 
     def __init__(self, *args, **kwargs):
@@ -49,7 +48,7 @@ class StaffProfileForm(forms.ModelForm):
         help_text="Please enter their phone number.")
     class Meta:
         model = Staff
-        fields = ('role', 'phone', 'reg_library')
+        fields = ('role', 'phone',)
 
 class UserForm(forms.ModelForm):
     username = forms.CharField(max_length=128,
@@ -59,7 +58,7 @@ class UserForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ('password', 'username', 'email')
+        fields = ('password', 'username', 'email',)
         
 class UserProfileForm(UserForm):
     def __init__(self, *args, **kwargs):
@@ -68,11 +67,9 @@ class UserProfileForm(UserForm):
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class' : 'form-control'})
 
-        self.fields['reg_library'].widget.attrs.update({'class' : 'custom-select d-block w-100'})
-
     class Meta:
         model = Member
-        fields = ('username','password', 'email', 'reg_library')
+        fields = ('username','password', 'email',)
         
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=128)
