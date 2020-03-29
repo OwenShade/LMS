@@ -15,7 +15,7 @@ Home
     {% if user.is_authenticated %}
         <div class="row justify-content-center">
             <div class="col-12">
-                <h3 class="text-center">Welcome Back {{ user.username }}.</h3>
+                <h3 class="text-center">Welcome Back, {{ user.username }}.</h3>
             </div>
         </div>
     {% else %}
@@ -26,16 +26,14 @@ Home
         </div>
 
         <div class="row justify-content-center py-4">
-            <div class="col-2">
-                <a type="button" class="btn btn-outline-primary" href="{% url 'LMS:login' %}">Log in</a>
-                <a type="button" class="btn btn-outline-primary" href="{% url 'LMS:register' %}">Register</a>
-            </div>
+            <a type="button" class="btn btn-outline-primary col-2" href="{% url 'LMS:login' %}">Log in</a>
+            <a type="button" class="btn btn-outline-primary col-2" href="{% url 'LMS:register' %}">Register</a>
         </div>
     {% endif %}
 
     <div class="row">
-        <div class="col-6 px-3">
-            <h3 class="text-center">Popular Categories</h3>
+        <div class="col-6 p-3">
+            <h3 class="text-center mb-3 mt-1">Popular Categories</h3>
             <!-- Prints all Categories -->
            {% if categories %}
            <ul class="list-group">
@@ -49,8 +47,8 @@ Home
                 <strong>There are no categories present.</strong>
            {% endif %}
         </div>
-        <div class="col-6 px-3">
-            <h3 class="text-center">Popular Books</h3>
+        <div class="col-6 p-3">
+            <h3 class="text-center mb-3 mt-1">Popular Books</h3>
             <!-- Should create a table with the following columns: Title, Author, Genre -->
             {% if books %}
             <table class="table">
