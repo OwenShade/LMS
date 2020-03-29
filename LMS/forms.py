@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from LMS.models import Member, Category, Book, Staff, Library, ISBN
+from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 
 #Form for adding a category
 class CategoryForm(forms.ModelForm):
@@ -58,7 +59,6 @@ class UserForm(forms.ModelForm):
         fields = ('password', 'username', 'email')
         
 class UserProfileForm(UserForm):
-
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         
@@ -74,3 +74,10 @@ class UserProfileForm(UserForm):
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=128)
     options = forms.ChoiceField(choices=[("1","Genre"), ("2","Title"), ("3","Author",), ("4","ISBN")], help_text="Choose what to search.")
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(help_text="Username")
+    password = forms.CharField(widget=forms.PasswordInput(), help_text="Password")
+
+    class Meta:
+        model = Member
+        fields = ('username', 'password')

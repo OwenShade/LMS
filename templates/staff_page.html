@@ -6,19 +6,25 @@
 {% endblock %}
 
 {% block body_block %}
-<div class = "mb-2 ml-3 col">
-    <h1>Welcome to the Staff Page.</h1>
-</div>
-<form>
-    <br>
-    <div class= "mb-3 ml-3 col">
-        <button formaction="{% url 'LMS:add_category' %}" class="btn btn-primary">Add a New Category</button>
+<center>
+    <div class="py-5 text-center">
+        <h1>Register for Library</h1>
     </div>
-    <div class= "mb-3 ml-3 col">
-        <button formaction="{% url 'LMS:add_staff' %}" class="btn btn-primary">Add a New Staff Member</button>
-    </div>
-    <div class= "mb-3 ml-3 col">
-        <button formaction="{% url 'LMS:add_book' %}" class="btn btn-primary">Add a New Book</button>
-    </div>
-</form>
+    <form>
+        <div class="row m-5">
+            <div class= "mb-3 ml-3 col">
+                <button formaction="{% url 'LMS:add_category' %}" class="btn btn-primary">Add a New Category</button>
+            </div>
+            <div class= "mb-3 ml-3 col">
+                <button formaction="{% url 'LMS:add_staff' %}" class="btn btn-primary">Add a New Staff Member</button>
+            </div>
+            <div class= "mb-3 ml-3 col">
+                <button formaction="{% url 'LMS:add_book' %}" class="btn btn-primary">Add a New Book</button>
+            </div>
+        </div>
+        <div class="row m-5">
+            <!-- Add future buttons here -->
+        </div>
+    </form>
+</center>
 {% endblock %}
