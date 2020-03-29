@@ -187,6 +187,17 @@ def returns(request):
         context_dict['books'] = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
     except:
         context_dict['books'] = None
+    if request.method == 'POST':
+        book = None
+        for key in request.POST.keys():
+            if key.startswith('return:'):
+                book = key[7:]
+                break
+        if book:
+            book = Book.objects.get(pk_num=book)
+            book.taken_out = None
+            book.save()
+            context_dict['returned'] = book.location
     return render(request, 'returns.html', context=context_dict)
 
 @login_required
