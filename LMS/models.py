@@ -16,7 +16,7 @@ class Library(models.Model):
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
-    reg_library = models.ForeignKey(Library, on_delete=models.CASCADE)
+    reg_library = models.ForeignKey(Library, on_delete=models.CASCADE, help_text="Registered Library")
     book_limit = models.IntegerField(default=10)
     date_reg = models.DateTimeField(auto_now_add=True)
     
