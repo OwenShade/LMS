@@ -167,15 +167,16 @@ def show_category(request, category_name_slug):
     context_dict = {}
     try:
         category = Category.objects.get(slug=category_name_slug)
+        books = Book.objects.filter(isbn__category=category)
+        context_dict['books'] = books
         context_dict['category'] = category
     except Category.DoesNotExist:
         context_dict['category'] = None
-    return render(request, 'browse.html', context=context_dict)
+        context_dict['books'] = None
+    return render(request, 'category.html', context=context_dict)
 
 @login_required
 def user_logout(request):
     logout(request)
     return redirect(reverse('home'))
-
-
     

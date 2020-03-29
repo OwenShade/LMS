@@ -41,7 +41,7 @@ Home
            <ul class="list-group">
                {% for category in categories %}
                <li class="list-group-item">
-                {{category.name}}
+                    <a href="/LMS/category/{{ category.slug }}/">{{ category.name }}</a>
                </li>
                {% endfor %}
            </ul>

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class Library(models.Model):
@@ -37,10 +38,15 @@ class Staff(models.Model):
         verbose_name_plural = "Staff"
     
 class Category(models.Model):
-    pk_num = models.IntegerField(unique=True)
+    pk_num = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128)
     views = models.IntegerField(default=0)
     manager = models.ForeignKey(Staff, on_delete=models.SET(None), blank=True, null=True)
+    slug = models.SlugField(unique=True)
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
     
     def __str__(self):
         return self.name
