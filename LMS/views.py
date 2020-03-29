@@ -66,7 +66,7 @@ def user_login(request):
                 return HttpResponse("Your library account is disabled.")
         else:
             print(f"Invalid login details: {username}, {password}")
-            return HttpResponse("Invalid login details supplied.")
+            return render(request, 'login.html', context={"login_errors": ["Invalid login details supplied."]})
     else:
         return render(request, 'login.html')
 

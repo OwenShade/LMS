@@ -49,14 +49,21 @@ class StaffProfileForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
     username = forms.CharField(max_length=128,
-        help_text="Please enter your name")
-    password = forms.CharField(widget=forms.PasswordInput())
+        help_text="Name")
+    password = forms.CharField(widget=forms.PasswordInput(), help_text="Password")
+    email = forms.EmailField(help_text="Email")
     
     class Meta:
         model = User
         fields = ('password', 'username', 'email')
         
-class UserProfileForm(forms.ModelForm):
+class UserProfileForm(UserForm):
+
+    def __init__(self, *args, **kwargs):
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+        self.fields['reg_library'].widget.attrs.update({'class' : 'custom-select d-block w-100'})
+
     class Meta:
         model = Member
-        fields = ('reg_library',)
+        fields = ('username','password', 'email', 'reg_library')
+        
