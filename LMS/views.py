@@ -182,7 +182,12 @@ def add_staff(request):
 
 @login_required
 def returns(request):
-    return render(request, 'returns.html')
+    context_dict = {}
+    try:
+        context_dict['books'] = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
+    except:
+        context_dict['books'] = None
+    return render(request, 'returns.html', context=context_dict)
 
 @login_required
 def staff_page(request):

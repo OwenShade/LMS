@@ -6,5 +6,17 @@
 {% endblock %}
 
 {% block body_block %}
-Return a Book.
+Return a Book
+<br/>
+<strong>List of Books</strong>
+{% if books %}
+    <ul>
+    {% for book in books %}
+        <li>{{ book.isbn.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %} 
+    <br/>
+    No books to return.
+{% endif %}
 {% endblock %}
