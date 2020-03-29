@@ -6,7 +6,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','LMS_project.settings')
 import django
 import csv
 django.setup()
-from LMS.models import Library, Member, Staff, Category, ISBN, Book
+from LMS.models import Member, Staff, Category, ISBN, Book
 
 def populate():
     #Create the Categories
