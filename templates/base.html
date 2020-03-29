@@ -43,12 +43,12 @@
                 {% endif %}
             </ul>
             {% if user.is_authenticated %}
-            <div class="col-2 d-flex justify-content-end align-items-center">
+            <div class="col-3 d-flex justify-content-end align-items-center">
                 <a class="btn btn-sm btn-outline-secondary m-1" href="{% url 'LMS:logout' %}">Log Out</a>
                 <a class="btn btn-sm btn-outline-secondary m-1" href="{% url 'LMS:change_password' %}">Change Password</a>
             </div>
             {% else %}
-                <div class="col-2 d-flex justify-content-end align-items-center">
+                <div class="col-3 d-flex justify-content-end align-items-center">
                     <a class="btn btn-sm btn-outline-secondary m-1" href="{% url 'LMS:login' %}">Log in</a>
                     <a class="btn btn-sm btn-outline-secondary m-1" href="{% url 'LMS:register' %}">Register</a>
                 </div>

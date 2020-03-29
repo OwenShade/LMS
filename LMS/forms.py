@@ -15,15 +15,18 @@ class CategoryForm(forms.ModelForm):
 
 #form for adding a book
 class BookForm(forms.ModelForm):
-    ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.")
-    title = forms.CharField(max_length=128,
-        help_text="Please enter the book title.")
+    ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.", label="ISBN")
+    title = forms.CharField(max_length=128, help_text="Please enter the book title.")
     category = forms.ModelChoiceField(Category.objects.all(), help_text="Please select a category.")
-    author = forms.CharField(max_length=128,
-        help_text="Please enter the author of the book.")
-    genre = forms.CharField(max_length=128,
-        help_text="Please enter the genre.")
+    author = forms.CharField(max_length=128, help_text="Please enter the author of the book.")
+    genre = forms.CharField(max_length=128, help_text="Please enter the genre.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
+    location = forms.CharField(max_length=16, help_text="Please enter the shelf that this book is on.")
+
+    def __init__(self, *args, **kwargs):
+        super(BookForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
 
     class Meta:
         model = ISBN
