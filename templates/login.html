@@ -7,7 +7,14 @@
 {% endblock %}
 
 {% block body_block %}
-<div class="text-center">
+<div class="text-center p-2">
+    {% if login_errors %}
+        <div class="p-2 m-2 my-auto bg-danger text-white">
+            {% for error in login_errors %}
+                <p class="my-auto">{{error}}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
     </div>
         <form id="login_form" method="post" action="/LMS/login/" class="form-signin">
             {% csrf_token %}
