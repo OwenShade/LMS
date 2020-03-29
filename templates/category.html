@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title_block %} 
+
+{% if category %} 
+    {{ category.name }} Browser 
+{% else %} 
+    No Category 
+{% endif %}
+{% endblock %}
+
+
+{% block body_block %}
+    <div>
+        {% if category %}
+            <h>{{ category.name }}</h>
+            {% if books %}
+                <ul>
+                {% for book in books %}
+                    <li>{{ book.isbn.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <strong>No books currently in category.</strong>
+            {% endif %} 
+        {% else %} 
+            The specified category does not exist. 
+        {% endif %}
+    </div>
+{% endblock %}
