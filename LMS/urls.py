@@ -16,5 +16,6 @@ urlpatterns = [
     path('returns/', views.returns, name='returns'),
     path('staff_page/', views.staff_page, name='staff_page'),
     path('logout/', views.user_logout, name='logout'),
+    path('change_password/', views.change_password, name='change_password'),
     path('category/<slug:Category_name_slug>/', views.show_category, name='show_category'),
 ]

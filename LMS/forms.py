@@ -48,9 +48,9 @@ class StaffProfileForm(forms.ModelForm):
         fields = ('role', 'phone', 'reg_library')
 
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
     username = forms.CharField(max_length=128,
         help_text="Please enter your name")
+    password = forms.CharField(widget=forms.PasswordInput())
     
     class Meta:
         model = User

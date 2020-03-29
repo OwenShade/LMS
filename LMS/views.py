@@ -1,12 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from LMS.models import Library, Member, Staff, Category, ISBN, Book
 from LMS.forms import CategoryForm, BookForm, StaffForm, UserForm, UserProfileForm, StaffProfileForm
-from django.shortcuts import redirect
-from django.urls import reverse
+from django.shortcuts import render, reverse, redirect
+from django.http import HttpResponse
 from django.views.generic import ListView
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import PasswordChangeForm
+
 
 def home(request):
     context_dict = {}
@@ -82,6 +83,22 @@ def browse(request):
 def search(request):
     return render(request, 'search.html')
 
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Password successfully updated.')
+            return redirect(reverse('home'))
+        else:
+            messages.error(request, 'Please correct errors.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'change_password.html', {'form': form})
+
+@login_required
 def add_category(request):
     form = CategoryForm()
 
@@ -97,6 +114,7 @@ def add_category(request):
     
     return render(request, 'add_category.html', {'form': form})
 
+@login_required
 def add_book(request):
     form = BookForm()
 
@@ -112,6 +130,7 @@ def add_book(request):
         form = BookForm()
     return render(request, 'add_book.html', {'form': form})
 
+@login_required
 def add_staff(request):
     form = StaffForm()
 
@@ -136,9 +155,11 @@ def add_staff(request):
         profile_form = StaffProfileForm()
     return render(request, 'add_staff.html', context = {'staff_form': staff_form, 'profile_form': profile_form})
 
+@login_required
 def returns(request):
     return render(request, 'returns.html')
 
+@login_required
 def staff_page(request):
     return render(request, 'staff_page.html')
 
