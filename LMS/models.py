@@ -71,7 +71,7 @@ class ISBN(models.Model):
 class Book(models.Model):
     pk_num = models.AutoField(primary_key=True)
     isbn = models.ForeignKey(ISBN, on_delete=models.CASCADE)
-    location = models.ForeignKey(Library, on_delete=models.CASCADE)
+    location = models.CharField(blank=False, max_length=16)
     taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
     
     def __str__(self):

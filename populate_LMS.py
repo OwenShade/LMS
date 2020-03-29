@@ -1,5 +1,6 @@
 import os
 import random
+import string
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','LMS_project.settings')
 
 import django
@@ -8,10 +9,6 @@ django.setup()
 from LMS.models import Library, Member, Staff, Category, ISBN, Book
 
 def populate():
-    #Create the Library
-    p = Library(pk_num=1, name="Oakwood Library", address="G12 6TY")
-    p.save()
-    
     #Create the Categories
     cat_names = ["General Works", "Philosophy", "Religion", "Social Sciences", "Culture", "Natural Sciences", "Applied Sciences", "Recreation", "Fiction & Literature", "History & Geography"]
     cat_views = [425,365,227,589,363,741,691,123,966,314]
@@ -29,7 +26,7 @@ def populate():
             
     #Add Books
     for key in enumerate(ISBN.objects.all()):
-        b = Book(isbn=key[1], location=Library.objects.get(pk_num=1))
+        b = Book(isbn=key[1], location=random.choice(string.ascii_letters[26:])+str(random.randrange(20)))
         b.save()
 if __name__ == '__main__':
     print('Starting LMS population script...')
