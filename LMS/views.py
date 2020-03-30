@@ -224,16 +224,20 @@ def staff_page(request):
         context_dict['books'] = books
     except:
         context_dict['books'] = None
+    
     if request.method == 'POST':
-        book = None
+        
+        #Returns book to location
         for key in request.POST.keys():
             if key.startswith('back_in:'):
                 book = key[8:]
+                location = request.POST['location']
+                book = Book.objects.get(pk_num=book)
+                book.back_in = True
+                book.location = location
+                book.save()
                 break
-        if book:
-            book = Book.objects.get(pk_num=book)
-            book.back_in = True
-            book.save()
+            
         return redirect('/LMS/staff_page')
     return render(request, 'staff_page.html', context=context_dict)
 

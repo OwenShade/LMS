@@ -55,13 +55,16 @@
                 {% for book in books %}
                     <tr>
                         <td>{{ book.pk_num }}</td>
-                        <td>{{ book.location }}</td>
-                        <td>
                         <form id="BackInForm" method="post" action="{% url 'LMS:staff_page' %}">
-                            {% csrf_token %}
-                            <input type="submit" name="back_in:{{ book.pk_num }}" class="btn btn-primary" value="Back in" />
-                        </form>
+                        {% csrf_token %}
+                        <td>
+                            <input type="text" name="location" value="{{ book.location }}" />
                         </td>
+                        <td>
+                            <input type="submit" name="back_in:{{ book.pk_num }}" class="btn btn-primary" value="Back in" />
+                        </td>
+                        </form>
+                        
                     </tr>
                 {% endfor %}
             </tbody>
