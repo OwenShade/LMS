@@ -62,7 +62,7 @@ class Book(models.Model):
     loan_until = models.DateField(default=None, blank=True, null=True)
     
     def save(self, *args, **kwargs):
-        if self.taken_out != None:
+        if self.taken_out != None and self.loan_until == None:
             self.loan_until = date.today() + timedelta(days=30)
         else:
             self.loan_until = None

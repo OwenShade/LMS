@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
+from _datetime import date
 
 
 def home(request):
@@ -185,9 +186,22 @@ def add_staff(request):
 def returns(request):
     context_dict = {}
     try:
-        context_dict['books'] = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
+        books = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
+        times_left = []
+        for book in books:
+            time = (book.loan_until - date.today()).days
+            if time < 0:
+                new_time = "Overdue by: " + str(time)
+                times_left.append(new_time)
+            else:
+                times_left.append(time)
+        if books:
+            context_dict['books'] = zip(books, times_left)
+        else:
+            context_dict['books'] = None
     except:
         context_dict['books'] = None
+    
     if request.method == 'POST':
         book = None
         for key in request.POST.keys():
@@ -199,6 +213,7 @@ def returns(request):
             book.taken_out = None
             book.save()
             context_dict['returned'] = book.location
+        return redirect('/LMS/returns')
     return render(request, 'returns.html', context=context_dict)
 
 @login_required
