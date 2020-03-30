@@ -14,49 +14,73 @@
     <div class="row">
         <div class="col-6">
             {% if isbn %}
-            <table class="table" >
-            <tbody>
-                <tr>
-                    <td>ISBN:</td>
-                    <td>{{isbn.ISBN}}</td>
-                </tr>
-                <tr>
-                    <td>Category</td>
-                    <td>{{isbn.category}}</td>
-                </tr>
-                <tr>
-                    <td>Title</td>
-                    <td>{{isbn.title}}</td>
-                </tr>
-                <tr>
-                    <td>Author</td>
-                    <td>{{isbn.author}}</td>
-                </tr>
-                <tr>
-                    <td>Genre</td>
-                    <td>{{isbn.genre}}</td>
-                </tr>
-                <tr>
-                    <td>Views:</td>
-                    <td>{{isbn.views}}</td>
-                </tr>
-                <tr>
-                    <td>Location</td>
-                    <td>{{isbn.location}}</td>
-                </tr>
-                <tr>
-                    <td>Taken out:</td>
-                    <td>{{isbn.taken_out}}</td>
-                </tr>
-            </tbody>
-            </table>
+                <table class="table" >
+                <tbody>
+                    <tr>
+                        <td>ISBN:</td>
+                        <td>{{isbn.ISBN}}</td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>{{isbn.category}}</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td>{{isbn.title}}</td>
+                    </tr>
+                    <tr>
+                        <td>Author</td>
+                        <td>{{isbn.author}}</td>
+                    </tr>
+                    <tr>
+                        <td>Genre</td>
+                        <td>{{isbn.genre}}</td>
+                    </tr>
+                    <tr>
+                        <td>Views:</td>
+                        <td>{{isbn.views}}</td>
+                    </tr>
+                </tbody>
+                </table>
+                <br/>
+                {% if books %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="w-50">Book ID</th>
+                            <th scope="w-30">Location</th>
+                            {% if user.is_authenticated %}
+                            <th scope="w-20">Loan</th>
+                            {% endif %}
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for book in books %}
+                                <tr>
+                                    <td>{{ book.pk_num }}</td>
+                                    <td>{{ book.location }}</td>
+                                    {% if book.taken_out %}
+                                        <td>Not available</td>
+                                    {% elif limit %}
+                                        <td>Reached book limit</td>
+                                    {% elif user.is_authenticated %}
+                                        <td>
+                                        <form id="LoanForm" method="post" action="{% url 'LMS:isbn_num' isbn.ISBN %}">
+                                            {% csrf_token %}
+                                            <input type="submit" name="loan:{{ book.pk_num }}" class="btn btn-primary" value="Loan" />
+                                        </form>
+                                        </td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
             {% else %}
                 <strong>No information.</strong>
             {% endif %}
         </div>
     </div>
 
-
-
-    
 {% endblock %}

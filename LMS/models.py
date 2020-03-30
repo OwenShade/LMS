@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from datetime import date, timedelta
 
 # Create your models here.
 class Member(models.Model):
@@ -58,6 +59,14 @@ class Book(models.Model):
     isbn = models.ForeignKey(ISBN, on_delete=models.CASCADE)
     location = models.CharField(blank=False, max_length=16)
     taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
+    loan_until = models.DateField(default=None, blank=True, null=True)
+    
+    def save(self, *args, **kwargs):
+        if self.taken_out != None:
+            self.loan_until = date.today() + timedelta(days=30)
+        else:
+            self.loan_until = None
+        super(Book, self).save(*args, **kwargs)
     
     def __str__(self):
         return str(self.isbn)

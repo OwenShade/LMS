@@ -146,13 +146,14 @@ def add_book(request):
 
     if request.method == 'POST':
         form = BookForm(request.POST)
-
-        if form.is_valid():
-            form.save(commit=True)
-            book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['category'].value())
-            book.save()
-            messages.success(request, 'Book successfully added.')
-            return redirect('/LMS/staff_page')
+        if ISBN.objects.get(ISBN=form['ISBN'].value()) == None:
+            if form.is_valid():
+                form.save(commit=True)
+        book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
+        book.save()
+        messages.success(request, 'Book successfully added.')
+        return redirect('/LMS/staff_page')
+            
     else:
         form = BookForm()
     return render(request, 'add_book.html', {'form': form})
@@ -208,7 +209,7 @@ def show_category(request, category_name_slug):
     context_dict = {}
     try:
         category = Category.objects.get(slug=category_name_slug)
-        books = Book.objects.filter(isbn__category=category)
+        books = ISBN.objects.filter(category=category)
         context_dict['books'] = books
         context_dict['category'] = category
     except Category.DoesNotExist:
@@ -221,8 +222,27 @@ def show_isbn(request, isbn):
     try:
         isbn = ISBN.objects.get(ISBN=isbn)
         context_dict['isbn'] = isbn
+        books = Book.objects.filter(isbn=isbn)
+        context_dict['books'] = books
     except:
         context_dict['isbn'] = None
+        context_dict['books'] = None
+        
+    if request.method == 'POST':
+        book = None
+        for key in request.POST.keys():
+            if key.startswith('loan:'):
+                book = key[5:]
+                break
+        if book:
+            user = Member.objects.get(user=request.user)
+            amount = Book.objects.filter(taken_out=Member.objects.get(user=request.user)).count()
+            if amount < user.book_limit:
+                book = Book.objects.get(pk_num=book)
+                book.taken_out = user
+                book.save()
+            else:
+                context_dict['limit'] = True
     return render(request, 'isbn.html', context=context_dict)
 
 @login_required
