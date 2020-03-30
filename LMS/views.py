@@ -218,7 +218,24 @@ def returns(request):
 
 @login_required
 def staff_page(request):
-    return render(request, 'staff_page.html')
+    context_dict = {}
+    try:
+        books = Book.objects.filter(back_in=False, taken_out=None)
+        context_dict['books'] = books
+    except:
+        context_dict['books'] = None
+    if request.method == 'POST':
+        book = None
+        for key in request.POST.keys():
+            if key.startswith('back_in:'):
+                book = key[8:]
+                break
+        if book:
+            book = Book.objects.get(pk_num=book)
+            book.back_in = True
+            book.save()
+        return redirect('/LMS/staff_page')
+    return render(request, 'staff_page.html', context=context_dict)
 
 def show_category(request, category_name_slug):
     context_dict = {}

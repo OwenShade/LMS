@@ -36,5 +36,36 @@
             <!-- Add future buttons here -->
         </div>
     </form>
+    {% if books %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <h2>Books to put back in place</h2>
+                </tr>
+                <tr>
+                <th scope="w-50">Book ID</th>
+                <th scope="w-30">Location</th>
+                {% if user.is_authenticated %}
+                <th scope="w-20">Back in</th>
+                {% endif %}
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.pk_num }}</td>
+                        <td>{{ book.location }}</td>
+                        <td>
+                        <form id="BackInForm" method="post" action="{% url 'LMS:staff_page' %}">
+                            {% csrf_token %}
+                            <input type="submit" name="back_in:{{ book.pk_num }}" class="btn btn-primary" value="Back in" />
+                        </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 </center>
 {% endblock %}

@@ -60,10 +60,12 @@ class Book(models.Model):
     location = models.CharField(blank=False, max_length=16)
     taken_out = models.ForeignKey(Member, on_delete=models.SET(None), blank=True, null=True)
     loan_until = models.DateField(default=None, blank=True, null=True)
+    back_in = models.BooleanField(default=True)
     
     def save(self, *args, **kwargs):
         if self.taken_out != None and self.loan_until == None:
             self.loan_until = date.today() + timedelta(days=30)
+            self.back_in = False
         else:
             self.loan_until = None
         super(Book, self).save(*args, **kwargs)
