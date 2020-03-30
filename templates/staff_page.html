@@ -7,6 +7,16 @@
 
 {% block body_block %}
 <center>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class = "alert alert-success">
+            <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+            </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
     <div class="py-5 text-center">
         <h1>Register for Library</h1>
     </div>

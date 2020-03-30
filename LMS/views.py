@@ -132,9 +132,10 @@ def add_category(request):
 
         if form.is_valid():
             form.save(commit=True)
-
-            return redirect('/LMS/')
+            messages.success(request, 'Category successfully added.')
+            return redirect('/LMS/staff_page')
         else:
+            messages.error(request, 'Please correct errors.')
             print(form.errors)
     
     return render(request, 'add_category.html', {'form': form})
@@ -150,7 +151,8 @@ def add_book(request):
             form.save(commit=True)
             book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['category'].value())
             book.save()
-            return redirect('/LMS/')
+            messages.success(request, 'Book successfully added.')
+            return redirect('/LMS/staff_page')
     else:
         form = BookForm()
     return render(request, 'add_book.html', {'form': form})
@@ -171,8 +173,8 @@ def add_staff(request):
             profile.user = staff
             
             profile.save()
-            
-            return redirect('/LMS/')
+            messages.success(request, 'Staff successfully added.')
+            return redirect('/LMS/staff_page')
     else:
         staff_form = StaffForm()
         profile_form = StaffProfileForm()
@@ -226,4 +228,5 @@ def show_isbn(request, isbn):
 @login_required
 def user_logout(request):
     logout(request)
+    messages.success(request, 'Successfully Logged Out.')
     return redirect(reverse('home'))
