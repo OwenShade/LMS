@@ -8,6 +8,9 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from _datetime import date
+from .decorators import unauthenticated_user
+from .decorators import allowed_users
+from django.contrib.auth.models import Group
 
 
 def home(request):
@@ -27,6 +30,7 @@ def home(request):
     response = render(request, 'home.html', context=context_dict)
     return response
 
+@unauthenticated_user
 def register(request):
     registered = False
 
@@ -36,6 +40,9 @@ def register(request):
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
 
+            group = Group.objects.get(name='customer')
+            user.groups.add(group)
+            
             user.set_password(user.password)
             user.save()
             
@@ -52,6 +59,7 @@ def register(request):
         profile_form = UserProfileForm()
     return render(request, 'register.html', context ={'user_form': user_form,'profile_form' : profile_form, 'registered': registered})
 
+@unauthenticated_user
 def user_login(request):
     context = {"login_errors": []}
 
@@ -125,6 +133,7 @@ def change_password(request):
     return render(request, 'change_password.html', {'form': form})
 
 @login_required
+@allowed_users(allowed_roles=['admin','staff'])
 def add_category(request):
     form = CategoryForm()
 
@@ -142,6 +151,7 @@ def add_category(request):
     return render(request, 'add_category.html', {'form': form})
 
 @login_required
+@allowed_users(allowed_roles=['admin','staff'])
 def add_book(request):
     form = BookForm()
 
@@ -160,6 +170,7 @@ def add_book(request):
     return render(request, 'add_book.html', {'form': form})
 
 @login_required
+@allowed_users(allowed_roles=['admin','staff'])
 def add_staff(request):
     if request.method == 'POST':
         staff_form = StaffForm(request.POST)
@@ -170,6 +181,9 @@ def add_staff(request):
 
             staff.set_password(staff.password)
             staff.save()
+            
+            group = Group.objects.get(name='staff')
+            staff.groups.add(group)
             
             profile = profile_form.save(commit=False)
             profile.user = staff
@@ -183,6 +197,7 @@ def add_staff(request):
     return render(request, 'add_staff.html', context = {'staff_form': staff_form, 'profile_form': profile_form})
 
 @login_required
+@allowed_users(allowed_roles=['admin','customer'])
 def returns(request):
     context_dict = {}
     try:
@@ -217,6 +232,7 @@ def returns(request):
     return render(request, 'returns.html', context=context_dict)
 
 @login_required
+@allowed_users(allowed_roles=['admin','staff'])
 def staff_page(request):
     return render(request, 'staff_page.html')
 
