@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from _datetime import date
+from django.db import IntegrityError
 
 
 def home(request):
@@ -132,12 +133,14 @@ def add_category(request):
         form = CategoryForm(request.POST)
 
         if form.is_valid():
-            form.save(commit=True)
-            messages.success(request, 'Category successfully added.')
-            return redirect('/LMS/staff_page')
-        else:
-            messages.error(request, 'Please correct errors.')
-            print(form.errors)
+            try:
+                form.save(commit=True)
+                messages.success(request, 'Category successfully added.')
+                return redirect('/LMS/staff_page')
+            except IntegrityError:
+                form.save(commit=False)
+                messages.error(request, 'Category already exists.')
+                return redirect('/LMS/staff_page')
     
     return render(request, 'add_category.html', {'form': form})
 
