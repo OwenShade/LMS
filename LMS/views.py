@@ -13,9 +13,17 @@ from .decorators import unauthenticated_user
 from .decorators import allowed_users
 from django.contrib.auth.models import Group
 
+def if_staff(request):
+    if request.user.groups.exists():
+                group = request.user.groups.all()[0].name
+                if group in ["admin", "staff"]:
+                    return True
+                else:
+                    return False
 
 def home(request):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         category_list = Category.objects.order_by('-views')[:5]
         context_dict['categories'] = category_list
@@ -27,7 +35,7 @@ def home(request):
         context_dict['books'] = book_list
     except ISBN.DoesNotExist:
         context_dict['books'] = None
-        
+    
     response = render(request, 'home.html', context=context_dict)
     return response
 
@@ -89,6 +97,7 @@ def user_login(request):
 
 def browse(request):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         category_list = Category.objects.all()
         context_dict['categories'] = category_list
@@ -98,6 +107,8 @@ def browse(request):
     return response
 
 def search(request):
+    context_dict = {}
+    context_dict['staff'] = if_staff(request)
     if request.method == 'POST':
         search_form = SearchForm(request.POST)
         if search_form.is_valid():
@@ -111,14 +122,17 @@ def search(request):
                 results = ISBN.objects.filter(author__icontains=data)
             elif option == "4":
                 results = ISBN.objects.filter(ISBN__icontains=data)
-                return render(request, 'search.html', {'search_form': search_form, 'results': results})
     else:
         results = []
         search_form = SearchForm()
-    return render(request, 'search.html', context = {'search_form': search_form, 'results': results})
+    context_dict['results'] = results
+    context_dict['search_form'] = search_form
+    return render(request, 'search.html', context = context_dict)
 
 @login_required
 def change_password(request):
+    context_dict = {}
+    context_dict['staff'] = if_staff(request)
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
@@ -132,13 +146,15 @@ def change_password(request):
         form = PasswordChangeForm(request.user)
         for field in form.fields:
             form.fields[field].widget.attrs.update({'class' : 'form-control'})
-    return render(request, 'change_password.html', {'form': form})
+    context_dict['form'] = form
+    return render(request, 'change_password.html', context = context_dict)
 
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_category(request):
+    context_dict = {}
+    context_dict['staff'] = if_staff(request)
     form = CategoryForm()
-
     if request.method == 'POST':
         form = CategoryForm(request.POST)
 
@@ -151,12 +167,14 @@ def add_category(request):
                 form.save(commit=False)
                 messages.error(request, 'Category already exists.')
                 return redirect('/LMS/staff_page')
-    
-    return render(request, 'add_category.html', {'form': form})
+    context_dict['form'] = form
+    return render(request, 'add_category.html', context = context_dict)
 
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_book(request):
+    context_dict = {}
+    context_dict['staff'] = if_staff(request)
     isbn_form = ISBNForm()
     book_form = BookForm()
     if request.method == 'POST':
@@ -182,11 +200,15 @@ def add_book(request):
     else:
         isbn_form = ISBNForm()
         book_form = BookForm()
-    return render(request, 'add_book.html', {'isbn_form': isbn_form, 'book_form': book_form})
+    context_dict['isbn_form'] = isbn_form
+    context_dict['book_form'] = book_form
+    return render(request, 'add_book.html', context = context_dict)
 
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_staff(request):
+    context_dict = {}
+    context_dict['staff'] = if_staff(request)
     if request.method == 'POST':
         staff_form = StaffForm(request.POST)
         profile_form = StaffProfileForm(request.POST)
@@ -209,12 +231,15 @@ def add_staff(request):
     else:
         staff_form = StaffForm()
         profile_form = StaffProfileForm()
-    return render(request, 'add_staff.html', context = {'staff_form': staff_form, 'profile_form': profile_form})
+    context_dict['staff_form'] = staff_form
+    context_dict['profile_form'] = profile_form
+    return render(request, 'add_staff.html', context = context_dict)
 
 @login_required
 @allowed_users(allowed_roles=['member'])
 def returns(request):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
         times_left = []
@@ -250,6 +275,7 @@ def returns(request):
 @allowed_users(allowed_roles=['admin','staff'])
 def staff_page(request):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.filter(back_in=False, taken_out=None)
         context_dict['books'] = books
@@ -274,6 +300,7 @@ def staff_page(request):
 
 def show_category(request, category_name_slug):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         category = Category.objects.get(slug=category_name_slug)
         books = ISBN.objects.filter(category=category)
@@ -286,15 +313,20 @@ def show_category(request, category_name_slug):
 
 def show_isbn(request, isbn):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         isbn = ISBN.objects.get(ISBN=isbn)
         context_dict['isbn'] = isbn
         books = Book.objects.filter(isbn=isbn)
         context_dict['books'] = books
+        if request.user.groups.exists():
+                group = request.user.groups.all()[0].name
+                if group in ["admin", "staff"]:
+                    context_dict['staff'] = True
     except:
         context_dict['isbn'] = None
         context_dict['books'] = None
-        
+        context_dict['staff'] = False
     if request.method == 'POST':
         book = None
         for key in request.POST.keys():
@@ -309,6 +341,7 @@ def show_isbn(request, isbn):
                 book.taken_out = user
                 context_dict['user'] = user
                 book.save()
+                return redirect('/LMS/'+str(isbn.ISBN))
             else:
                 context_dict['limit'] = True
     return render(request, 'isbn.html', context=context_dict)
@@ -323,6 +356,7 @@ def user_logout(request):
 @allowed_users(allowed_roles=['admin','staff'])
 def extend_loan(request):
     context_dict = {}
+    context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.exclude(taken_out=None)
         times_left = []
