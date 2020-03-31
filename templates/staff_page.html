@@ -45,9 +45,7 @@
                 <tr>
                 <th scope="w-50">Book ID</th>
                 <th scope="w-30">Location</th>
-                {% if user.is_authenticated %}
                 <th scope="w-20">Back in</th>
-                {% endif %}
                 </tr>
             </thead>
 
@@ -69,6 +67,27 @@
                 {% endfor %}
             </tbody>
         </table>
+    {% endif %}
+
+    
+    {% if logs %}
+    <table class="table">
+        <thead>
+            <tr>
+                <h2>Database changes log</h2>
+            </tr>
+            <tr>
+            <th scope="w-50">Log</th>
+            </tr>
+        <tbody>
+        {% for log in logs %}
+            <tr>
+                <td>
+                    {{ log }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
     {% endif %}
 </center>
 {% endblock %}

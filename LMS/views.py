@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
+from django.contrib.admin.models import LogEntry
 from _datetime import date, timedelta
 from django.db import IntegrityError
 from .decorators import unauthenticated_user
@@ -325,7 +326,9 @@ def staff_page(request):
     context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.filter(back_in=False, taken_out=None)
+        logs = LogEntry.objects.all().order_by('-action_time')[:5]
         context_dict['books'] = books
+        context_dict['logs'] = logs
     except:
         context_dict['books'] = None
     
@@ -343,6 +346,7 @@ def staff_page(request):
                 break
             
         return redirect('/LMS/staff_page')
+    print(context_dict)
     return render(request, 'staff_page.html', context=context_dict)
 
 def show_category(request, category_name_slug):
