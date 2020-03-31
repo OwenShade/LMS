@@ -341,6 +341,7 @@ def show_isbn(request, isbn):
                 book.taken_out = user
                 context_dict['user'] = user
                 book.save()
+                return redirect('/LMS/'+str(isbn.ISBN))
             else:
                 context_dict['limit'] = True
     return render(request, 'isbn.html', context=context_dict)
