@@ -61,7 +61,9 @@
                             <tr>
                             <th scope="col w-60">Book ID</th>
                             <th scope="col w-20">Location</th>
+                            {% if not staff %}
                             <th scope="col w-20">Loan</th>
+                            {% endif %}
                             </tr>
                         </thead>
 
@@ -70,21 +72,23 @@
                                 <tr>
                                     <td>{{ book.pk_num }}</td>
                                     <td>{{ book.location }}</td>
-                                    {% if book.taken_out == user %}
-                                    <td>You have taken this book out.</td>
-                                    {% elif book.taken_out %}
-                                        <td>Book unavailable.</td>
-                                    {% elif limit %}
-                                        <td>Reached book limit</td>
-                                    {% elif user.is_authenticated %}
-                                        <td>
-                                            <form id="LoanForm" method="post" action="{% url 'LMS:isbn_num' isbn.ISBN %}">
-                                                {% csrf_token %}
-                                                <input type="submit" name="loan:{{ book.pk_num }}" class="btn btn-primary" value="Loan" />
-                                            </form>
-                                        </td>
-                                    {% else %}
-                                        <td><a href="{% url 'LMS:login' %}?next={{ request.path|urlencode }}">Log in to loan this book</a></td>
+                                    {% if not staff %}
+                                        {% if book.taken_out == user %}
+                                        <td>You have taken this book out.</td>
+                                        {% elif book.taken_out %}
+                                            <td>Book unavailable.</td>
+                                        {% elif limit %}
+                                            <td>Reached book limit</td>
+                                        {% elif user.is_authenticated %}
+                                            <td>
+                                                <form id="LoanForm" method="post" action="{% url 'LMS:isbn_num' isbn.ISBN %}">
+                                                    {% csrf_token %}
+                                                    <input type="submit" name="loan:{{ book.pk_num }}" class="btn btn-primary" value="Loan" />
+                                                </form>
+                                            </td>
+                                        {% else %}
+                                            <td><a href="{% url 'LMS:login' %}?next={{ request.path|urlencode }}">Log in to loan this book</a></td>
+                                        {% endif %}
                                     {% endif %}
                                 </tr>
                             {% endfor %}
