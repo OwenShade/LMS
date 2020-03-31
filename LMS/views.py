@@ -13,6 +13,8 @@ from .decorators import unauthenticated_user
 from .decorators import allowed_users
 from django.contrib.auth.models import Group
 
+#Simple view that is mapped to the base html so that we can check what level of
+#permissions a user has on all pages of the site, in order to decide what type of content they are shown
 def if_staff(request):
     if request.user.groups.exists():
                 group = request.user.groups.all()[0].name
@@ -21,31 +23,38 @@ def if_staff(request):
                 else:
                     return False
 
+#View to map to the home page that filters through to find the most popular categories and books 
 def home(request):
     context_dict = {}
     context_dict['staff'] = if_staff(request)
     try:
+        #finds the 5 most popular categories by check their amount of views and appends them to the context dict
         category_list = Category.objects.order_by('-views')[:5]
         context_dict['categories'] = category_list
     except Category.DoesNotExist:
         context_dict['categories'] = None
 
     try:
+        #finds the 5 most popular books by check their amount of views and appends them to the context dict
         book_list = ISBN.objects.order_by('-views')[:5]
         context_dict['books'] = book_list
     except ISBN.DoesNotExist:
         context_dict['books'] = None
     
+    #returns the request to the home page along with the context dictionary
     response = render(request, 'home.html', context=context_dict)
     return response
 
+#Uses decorators to make sure only unauthenticated user can access the register page
 @unauthenticated_user
 def register(request):
     registered = False
 
     if request.method == 'POST':
+        #display the forms to the user on the html page
         user_form = UserForm(request.POST)
         profile_form = UserProfileForm(request.POST)
+        #If the details entered in the forms are valide, create the new user instance using the entered values
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
 
@@ -61,6 +70,7 @@ def register(request):
             profile.save()
 
             registered = True
+        #if the details entered aren't appropriate, print the errors.
         else:
             print(user_form.errors, profile_form.errors)
     else:
@@ -68,23 +78,27 @@ def register(request):
         profile_form = UserProfileForm()
     return render(request, 'register.html', context ={'user_form': user_form,'profile_form' : profile_form, 'registered': registered})
 
+#Uses decorators to make sure only unauthenticated user can access the login page
 @unauthenticated_user
 def user_login(request):
     context = {"login_errors": []}
 
     if request.method == 'POST':
+        #diplay the login form to the user through the html page
         form = LoginForm(request=request, data=request.POST)
         context["form"] = form
-
+        #if the values entered are appriopriate, validate that the username and password are correct and link up to an account
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
+                #if the login is correct, login the user and display a success message
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}")
                 return HttpResponseRedirect(request.session['login_from'])
             else:
+                #if the login is wrong, tell the user
                 context["login_errors"].append("Invalid login details supplied.")
         else:
             print(form.errors)
@@ -95,10 +109,14 @@ def user_login(request):
     request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
     return render(request = request, template_name = "login.html", context=context)
 
+#view for the brwse page
 def browse(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
+    #(only customers should be able to access the browse page)
     context_dict['staff'] = if_staff(request)
     try:
+        #includes all the category names in the category list then appends this to the context dictionary to be send to browse.html
         category_list = Category.objects.all()
         context_dict['categories'] = category_list
     except Category.DoesNotExist:
@@ -106,20 +124,26 @@ def browse(request):
     response = render(request, 'browse.html', context=context_dict)
     return response
 
+#view for the search page
 def search(request):
     context_dict = {}
     context_dict['staff'] = if_staff(request)
+    #sends a request to display the search form
     if request.method == 'POST':
         search_form = SearchForm(request.POST)
         if search_form.is_valid():
             data = search_form.cleaned_data['search']
             option = search_form.cleaned_data['options']
+            #if the user selects genre from the drop down menu, search genres for the data entered at the search bar
             if option == "1":
                 results = ISBN.objects.filter(genre__icontains=data)
+            #if the user selects title from the drop down menu, search titles for the data entered at the search bar
             elif option == "2":
                 results = ISBN.objects.filter(title__icontains=data)
+            #if the user selects authors from the drop down menu, search authors for the data entered at the search bar
             elif option == "3":
                 results = ISBN.objects.filter(author__icontains=data)
+            #if the user selects ISBN from the drop down menu, search ISBN for the data entered at the search bar
             elif option == "4":
                 results = ISBN.objects.filter(ISBN__icontains=data)
     else:
@@ -129,12 +153,16 @@ def search(request):
     context_dict['search_form'] = search_form
     return render(request, 'search.html', context = context_dict)
 
+#Uses decorators to make sure only logged in users can change their password
 @login_required
 def change_password(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     if request.method == 'POST':
+        #display the form to the user
         form = PasswordChangeForm(request.user, request.POST)
+        #if the form is correct, update password and display success message, otherwise, ask user to correct errors
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
@@ -149,20 +177,23 @@ def change_password(request):
     context_dict['form'] = form
     return render(request, 'change_password.html', context = context_dict)
 
+#Uses decorators to make sure only logged in staff memebers and admins can add categories
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_category(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     form = CategoryForm()
     if request.method == 'POST':
         form = CategoryForm(request.POST)
-
+        #if the form is correct, let the user know through a redirect message
         if form.is_valid():
             try:
                 form.save(commit=True)
                 messages.success(request, 'Category successfully added.')
                 return redirect('/LMS/staff_page')
+            #if the category already exists, let the user know through a redirect message
             except IntegrityError:
                 form.save(commit=False)
                 messages.error(request, 'Category already exists.')
@@ -170,15 +201,20 @@ def add_category(request):
     context_dict['form'] = form
     return render(request, 'add_category.html', context = context_dict)
 
+#Uses decorators to make sure only logged in staff memebers and admins can add books
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_book(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     isbn_form = ISBNForm()
     book_form = BookForm()
+    #display the appropriate form depending on the request
     if request.method == 'POST':
         if 'submit_isbn' in request.POST:
+            #display the form which allows staff to add a new book
+            #if successfull, tell the user with a redirect message
             form = ISBNForm(request.POST)
             if form.is_valid():
                 form.save(commit=True)
@@ -186,6 +222,8 @@ def add_book(request):
                 book.save()
                 messages.success(request, 'Book successfully added.')
         elif 'submit_book' in request.POST:
+            #display the form which allows staff to add copies of the same book
+            #if successfull, tell the user with a redirect message
             form = BookForm(request.POST)
             if form.is_valid():
                 isbn = ISBN.objects.filter(ISBN=form['ISBN'].value())
@@ -204,11 +242,15 @@ def add_book(request):
     context_dict['book_form'] = book_form
     return render(request, 'add_book.html', context = context_dict)
 
+#Uses decorators to make sure only logged in staff memebers and admins can add new staff members
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_staff(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
+    #Shows the staff form and profile form to the user when called upon
+    #sets the new staffs attributes according to the data added and assigns the staff member to the staff group
     if request.method == 'POST':
         staff_form = StaffForm(request.POST)
         profile_form = StaffProfileForm(request.POST)
@@ -226,6 +268,7 @@ def add_staff(request):
             profile.user = staff
             
             profile.save()
+            #sends a message when redirected to let the user know they have been successfully added the record
             messages.success(request, 'Staff successfully added.')
             return redirect('/LMS/staff_page')
     else:
@@ -235,10 +278,12 @@ def add_staff(request):
     context_dict['profile_form'] = profile_form
     return render(request, 'add_staff.html', context = context_dict)
 
+#Uses decorators to make sure only logged in members (users) can return books
 @login_required
 @allowed_users(allowed_roles=['member'])
 def returns(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
@@ -271,10 +316,12 @@ def returns(request):
         return redirect('/LMS/returns')
     return render(request, 'returns.html', context=context_dict)
 
+#Uses decorators to make sure only logged in staff members and admins can access the staff page
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def staff_page(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.filter(back_in=False, taken_out=None)
@@ -300,6 +347,7 @@ def staff_page(request):
 
 def show_category(request, category_name_slug):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
         category = Category.objects.get(slug=category_name_slug)
@@ -313,6 +361,7 @@ def show_category(request, category_name_slug):
 
 def show_isbn(request, isbn):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
         isbn = ISBN.objects.get(ISBN=isbn)
@@ -346,16 +395,19 @@ def show_isbn(request, isbn):
                 context_dict['limit'] = True
     return render(request, 'isbn.html', context=context_dict)
 
+#Uses decorators to make sure only logged in users can log out
 @login_required
 def user_logout(request):
     logout(request)
+    #sends a message when redirected to let the user know they have been successfully logged out
     messages.success(request, 'Successfully Logged Out.')
     return redirect(reverse('home'))
 
-@login_required
+#Uses decorators to make sure only logged in staff members and admins can extend loans
 @allowed_users(allowed_roles=['admin','staff'])
 def extend_loan(request):
     context_dict = {}
+    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.exclude(taken_out=None)
