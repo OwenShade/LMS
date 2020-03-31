@@ -12,6 +12,9 @@ from django.db import IntegrityError
 from .decorators import unauthenticated_user
 from .decorators import allowed_users
 from django.contrib.auth.models import Group
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render
+
 
 
 def home(request):
@@ -97,6 +100,7 @@ def browse(request):
     return response
 
 def search(request):
+     
     if request.method == 'POST':
         search_form = SearchForm(request.POST)
         if search_form.is_valid():
@@ -104,16 +108,56 @@ def search(request):
             option = search_form.cleaned_data['options']
             if option == "1":
                 results = ISBN.objects.filter(genre__icontains=data)
+
+                page = request.GET.get('page')
+                paginator = Paginator(results, 10)
+                try:
+                    results = paginator.page(page)
+                except PageNotAnInteger:
+                    results = paginator.page(1)
+                except EmptyPage:
+                    results = paginator.page(paginator.num_pages)
+
             elif option == "2":
                 results = ISBN.objects.filter(title__icontains=data)
+
+                page = request.GET.get('page')
+                paginator = Paginator(user_list, 10)
+                try:
+                    results = paginator.page(page)
+                except PageNotAnInteger:
+                    results = paginator.page(1)
+                except EmptyPage:
+                    results = paginator.page(paginator.num_pages)
+
             elif option == "3":
                 results = ISBN.objects.filter(author__icontains=data)
+                page = request.GET.get('page')
+                paginator = Paginator(results, 10)
+                try:
+                    results = paginator.page(page)
+                except PageNotAnInteger:
+                    results = paginator.page(1)
+                except EmptyPage:
+                    results = paginator.page(paginator.num_pages)
+
             elif option == "4":
                 results = ISBN.objects.filter(ISBN__icontains=data)
+
+                page = request.GET.get('page')
+                paginator = Paginator(results, 10)
+                try:
+                    results = paginator.page(page)
+                except PageNotAnInteger:
+                    results = paginator.page(1)
+                except EmptyPage:
+                    results = paginator.page(paginator.num_pages)
+
                 return render(request, 'search.html', {'search_form': search_form, 'results': results})
     else:
         results = []
         search_form = SearchForm()
+    
     return render(request, 'search.html', context = {'search_form': search_form, 'results': results})
 
 @login_required
