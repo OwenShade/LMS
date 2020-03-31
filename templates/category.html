@@ -13,18 +13,20 @@
 {% block body_block %}
     <div>
         {% if category %}
-            <h>{{ category.name }}</h>
-            {% if books %}
-                <ul>
-                {% for book in books %}
-                    <li><a href="{% url 'LMS:isbn_num' book.ISBN %}">{{ book.title }}</a></li>
-                {% endfor %}
-                </ul>
-            {% else %}
-                <strong>No books currently in category.</strong>
-            {% endif %} 
+            <h1 class="row my-3">{{ category.name }}</h1>
+            <div class="row">
+                {% if books %}
+                    <ul class="list-group">
+                    {% for book in books %}
+                        <li class="list-group-item list-group-item-action"><a href="{% url 'LMS:isbn_num' book.ISBN %}">{{ book.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <strong>No books currently in category.</strong>
+                {% endif %}
+            </div>
         {% else %} 
-            The specified category does not exist. 
+            <strong>The specified category does not exist.</strong>
         {% endif %}
     </div>
 {% endblock %}

@@ -7,6 +7,9 @@ import django
 import csv
 django.setup()
 from LMS.models import Member, Staff, Category, ISBN, Book
+from django.contrib.auth.models import Group, Permission
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth.models import User
 
 def populate():
     #Create the Categories
@@ -15,7 +18,20 @@ def populate():
     for cat in enumerate(cat_names):
         p = Category(pk_num=cat[0], name=cat[1], views = cat_views[cat[0]], manager=None)
         p.save()
-        
+    
+    #Create groups and admin user
+    Group.objects.get_or_create(name='admin')
+    Group.objects.get_or_create(name='staff')
+    Group.objects.get_or_create(name='member')
+    user = User.objects.create_user('admin', 'admin@admin.com', 'admin')
+    group = Group.objects.get(name='admin')
+    user.groups.add(group)
+
+    # At this point, user is a User object that has already been saved
+    # to the database. You can continue to change its attributes
+    # if you want to change other fields.
+    user.last_name = 'Lennon'
+    user.save()
     
     #Add the ISBN of books
     with open('book.csv') as csvfile:

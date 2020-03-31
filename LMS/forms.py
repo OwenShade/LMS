@@ -8,7 +8,12 @@ class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128,
         help_text="Please enter the new category.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
-    
+
+    def __init__(self, *args, **kwargs):
+        super(CategoryForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control m-1'})
+
     class Meta:
         model = Category
         fields = ('name',)
@@ -76,7 +81,6 @@ class UserForm(forms.ModelForm):
 class UserProfileForm(UserForm):
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
-        
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class' : 'form-control'})
 
@@ -87,6 +91,13 @@ class UserProfileForm(UserForm):
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=128)
     options = forms.ChoiceField(choices=[("1","Genre"), ("2","Title"), ("3","Author",), ("4","ISBN")], help_text="Choose what to search.")
+
+    def __init__(self, *args, **kwargs):
+        super(SearchForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
+
+
 class LoginForm(AuthenticationForm):
     username = forms.CharField(help_text="Username")
     password = forms.CharField(widget=forms.PasswordInput(), help_text="Password")

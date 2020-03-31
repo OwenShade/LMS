@@ -6,46 +6,50 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Return a Book</h1>
-{% if returned %}
-<h2>Book returned!</h2>
-{% endif %}
-<br/>
-<strong>List of Books</strong>
-{% if books %}
-<form id="ReturnForm" method="post" action="/LMS/returns/">
-    {% csrf_token %}
-    <table class="table">
-        <thead>
-            <tr>
-            <th scope="w-50">Book Name</th>
-            <th scope="w-30">Book ID</th>
-            <th scope="w-20">Time Left</th>
-            <th scope="w-10">Return</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for book, time_left in books %}
-            <tr>
-                <td>
-                    {{ book.isbn.title }}
-                </td>
-                <td>
-                    {{ book.pk_num }}
-                </td>
-                <td>
-                    {{ time_left }} days
-                </td>
-                <td>
-                    <input type="submit" name="return:{{ book.pk_num }}" class="btn btn-primary" value="Return" />
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</form>
-{% else %} 
-    <br/>
-    No books to return.
-{% endif %}
+    <div class="py-5 text-center">
+        <h1>Return a Book</h1>
+    </div>
+    
+    {% if returned %}
+        <h2>Book returned!</h2>
+    {% endif %}
+
+    <h5>List of Books</h5>
+    
+    {% if books %}
+        <form id="ReturnForm" method="post" action="/LMS/returns/">
+            {% csrf_token %}
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col w-50">Book Name</th>
+                    <th scope="col w-30">Book ID</th>
+                    <th scope="col w-20">Time Left</th>
+                    <th scope="col w-10">Return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book, time_left in books %}
+                    <tr>
+                        <td>
+                            {{ book.isbn.title }}
+                        </td>
+                        <td>
+                            {{ book.pk_num }}
+                        </td>
+                        <td>
+                            {{ time_left }} days
+                        </td>
+                        <td>
+                            <input type="submit" name="return:{{ book.pk_num }}" class="btn btn-primary" value="Return" />
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    {% else %} 
+        <br/>
+        No books to return.
+    {% endif %}
 {% endblock %}
