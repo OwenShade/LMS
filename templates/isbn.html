@@ -70,10 +70,8 @@
                                 <tr>
                                     <td>{{ book.pk_num }}</td>
                                     <td>{{ book.location }}</td>
-                                    {% if not book.back_in %}
-                                        <td>Not available</td>
                                     {% if book.taken_out == user %}
-                                        <td>You have taken this book out.</td>
+                                    <td>You have taken this book out.</td>
                                     {% elif book.taken_out %}
                                         <td>Book unavailable.</td>
                                     {% elif limit %}
