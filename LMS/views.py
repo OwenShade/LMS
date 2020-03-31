@@ -279,11 +279,9 @@ def staff_page(request):
     context_dict['staff'] = if_staff(request)
     try:
         books = Book.objects.filter(back_in=False, taken_out=None)
-        logs = LogEntry.objects.all().order_by('-action_time')[:20]
-        logCount = LogEntry.objects.all().order_by('-action_time')[:20].count()
+        logs = LogEntry.objects.all().order_by('-action_time')[:5]
         context_dict['books'] = books
         context_dict['logs'] = logs
-        context_dict['logCount'] = logCount
     except:
         context_dict['books'] = None
     
