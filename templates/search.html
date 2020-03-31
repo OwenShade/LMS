@@ -39,7 +39,7 @@
             <tbody>
                 {% for book in results %}
                 <tr>
-                    <td scope="row"><a href="{% url 'LMS:isbn_num' book.ISBN %}">{{book.title}}</a></td>
+                    <td scope="row">{{ forloop.counter }}. <a href="{% url 'LMS:isbn_num' book.ISBN %}">{{book.title}}</a></td>
                     <td>{{book.author}}</td>
                     <td>{{book.genre}}</td>
                 </tr>
