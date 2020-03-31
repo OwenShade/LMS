@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from datetime import date, timedelta
 
-# Create your models here.
+#initialises the types and relationships between different fields in the Mmember model
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     book_limit = models.IntegerField(default=10)
@@ -12,6 +12,7 @@ class Member(models.Model):
     def __str__(self):
         return self.user.username
 
+#initialises the types and relationships between different fields in the staff model
 class Staff(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.CharField(max_length=128)
@@ -22,7 +23,8 @@ class Staff(models.Model):
     
     class Meta:
         verbose_name_plural = "Staff"
-    
+
+#initialises the types and relationships between different fields in the Category model
 class Category(models.Model):
     pk_num = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128)
@@ -39,7 +41,8 @@ class Category(models.Model):
     
     class Meta:
         verbose_name_plural = "Categories"
-        
+
+#initialises the types and relationships between different fields in the ISBN model
 class ISBN(models.Model):
     ISBN = models.IntegerField(unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -53,7 +56,8 @@ class ISBN(models.Model):
     
     class Meta:
         verbose_name_plural = "ISBNs"
-    
+
+#initialises the types and relationships between different fields in the book model
 class Book(models.Model):
     pk_num = models.AutoField(primary_key=True)
     isbn = models.ForeignKey(ISBN, on_delete=models.CASCADE)
