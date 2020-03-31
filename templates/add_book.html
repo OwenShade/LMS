@@ -9,7 +9,7 @@
         <h1>Add a book</h1>
     </div>
 
-    <form id="BookForm" method="post" action="/LMS/add_book/" class="col-8">
+    <form id="BookForm" method="post" action="/LMS/add_book/">
         {% csrf_token %}
         {% for field in form %}
             {% if field not in form.hidden_fields %}
@@ -36,6 +36,6 @@
         {% endif %}
 
         <input type="submit" name="submit" class="btn btn-primary" value="Create Book" /> 
-        <a href="{% url 'LMS:staff_page' %}" class="btn btn-primary">Staff Page</a>
+        <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
     </form> 
 {% endblock %}

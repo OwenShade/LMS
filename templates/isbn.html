@@ -11,9 +11,18 @@
 
 
 {% block body_block %}
-    <div class="row">
-        <div class="col-6">
-            {% if isbn %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class = "alert alert-success">
+            <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+            </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if isbn %}
+        <div class="row my-3 mh-auto p-3">
+            <div class="col-10">
                 <table class="table" >
                 <tbody>
                     <tr>
@@ -42,16 +51,17 @@
                     </tr>
                 </tbody>
                 </table>
-                <br/>
+            </div>
+        </div>
+        <div class="row m-auto p-3">
+            <div class="col-10">
                 {% if books %}
-                    <table class="table">
+                    <table class="table my-5">
                         <thead>
                             <tr>
-                            <th scope="w-50">Book ID</th>
-                            <th scope="w-30">Location</th>
-                            {% if user.is_authenticated %}
-                            <th scope="w-20">Loan</th>
-                            {% endif %}
+                            <th scope="col w-60">Book ID</th>
+                            <th scope="col w-20">Location</th>
+                            <th scope="col w-20">Loan</th>
                             </tr>
                         </thead>
 
@@ -60,27 +70,30 @@
                                 <tr>
                                     <td>{{ book.pk_num }}</td>
                                     <td>{{ book.location }}</td>
-                                    {% if book.taken_out %}
-                                        <td>Not available</td>
+                                    {% if book.taken_out == user %}
+                                        <td>You have taken this book out.</td>
+                                    {% elif book.taken_out %}
+                                        <td>Book unavailable.</td>
                                     {% elif limit %}
                                         <td>Reached book limit</td>
                                     {% elif user.is_authenticated %}
                                         <td>
-                                        <form id="LoanForm" method="post" action="{% url 'LMS:isbn_num' isbn.ISBN %}">
-                                            {% csrf_token %}
-                                            <input type="submit" name="loan:{{ book.pk_num }}" class="btn btn-primary" value="Loan" />
-                                        </form>
+                                            <form id="LoanForm" method="post" action="{% url 'LMS:isbn_num' isbn.ISBN %}">
+                                                {% csrf_token %}
+                                                <input type="submit" name="loan:{{ book.pk_num }}" class="btn btn-primary" value="Loan" />
+                                            </form>
                                         </td>
+                                    {% else %}
+                                        <td><a href="{% url 'LMS:login' %}?next={{ request.path|urlencode }}">Log in to loan this book</a></td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 {% endif %}
-            {% else %}
-                <strong>No information.</strong>
-            {% endif %}
+            </div>
         </div>
-    </div>
-
+    {% else %}
+        <strong>No information.</strong>
+    {% endif %}
 {% endblock %}

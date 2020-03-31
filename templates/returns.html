@@ -6,25 +6,26 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Return a Book</h1>
+    <div class="py-5 text-center">
+        <h1>Return a Book</h1>
+    </div>
     
     {% if returned %}
         <h2>Book returned!</h2>
     {% endif %}
 
-    <br/>
-    <strong>List of Books</strong>
-
+    <h5>List of Books</h5>
+    
     {% if books %}
         <form id="ReturnForm" method="post" action="/LMS/returns/">
             {% csrf_token %}
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="w-50">Book Name</th>
-                    <th scope="w-30">Book ID</th>
-                    <th scope="w-20">Time Left</th>
-                    <th scope="w-10">Return</th>
+                    <th scope="col w-50">Book Name</th>
+                    <th scope="col w-30">Book ID</th>
+                    <th scope="col w-20">Time Left</th>
+                    <th scope="col w-10">Return</th>
                     </tr>
                 </thead>
                 <tbody>
