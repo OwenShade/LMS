@@ -201,7 +201,7 @@ def add_staff(request):
     return render(request, 'add_staff.html', context = {'staff_form': staff_form, 'profile_form': profile_form})
 
 @login_required
-@allowed_users(allowed_roles=['admin','customer'])
+@allowed_users(allowed_roles=['member'])
 def returns(request):
     context_dict = {}
     try:
