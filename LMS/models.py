@@ -66,8 +66,6 @@ class Book(models.Model):
         if self.taken_out != None and self.loan_until == None:
             self.loan_until = date.today() + timedelta(days=30)
             self.back_in = False
-        else:
-            self.loan_until = None
         super(Book, self).save(*args, **kwargs)
     
     def __str__(self):

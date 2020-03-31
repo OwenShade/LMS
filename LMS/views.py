@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
-from _datetime import date
+from _datetime import date, timedelta
 
 
 def home(request):
@@ -147,11 +147,10 @@ def add_book(request):
 
     if request.method == 'POST':
         form = BookForm(request.POST)
-        if ISBN.objects.get(ISBN=form['ISBN'].value()) == None:
-            if form.is_valid():
-                form.save(commit=True)
-        book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
-        book.save()
+        if form.is_valid():
+            form.save(commit=True)
+            book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
+            book.save()
         messages.success(request, 'Book successfully added.')
         return redirect('/LMS/staff_page')
             
@@ -189,12 +188,13 @@ def returns(request):
         books = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
         times_left = []
         for book in books:
-            time = (book.loan_until - date.today()).days
-            if time < 0:
-                new_time = "Overdue by: " + str(time)
-                times_left.append(new_time)
-            else:
-                times_left.append(time)
+            if book.loan_until != None:
+                time = (book.loan_until - date.today()).days
+                if time < 0:
+                    new_time = "Overdue by: " + str(time)
+                    times_left.append(new_time)
+                else:
+                    times_left.append(time)
         if books:
             context_dict['books'] = zip(books, times_left)
         else:
@@ -207,12 +207,11 @@ def returns(request):
         for key in request.POST.keys():
             if key.startswith('return:'):
                 book = key[7:]
+                book = Book.objects.get(pk_num=book)
+                book.taken_out = None
+                book.loan_until = None
+                book.save()
                 break
-        if book:
-            book = Book.objects.get(pk_num=book)
-            book.taken_out = None
-            book.save()
-            context_dict['returned'] = book.location
         return redirect('/LMS/returns')
     return render(request, 'returns.html', context=context_dict)
 
@@ -286,3 +285,35 @@ def user_logout(request):
     logout(request)
     messages.success(request, 'Successfully Logged Out.')
     return redirect(reverse('home'))
+
+@login_required
+def extend_loan(request):
+    context_dict = {}
+    try:
+        books = Book.objects.exclude(taken_out=None)
+        times_left = []
+        for book in books:
+            time = (book.loan_until - date.today()).days
+            if time < 0:
+                new_time = "Overdue by: " + str(time)
+                times_left.append(new_time)
+            else:
+                times_left.append(time)
+        if books:
+            context_dict['books'] = zip(books, times_left)
+        else:
+            context_dict['books'] = None
+    except:
+        context_dict['books'] = None
+    
+    if request.method == 'POST':
+        book = None
+        for key in request.POST.keys():
+            if key.startswith('extend:'):
+                book = key[7:]
+                book = Book.objects.get(pk_num=book)
+                book.loan_until = book.loan_until + timedelta(days=7)
+                book.save()
+                break
+        return redirect('/LMS/extend_loan')
+    return render(request, 'extend_loan.html', context=context_dict)

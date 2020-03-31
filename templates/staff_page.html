@@ -33,7 +33,9 @@
             </div>
         </div>
         <div class="row m-5">
-            <!-- Add future buttons here -->
+            <div class= "mb-3 ml-3 col">
+                <button formaction="{% url 'LMS:extend_loan' %}" class="btn btn-primary">Extend Loans</button>
+            </div>
         </div>
     </form>
     {% if books %}

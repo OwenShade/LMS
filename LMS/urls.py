@@ -19,4 +19,5 @@ urlpatterns = [
     path('change_password/', views.change_password, name='change_password'),
     path('category/<slug:category_name_slug>/', views.show_category, name='show_category'),
     path('<int:isbn>',views.show_isbn, name='isbn_num'),
+    path('extend_loan/', views.extend_loan, name='extend_loan')
 ]
