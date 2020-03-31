@@ -320,6 +320,7 @@ def user_logout(request):
     return redirect(reverse('home'))
 
 @login_required
+@allowed_users(allowed_roles=['admin','staff'])
 def extend_loan(request):
     context_dict = {}
     try:
