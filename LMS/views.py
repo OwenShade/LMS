@@ -1,7 +1,7 @@
 from LMS.models import *
 from LMS.forms import *
 from django.shortcuts import render, reverse, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
@@ -75,7 +75,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}")
-                return redirect('/')
+                return HttpResponseRedirect(request.session['login_from'])
             else:
                 context["login_errors"].append("Invalid login details supplied.")
         else:
@@ -84,6 +84,7 @@ def user_login(request):
 
     form = LoginForm()
     context["form"] = form
+    request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
     return render(request = request, template_name = "login.html", context=context)
 
 def browse(request):
@@ -274,6 +275,7 @@ def show_isbn(request, isbn):
             if amount < user.book_limit:
                 book = Book.objects.get(pk_num=book)
                 book.taken_out = user
+                context_dict['user'] = user
                 book.save()
             else:
                 context_dict['limit'] = True
