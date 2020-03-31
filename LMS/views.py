@@ -109,55 +109,28 @@ def search(request):
             if option == "1":
                 results = ISBN.objects.filter(genre__icontains=data)
 
-                page = request.GET.get('page')
-                paginator = Paginator(results, 10)
-                try:
-                    results = paginator.page(page)
-                except PageNotAnInteger:
-                    results = paginator.page(1)
-                except EmptyPage:
-                    results = paginator.page(paginator.num_pages)
-
             elif option == "2":
                 results = ISBN.objects.filter(title__icontains=data)
 
-                page = request.GET.get('page')
-                paginator = Paginator(user_list, 10)
-                try:
-                    results = paginator.page(page)
-                except PageNotAnInteger:
-                    results = paginator.page(1)
-                except EmptyPage:
-                    results = paginator.page(paginator.num_pages)
-
             elif option == "3":
                 results = ISBN.objects.filter(author__icontains=data)
-                page = request.GET.get('page')
-                paginator = Paginator(results, 10)
-                try:
-                    results = paginator.page(page)
-                except PageNotAnInteger:
-                    results = paginator.page(1)
-                except EmptyPage:
-                    results = paginator.page(paginator.num_pages)
 
             elif option == "4":
                 results = ISBN.objects.filter(ISBN__icontains=data)
-
-                page = request.GET.get('page')
-                paginator = Paginator(results, 10)
-                try:
-                    results = paginator.page(page)
-                except PageNotAnInteger:
-                    results = paginator.page(1)
-                except EmptyPage:
-                    results = paginator.page(paginator.num_pages)
-
-                return render(request, 'search.html', {'search_form': search_form, 'results': results})
+                
     else:
         results = []
         search_form = SearchForm()
     
+    page = request.GET.get('page')
+    paginator = Paginator(results, 10)
+    try:
+        results = paginator.page(page)
+    except PageNotAnInteger:
+        results = paginator.page(1)
+    except EmptyPage:
+        results = paginator.page(paginator.num_pages)
+
     return render(request, 'search.html', context = {'search_form': search_form, 'results': results})
 
 @login_required
