@@ -45,9 +45,7 @@
                 <tr>
                 <th scope="w-50">Book ID</th>
                 <th scope="w-30">Location</th>
-                {% if user.is_authenticated %}
                 <th scope="w-20">Back in</th>
-                {% endif %}
                 </tr>
             </thead>
 
@@ -70,34 +68,26 @@
             </tbody>
         </table>
     {% endif %}
-</center>
 
-<ul class="dropdown-menu">
-    <li class="external">
-        <h3><span class="bold">{{ logCount }}</span> Notification(s) </h3>
-    </li>
-        {% if logs %}
-            <ul class="dropdown-menu-list scroller actionlist" data-handle-color="#637283" style="height: 250px;">
-                {% for log in logs %}
-                    <li>
-                        {% if log.action_flag == 1 %}
-                            <span class="label label-sm label-icon label-success">
-                                <i class="fa fa-plus"></i>
-                            </span>
-                        {% elif log.action_flag == 2 %}
-                            <span class="label label-sm label-icon label-info">
-                                <i class="fa fa-edit"></i>
-                            </span>
-                        {% elif log.action_flag == 3 %}
-                            <span class="label label-sm label-icon label-danger">
-                                <i class="fa fa-minus"></i>
-                            </span>
-                        {% endif %}
-                        {{ log.content_type|capfirst }}: {{ log }}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-</ul>
+    
+    {% if logs %}
+    <table class="table">
+        <thead>
+            <tr>
+                <h2>Database changes log</h2>
+            </tr>
+            <tr>
+            <th scope="w-50">Log</th>
+            </tr>
+        <tbody>
+        {% for log in logs %}
+            <tr>
+                <td>
+                    {{ log }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    {% endif %}
+</center>
 {% endblock %}

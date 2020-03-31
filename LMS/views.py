@@ -301,6 +301,7 @@ def staff_page(request):
                 break
             
         return redirect('/LMS/staff_page')
+    print(context_dict)
     return render(request, 'staff_page.html', context=context_dict)
 
 def show_category(request, category_name_slug):
