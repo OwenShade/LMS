@@ -9,10 +9,10 @@
         <h1>Add a book</h1>
     </div>
 
-    <form id="BookForm" method="post" action="/LMS/add_book/">
+    <form id="ISBNForm" method="post" action="/LMS/add_book/">
         {% csrf_token %}
-        {% for field in form %}
-            {% if field not in form.hidden_fields %}
+        {% for field in isbn_form %}
+            {% if field not in isbn_form.hidden_fields %}
                 <div class="form-group row">
                     <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
                     <div class="col-5">
@@ -23,7 +23,36 @@
             {% endif %}
         {% endfor %}
 
-        {% if form.errors %}
+        {% if isbn_form.errors %}
+            {% for field in isbn_form %}
+                <div class="row">
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <input type="submit" name="submit_isbn" class="btn btn-primary" value="Create Book" /> 
+        <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
+    </form>
+    <form id="BookForm" method="post" action="/LMS/add_book/">
+        {% csrf_token %}
+        {% for field in book_form %}
+            {% if field not in book_form.hidden_fields %}
+                <div class="form-group row">
+                    <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
+                    <div class="col-5">
+                        {{field}}
+                        <div class="invalid-feedback">{{ field.errors }}</div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if book_form.errors %}
             {% for field in form %}
                 <div class="row">
                     {% for error in field.errors %}
@@ -35,7 +64,7 @@
             {% endfor %}
         {% endif %}
 
-        <input type="submit" name="submit" class="btn btn-primary" value="Create Book" /> 
+        <input type="submit" name="submit_book" class="btn btn-primary" value="Add Copy of Book" /> 
         <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
-    </form> 
+    </form>
 {% endblock %}

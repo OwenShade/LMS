@@ -157,20 +157,32 @@ def add_category(request):
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_book(request):
-    form = BookForm()
-
+    isbn_form = ISBNForm()
+    book_form = BookForm()
     if request.method == 'POST':
-        form = BookForm(request.POST)
-        if form.is_valid():
-            form.save(commit=True)
-            book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
-            book.save()
-        messages.success(request, 'Book successfully added.')
+        if 'submit_isbn' in request.POST:
+            form = ISBNForm(request.POST)
+            if form.is_valid():
+                form.save(commit=True)
+                book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
+                book.save()
+                messages.success(request, 'Book successfully added.')
+        elif 'submit_book' in request.POST:
+            form = BookForm(request.POST)
+            if form.is_valid():
+                isbn = ISBN.objects.filter(ISBN=form['ISBN'].value())
+                if isbn.count() != 0:
+                    book = Book(isbn=isbn[0], location = form['location'].value())
+                    book.save()
+                    messages.success(request, 'Copy of book successfully added.')
+                else:
+                    form.add_error('ISBN', 'No ISBN Found')
         return redirect('/LMS/staff_page')
             
     else:
-        form = BookForm()
-    return render(request, 'add_book.html', {'form': form})
+        isbn_form = ISBNForm()
+        book_form = BookForm()
+    return render(request, 'add_book.html', {'isbn_form': isbn_form, 'book_form': book_form})
 
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])

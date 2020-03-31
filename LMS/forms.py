@@ -19,7 +19,7 @@ class CategoryForm(forms.ModelForm):
         fields = ('name',)
 
 #form for adding a book
-class BookForm(forms.ModelForm):
+class ISBNForm(forms.ModelForm):
     ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.", label="ISBN")
     title = forms.CharField(max_length=128, help_text="Please enter the book title.")
     category = forms.ModelChoiceField(Category.objects.all(), help_text="Please select a category.")
@@ -28,7 +28,7 @@ class BookForm(forms.ModelForm):
     location = forms.CharField(max_length=16, help_text="Please enter the shelf that this book is on.")
 
     def __init__(self, *args, **kwargs):
-        super(BookForm, self).__init__(*args, **kwargs)
+        super(ISBNForm, self).__init__(*args, **kwargs)
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class' : 'form-control'})
 
@@ -105,3 +105,7 @@ class LoginForm(AuthenticationForm):
     class Meta:
         model = Member
         fields = ('username', 'password')
+        
+class BookForm(forms.Form):
+    ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.", label="ISBN")
+    location = forms.CharField(max_length=16, help_text="Please enter the shelf that this book is on.")
