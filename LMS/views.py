@@ -15,7 +15,7 @@ from .decorators import allowed_users
 from django.contrib.auth.models import Group
 from datetime import datetime
 
-#Simple view that is mapped to the base html so that we can check what level of
+#Simple function that is mapped to the base html so that we can check what level of
 #permissions a user has on all pages of the site, in order to decide what type of content they are shown
 def if_staff(request):
     if request.user.groups.exists():
@@ -24,6 +24,21 @@ def if_staff(request):
                     return True
                 else:
                     return False
+                        
+
+#A function that adds a entry to the log table that is displayed on staff page
+def log(request, object, message):
+    def get_content_type_for_model(obj):
+        from django.contrib.contenttypes.models import ContentType
+        return ContentType.objects.get_for_model(obj, for_concrete_model=False)    
+    from django.contrib.admin.models import LogEntry, CHANGE
+    return LogEntry.objects.log_action(
+        user_id=request.user.pk,
+        content_type_id=get_content_type_for_model(object).pk,
+        object_id=object.pk,
+        object_repr=str(object),
+        action_flag=CHANGE,
+        change_message=message,)
 
 #View to map to the home page that filters through to find the most popular categories and books 
 def home(request):
@@ -33,14 +48,14 @@ def home(request):
         #finds the 5 most popular categories by check their amount of views and appends them to the context dict
         category_list = Category.objects.order_by('-views')[:5]
         context_dict['categories'] = category_list
-    except Category.DoesNotExist:
+    except:
         context_dict['categories'] = None
 
     try:
         #finds the 5 most popular books by check their amount of views and appends them to the context dict
         book_list = ISBN.objects.order_by('-views')[:5]
         context_dict['books'] = book_list
-    except ISBN.DoesNotExist:
+    except:
         context_dict['books'] = None
     
     #returns the request to the home page along with the context dictionary
@@ -56,10 +71,11 @@ def register(request):
         #display the forms to the user on the html page
         user_form = UserForm(request.POST)
         profile_form = UserProfileForm(request.POST)
-        #If the details entered in the forms are valide, create the new user instance using the entered values
+        #If the details entered in the forms are valid, create the new user instance using the entered values
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
 
+            #Adds member to permissions group
             group = Group.objects.get(name='member')
             user.groups.add(group)
             
@@ -70,15 +86,13 @@ def register(request):
             profile.user = user
             
             profile.save()
-
             registered = True
-        #if the details entered aren't appropriate, print the errors.
-        else:
-            print(user_form.errors, profile_form.errors)
     else:
         user_form = UserForm()
         profile_form = UserProfileForm()
-    return render(request, 'register.html', context ={'user_form': user_form,'profile_form' : profile_form, 'registered': registered})
+        
+    context_dict = {'user_form': user_form,'profile_form' : profile_form, 'registered': registered}
+    return render(request, 'register.html', context =context_dict)
 
 #Uses decorators to make sure only unauthenticated user can access the login page
 @unauthenticated_user
@@ -89,7 +103,7 @@ def user_login(request):
         #diplay the login form to the user through the html page
         form = LoginForm(request=request, data=request.POST)
         context["form"] = form
-        #if the values entered are appriopriate, validate that the username and password are correct and link up to an account
+        #if the values entered are appropriate, validate that the username and password are correct and link up to an account
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -111,11 +125,9 @@ def user_login(request):
     request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
     return render(request = request, template_name = "login.html", context=context)
 
-#view for the brwse page
+#view for the browse page
 def browse(request):
     context_dict = {}
-    #adds a boolean to the context dict describing whether or not a user is a staff member
-    #(only customers should be able to access the browse page)
     context_dict['staff'] = if_staff(request)
     try:
         #includes all the category names in the category list then appends this to the context dictionary to be send to browse.html
@@ -134,20 +146,20 @@ def search(request):
     if request.method == 'POST':
         search_form = SearchForm(request.POST)
         if search_form.is_valid():
-            data = search_form.cleaned_data['search']
-            option = search_form.cleaned_data['options']
-            #if the user selects genre from the drop down menu, search genres for the data entered at the search bar
+            data = search_form['search'].value()
+            option = search_form['options'].value()
+            #if the user selects genre from the drop down menu, search genres 
             if option == "1":
-                results = ISBN.objects.filter(genre__icontains=data)
-            #if the user selects title from the drop down menu, search titles for the data entered at the search bar
+                results = ISBN.objects.filter(genre__icontains=data).order_by('-views')[:30]
+            #if the user selects title from the drop down menu, search titles
             elif option == "2":
-                results = ISBN.objects.filter(title__icontains=data)
-            #if the user selects authors from the drop down menu, search authors for the data entered at the search bar
+                results = ISBN.objects.filter(title__icontains=data).order_by('-views')[:30]
+            #if the user selects authors from the drop down menu, search authors
             elif option == "3":
-                results = ISBN.objects.filter(author__icontains=data)
-            #if the user selects ISBN from the drop down menu, search ISBN for the data entered at the search bar
-            elif option == "4":
-                results = ISBN.objects.filter(ISBN__icontains=data)
+                results = ISBN.objects.filter(author__icontains=data).order_by('-views')[:30]
+            #if the user selects ISBN from the drop down menu, search ISBN
+            else:
+                results = ISBN.objects.filter(ISBN__icontains=data).order_by('-views')[:30]
     else:
         results = []
         search_form = SearchForm()
@@ -179,7 +191,7 @@ def change_password(request):
     context_dict['form'] = form
     return render(request, 'change_password.html', context = context_dict)
 
-#Uses decorators to make sure only logged in staff memebers and admins can add categories
+#Uses decorators to make sure only logged in staff members and admins can add categories
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_category(request):
@@ -194,16 +206,18 @@ def add_category(request):
             try:
                 form.save(commit=True)
                 messages.success(request, 'Category successfully added.')
+                log(request, Category.objects.get(name=form['name'].value()), "Category added")
                 return redirect('/LMS/staff_page')
+            
             #if the category already exists, let the user know through a redirect message
-            except IntegrityError:
+            except:
                 form.save(commit=False)
                 messages.error(request, 'Category already exists.')
                 return redirect('/LMS/staff_page')
     context_dict['form'] = form
     return render(request, 'add_category.html', context = context_dict)
 
-#Uses decorators to make sure only logged in staff memebers and admins can add books
+#Uses decorators to make sure only logged in staff members and admins can add books
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_book(request):
@@ -222,6 +236,7 @@ def add_book(request):
                 form.save(commit=True)
                 book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
                 book.save()
+                log(request, book, "Added Book")
                 messages.success(request, 'Book successfully added.')
         elif 'submit_book' in request.POST:
             #display the form which allows staff to add copies of the same book
@@ -232,6 +247,7 @@ def add_book(request):
                 if isbn.count() != 0:
                     book = Book(isbn=isbn[0], location = form['location'].value())
                     book.save()
+                    log(request, book, "Added copy of book")
                     messages.success(request, 'Copy of book successfully added.')
                 else:
                     form.add_error('ISBN', 'No ISBN Found')
@@ -244,7 +260,7 @@ def add_book(request):
     context_dict['book_form'] = book_form
     return render(request, 'add_book.html', context = context_dict)
 
-#Uses decorators to make sure only logged in staff memebers and admins can add new staff members
+#Uses decorators to make sure only logged in staff members and admins can add new staff members
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_staff(request):
@@ -263,6 +279,7 @@ def add_staff(request):
             staff.set_password(staff.password)
             staff.save()
             
+            #Add staff to group permissions
             group = Group.objects.get(name='staff')
             staff.groups.add(group)
             
@@ -270,6 +287,7 @@ def add_staff(request):
             profile.user = staff
             
             profile.save()
+            log(request, profile, "Added new staff")
             #sends a message when redirected to let the user know they have been successfully added the record
             messages.success(request, 'Staff successfully added.')
             return redirect('/LMS/staff_page')
@@ -288,6 +306,7 @@ def returns(request):
     #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
+        #Show the member the books they can return with respective time left
         books = Book.objects.filter(taken_out=Member.objects.get(user=request.user))
         times_left = []
         for book in books:
@@ -305,6 +324,7 @@ def returns(request):
     except:
         context_dict['books'] = None
     
+    #If book return button pressed, returns book
     if request.method == 'POST':
         book = None
         for key in request.POST.keys():
@@ -323,8 +343,9 @@ def returns(request):
 @allowed_users(allowed_roles=['admin','staff'])
 def staff_page(request):
     context_dict = {}
-    #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
+    
+    #Return books not back in position and logs of database changes
     try:
         books = Book.objects.filter(back_in=False, taken_out=None)
         logs = LogEntry.objects.all().order_by('-action_time')[:5]
@@ -335,19 +356,20 @@ def staff_page(request):
     
     if request.method == 'POST':
         
-        #Returns book to location
+        #Returns book to location and if the location is modified, update it
         for key in request.POST.keys():
             if key.startswith('back_in:'):
                 book = key[8:]
                 location = request.POST['location']
                 book = Book.objects.get(pk_num=book)
                 book.back_in = True
-                book.location = location
+                if location:
+                    book.location = location
                 book.save()
+                log(request, book, "Back in")
                 break
-            
         return redirect('/LMS/staff_page')
-    print(context_dict)
+    
     return render(request, 'staff_page.html', context=context_dict)
 
 def show_category(request, category_name_slug):
@@ -356,7 +378,7 @@ def show_category(request, category_name_slug):
     context_dict['staff'] = if_staff(request)
     try:
         category = Category.objects.get(slug=category_name_slug)
-        books = ISBN.objects.filter(category=category)
+        books = ISBN.objects.filter(category=category).order_by('-views')
         context_dict['books'] = books
         context_dict['category'] = category
     except Category.DoesNotExist:
@@ -373,18 +395,14 @@ def show_isbn(request, isbn):
     #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
     try:
+        #send ISBN and book data to template
         isbn = ISBN.objects.get(ISBN=isbn)
         context_dict['isbn'] = isbn
         books = Book.objects.filter(isbn=isbn)
         context_dict['books'] = books
-        if request.user.groups.exists():
-                group = request.user.groups.all()[0].name
-                if group in ["admin", "staff"]:
-                    context_dict['staff'] = True
     except:
         context_dict['isbn'] = None
         context_dict['books'] = None
-        context_dict['staff'] = False
     if request.method == 'POST':
         book = None
         for key in request.POST.keys():
@@ -425,6 +443,8 @@ def extend_loan(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
     context_dict['staff'] = if_staff(request)
+    
+    #find books currently out also time left on loan
     try:
         books = Book.objects.exclude(taken_out=None)
         times_left = []
@@ -442,6 +462,7 @@ def extend_loan(request):
     except:
         context_dict['books'] = None
     
+    #If button pressed it finds the book to extend then updates the loan to add 7 days
     if request.method == 'POST':
         book = None
         for key in request.POST.keys():
@@ -450,6 +471,7 @@ def extend_loan(request):
                 book = Book.objects.get(pk_num=book)
                 book.loan_until = book.loan_until + timedelta(days=7)
                 book.save()
+                log(request, book, "Extended Loan")
                 break
         return redirect('/LMS/extend_loan')
     return render(request, 'extend_loan.html', context=context_dict)

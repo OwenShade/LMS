@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from datetime import date, timedelta
 
-#initialises the types and relationships between different fields in the Mmember model
+#initialises the types and relationships between different fields in the Member model
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     book_limit = models.IntegerField(default=10)

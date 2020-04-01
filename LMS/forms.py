@@ -21,7 +21,7 @@ class CategoryForm(forms.ModelForm):
         fields = ('name',)
 
 #form for adding a book
-#display input options to the user so that they can enter the ISBN, title, authory, category, genre, and shelf location.
+#display input options to the user so that they can enter the ISBN, title, author, category, genre, and shelf location.
 class ISBNForm(forms.ModelForm):
     ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.", label="ISBN")
     title = forms.CharField(max_length=128, help_text="Please enter the book title.")
@@ -124,6 +124,7 @@ class LoginForm(AuthenticationForm):
         model = Member
         fields = ('username', 'password')
         
+#form allowing a staff member to create a copy of a book with a different location if needed
 class BookForm(forms.Form):
     ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.", label="ISBN")
     location = forms.CharField(max_length=16, help_text="Please enter the shelf that this book is on.")
