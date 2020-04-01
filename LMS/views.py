@@ -266,7 +266,7 @@ def add_staff(request):
     #Shows the staff form and profile form to the user when called upon
     #sets the new staffs attributes according to the data added and assigns the staff member to the staff group
     if request.method == 'POST':
-        staff_form = NewStaffForm(request.POST)
+        staff_form = StaffForm(request.POST)
 
         if staff_form.is_valid():
             staff_form.save()
@@ -291,7 +291,7 @@ def add_staff(request):
                 messages.success(request, 'Staff successfully added.')
                 
     else:
-        staff_form = NewStaffForm()
+        staff_form = StaffForm()
     return render(request, 'add_staff.html', {'form': staff_form, 'registered':registered})
 
 

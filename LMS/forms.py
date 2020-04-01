@@ -40,11 +40,17 @@ class ISBNForm(forms.ModelForm):
         model = ISBN
         fields = ('ISBN', 'title', 'category', 'author', 'genre',)
 
-class NewStaffForm(UserCreationForm):
+class StaffForm(UserCreationForm):
     username = forms.CharField(max_length=30)
     email = forms.EmailField(max_length=254)
     role = forms.CharField(max_length=128)
     phone = forms.IntegerField()
+
+    #script for styling the form
+    def __init__(self, *args, **kwargs):
+        super(StaffForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
 
     class Meta:
         model = User
@@ -54,6 +60,12 @@ class NewStaffForm(UserCreationForm):
 class SignUpForm(UserCreationForm):
     username = forms.CharField(max_length=30)
     email = forms.EmailField(max_length=254)
+    
+    #script for styling the form
+    def __init__(self, *args, **kwargs):
+        super(SearchForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
 
     class Meta:
         model = User
