@@ -400,6 +400,8 @@ def show_isbn(request, isbn):
         context_dict['isbn'] = None
         context_dict['books'] = None
     if request.method == 'POST':
+        
+        #If a loan button pressed, finds the book to loan and takes it out
         book = None
         for key in request.POST.keys():
             if key.startswith('loan:'):
