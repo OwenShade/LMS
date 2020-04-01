@@ -233,15 +233,13 @@ def add_book(request):
             #if successfull, tell the user with a redirect message
             form = ISBNForm(request.POST)
             if form.is_valid():
-                try:
                     form.save(commit=True)
                     book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
                     book.save()
                     log(request, book, "Added Book")
                     messages.success(request, 'Book successfully added.')
-                except:
-                    form.save(commit=False)
-                    messages.error(request, 'Book already exists.')
+            else:
+                    messages.error(request, 'ISBN already exists.')
         elif 'submit_book' in request.POST:
             #display the form which allows staff to add copies of the same book
             #if successfull, tell the user with a redirect message
@@ -254,8 +252,7 @@ def add_book(request):
                     log(request, book, "Added copy of book")
                     messages.success(request, 'Copy of book successfully added.')
                 else:
-                    form.add_error('ISBN', 'No ISBN Found')
-                    messages.error(request, 'Book does not exist.')
+                    messages.error(request, 'ISBN does not exist.')
         return redirect('/LMS/staff_page')
             
     else:
@@ -409,6 +406,8 @@ def show_isbn(request, isbn):
         context_dict['isbn'] = None
         context_dict['books'] = None
     if request.method == 'POST':
+        
+        #If a loan button pressed, finds the book to loan and takes it out
         book = None
         for key in request.POST.keys():
             if key.startswith('loan:'):
