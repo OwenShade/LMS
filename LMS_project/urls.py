@@ -20,6 +20,7 @@ from LMS import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('index', views.home, name='home'),
     path('LMS/', include('LMS.urls')),
     path('admin/', admin.site.urls),
 ]
