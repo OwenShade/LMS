@@ -1,19 +1,21 @@
 from LMS.models import *
 from LMS.forms import *
 from django.shortcuts import render, reverse, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from django.contrib.admin.models import LogEntry
+from django.views.decorators.csrf import csrf_exempt
 from _datetime import date, timedelta
 from django.db import IntegrityError
 from .decorators import unauthenticated_user
 from .decorators import allowed_users
 from django.contrib.auth.models import Group
 from datetime import datetime
+from django.template.loader import render_to_string
 
 #Simple function that is mapped to the base html so that we can check what level of
 #permissions a user has on all pages of the site, in order to decide what type of content they are shown
@@ -139,16 +141,17 @@ def browse(request):
     return response
 
 #view for the search page
+@csrf_exempt
 def search(request):
     context_dict = {}
     context_dict['staff'] = if_staff(request)
     #sends a request to display the search form
-    if request.method == 'POST':
-        search_form = SearchForm(request.POST)
-        if search_form.is_valid():
-            data = search_form['search'].value()
-            option = search_form['options'].value()
-            #if the user selects genre from the drop down menu, search genres 
+    data = request.GET.get('search')
+    if data:
+        data = request.GET.get('search')
+        option = request.GET.get('options')
+        #if the user selects genre from the drop down menu, search genres 
+        if data and option:
             if option == "1":
                 results = ISBN.objects.filter(genre__icontains=data).order_by('-views')[:30]
             #if the user selects title from the drop down menu, search titles
@@ -160,11 +163,17 @@ def search(request):
             #if the user selects ISBN from the drop down menu, search ISBN
             else:
                 results = ISBN.objects.filter(ISBN__icontains=data).order_by('-views')[:30]
+        else:
+            results = []
     else:
         results = []
-        search_form = SearchForm()
     context_dict['results'] = results
-    context_dict['search_form'] = search_form
+    
+    if request.is_ajax():
+        html = render_to_string(template_name="results.html", context=context_dict)
+        data_dict = {"html_from_view": html}
+        return JsonResponse(data=data_dict, safe=False)
+    
     return render(request, 'search.html', context = context_dict)
 
 #Uses decorators to make sure only logged in users can change their password

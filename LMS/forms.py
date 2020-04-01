@@ -102,19 +102,7 @@ class UserProfileForm(UserForm):
         model = Member
         fields = ('username','password', 'email',)
         
-class SearchForm(forms.Form):
-    #text box for the user to enter the value to search
-    search = forms.CharField(max_length=128)
-    #drop down box for the user to choose which list they want to search
-    options = forms.ChoiceField(choices=[("1","Genre"), ("2","Title"), ("3","Author",), ("4","ISBN")], help_text="Choose what to search.")
-
-    #script for styling the form
-    def __init__(self, *args, **kwargs):
-        super(SearchForm, self).__init__(*args, **kwargs)
-        for field in self.fields:
-            self.fields[field].widget.attrs.update({'class' : 'form-control'})
-
-
+        
 #allows the user to login, by asking for the users credentials: username and password
 class LoginForm(AuthenticationForm):
     username = forms.CharField(help_text="Username")

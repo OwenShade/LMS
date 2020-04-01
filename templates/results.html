@@ -1,0 +1,22 @@
+{% if results %}
+        <h3 class="text-center mb-3 mt-1">Popular Books</h3>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="w-50">Title</th>
+                <th scope="w-30">Author</th>
+                <th scope="w-20">Genre</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for book in results %}
+                <tr>
+                    <td scope="row">{{ forloop.counter }}. <a href="{% url 'LMS:isbn_num' book.ISBN %}">{{book.title}}</a></td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.genre}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endif %}

@@ -6,46 +6,20 @@
 {% endblock %}
 
 {% block body_block %}
-<form id="SearchForm" method="post" action="/LMS/search/">
-    {% csrf_token %}
     <div class="card m-4 box-shadow col ">
         <div class="card-header">
             <h3>Search</h3>
         </div>
-        <div class="card-body">
-            {% for field in search_form %}
-                <div class="row">
-                    <label for="id_{{field.name}}" class="col-2 col-form-label">{{ field.label }}</label>
-                    <div class="col-3">
-                        {{field}}
-                        <div class="invalid-feedback">{{ field.errors }}</div>
-                    </div>
-                </div>
-            {% endfor %}
-            <input type="submit" name="submit" class="btn btn-primary" value="Search" />
-        </div>
+        <input id="search" name="search" placeholder="Search">
+        <select id="options" name="options">
+            <option value="1">Genre</option>
+            <option value="2">Title</option>
+            <option value="3">Author</option>
+            <option value="4">ISBN</option>
+          </select>
     </div>
-    {% if results %}
-        <h3 class="text-center mb-3 mt-1">Popular Books</h3>
-
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="w-50">Title</th>
-                <th scope="w-30">Author</th>
-                <th scope="w-20">Genre</th>
-              </tr>
-            </thead>
-            <tbody>
-                {% for book in results %}
-                <tr>
-                    <td scope="row">{{ forloop.counter }}. <a href="{% url 'LMS:isbn_num' book.ISBN %}">{{book.title}}</a></td>
-                    <td>{{book.author}}</td>
-                    <td>{{book.genre}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
-</form>
+<div id="dynamic_content" class="col-6">
+    {% include 'results.html' %}
+</div>
+<script type="text/javascript" src="{% static "javascript/main.js" %}"></script>
 {% endblock %}
