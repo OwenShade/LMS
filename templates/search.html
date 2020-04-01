@@ -8,27 +8,26 @@
 {% block body_block %}
 <form id="SearchForm" method="post" action="/LMS/search/">
     {% csrf_token %}
-    <div class="card m-4 box-shadow col ">
-        <div class="card-header">
-            <h3>Search</h3>
-        </div>
-        <div class="card-body">
-            {% for field in search_form %}
-                <div class="row">
-                    <label for="id_{{field.name}}" class="col-2 col-form-label">{{ field.label }}</label>
-                    <div class="col-3">
-                        {{field}}
-                        <div class="invalid-feedback">{{ field.errors }}</div>
+        <div class="card mx-auto box-shadow my-4">
+            <div class="card-header">
+                <h3>Search</h3>
+            </div>
+            <div class="card-body">
+                {% for field in search_form %}
+                    <div class="row">
+                        <label for="id_{{field.name}}" class="col-2 col-form-label">{{ field.label }}</label>
+                        <div class="col-3 m-1">
+                            {{field}}
+                            <div class="invalid-feedback">{{ field.errors }}</div>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-            <input type="submit" name="submit" class="btn btn-primary" value="Search" />
+                {% endfor %}
+                <input type="submit" name="submit" class="btn btn-primary" value="Search" />
+            </div>
         </div>
-    </div>
-    {% if results %}
-        <h3 class="text-center mb-3 mt-1">Popular Books</h3>
 
-        <table class="table">
+    {% if results %}
+        <table class="table col">
             <thead>
               <tr>
                 <th scope="w-50">Title</th>

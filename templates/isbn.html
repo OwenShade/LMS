@@ -22,7 +22,7 @@
     {% endif %}
     {% if isbn %}
         <div class="row my-3 mh-auto p-3">
-            <div class="col-10">
+            <div class="col">
                 <table class="table" >
                 <tbody>
                     <tr>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="row m-auto p-3">
-            <div class="col-10">
+            <div class="col">
                 {% if books %}
                     <table class="table my-5">
                         <thead>
@@ -73,10 +73,8 @@
                                     <td>{{ book.pk_num }}</td>
                                     <td>{{ book.location }}</td>
                                     {% if not staff %}
-                                        {% if book.taken_out == user %}
-                                        <td>You have taken this book out.</td>
-                                        {% elif book.taken_out %}
-                                            <td>Book unavailable.</td>
+                                        {% if book.taken_out %}
+                                            <td>Book on loan.</td>
                                         {% elif limit %}
                                             <td>Reached book limit</td>
                                         {% elif user.is_authenticated %}

@@ -26,8 +26,8 @@ Home
         </div>
 
         <div class="row justify-content-center py-4">
-            <a type="button" class="btn btn-outline-primary col-2" href="{% url 'LMS:login' %}">Log in</a>
-            <a type="button" class="btn btn-outline-primary col-2" href="{% url 'LMS:register' %}">Register</a>
+            <a type="button" class="btn btn-outline-primary col-2 mx-1" href="{% url 'LMS:login' %}">Log in</a>
+            <a type="button" class="btn btn-outline-primary col-2 mx-1" href="{% url 'LMS:register' %}">Register</a>
         </div>
     {% endif %}
 
@@ -71,7 +71,7 @@ Home
                 <tbody>
                     {% for book in books %}
                     <tr>
-                        <td>{{book.title}}</td>
+                        <td><a href="{% url 'LMS:isbn_num' book.ISBN %}">{{ book.title }}</a></td>
                         <td>{{book.author}}</td>
                         <td>{{book.genre}}</td>
                     </tr>
