@@ -76,6 +76,11 @@ class SearchViewTests(TestCase):
 
         num_categories = len(response.context['categories'])
         self.assertEquals(num_categories, 3)
+    
+    def test_category_that_already_exists_cannot_be_added_again(self):
+        
+        add_category('General Works')
+        self.assertEquals(response.status_code, 302)
 
 class CategorySlugViewTests(TestCase):
 
@@ -149,4 +154,5 @@ class UserLoginOutTests(TestCase):
         self.assertEqual(response.status_code, 200)
         user = auth.get_user(self.client)
         assert user.is_authenticated()
+
 
