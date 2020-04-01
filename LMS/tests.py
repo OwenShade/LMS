@@ -5,17 +5,15 @@ from django.contrib import auth
 
 # Create your tests here.
 class CategoryMethodTests(TestCase):
-    """
     def test_ensure_views_are_positive(self):
-        
+        """
         Ensures the number of views in a given category is not negative
-        
+        """
 
         category = Category(name='test', views=-1)
         category.save()
 
         self.assertEqual((category.views >= 0 ), True)
-    """
     
     def test_slug_line_creation(self):
         """
@@ -91,19 +89,17 @@ class SearchViewTests(TestCase):
 
 class CategorySlugViewTests(TestCase):
 
-    """
     def test_category_slug_with_no_books_present(self):
-        
+        """
         Ensures that when no books are present, the category slugged page
         displays a view to reflect this
-        
+        """
 
         response = self.client.get(reverse('LMS:browse/general-works'))
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'There are no books present.')
         self.assertQuerysetEqual(response.context['ISBN'], [])
-    """
 
     def add_ISBN(ISBN, category, title, author, genre, views = 0):
         """
@@ -154,7 +150,7 @@ class UserAuthenticationTests(TestCase):
         self.assertContains(response, "You are not authorised to view this page.")
         
     def test_unauthenticated_user_cannot_access_addcategory(self):
-        response = self.client.get(reverse('LMS:add_category'))
+        response = self.client.get(reverse(':LMS:add_category'))
         self.assertContains(response, "You are not authorised to view this page.")
         
     def test_unauthenticated_user_cannot_access_addstaff(self):
