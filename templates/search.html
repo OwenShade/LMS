@@ -16,7 +16,7 @@
                 {% for field in search_form %}
                     <div class="row">
                         <label for="id_{{field.name}}" class="col-2 col-form-label">{{ field.label }}</label>
-                        <div class="col-3">
+                        <div class="col-3 m-1">
                             {{field}}
                             <div class="invalid-feedback">{{ field.errors }}</div>
                         </div>
