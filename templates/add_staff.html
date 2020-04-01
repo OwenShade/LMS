@@ -5,41 +5,30 @@
 {% endblock %}
 
 {% block body_block %}
-    <div class="py-5 text-center">
-        <h1>Add a staff member</h1>
-    </div>
-    <form id="StaffForm" method="post" action="/LMS/add_staff/">
+{% if registered %}
+<div class="alert alert-success" role="alert">
+  You have added a new member of Staff successfully! <a href="{% url 'LMS:staff_page' %}">Return to Staff Page.</a></p>
+</div>
+<a href="{% url 'LMS:staff_page' %}">Staff Page</a></p>
+{% else %}
+<div class="row">
+    <form method="post">
         {% csrf_token %}
-        {% for field in staff_form %}
-            <div class="form-group row">
-                <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
-                <div class="col-5">
-                    {{field}}
-                    <div class="invalid-feedback">{{ field.errors }}</div>
-                </div>
-            </div>
-        {% endfor %}
-        {% for field in profile_form %}
-                <div class="form-group row">
-                    <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
-                    <div class="col-5">
-                        {{field}}
-                        <div class="invalid-feedback">{{ field.errors }}</div>
-                    </div>
-                </div>
-        {% endfor %}
-        {% if staff_form.errors %}
-            {% for field in staff_form %}
-                {% for error in field.errors %}
-                <div class="alert alert-danger">
-                    <strong>{{ error }}</strong>
-                </div>
-                {% endfor %}
+        {% for field in form %}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% if field.help_text %}
+              <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
             {% endfor %}
-        {% endif %}
-        <input type="submit" name="submit" class="btn btn-primary" value="Add Staff Member" /> 
-        <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
-    </form> 
-    <br/>
+          </p>
+        {% endfor %}
+        <button type="submit">Sign up</button>
+      </form>
+</div>
+{% endif %}
 {% endblock %}
     
