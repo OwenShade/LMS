@@ -66,33 +66,27 @@ def home(request):
 @unauthenticated_user
 def register(request):
     registered = False
-
     if request.method == 'POST':
         #display the forms to the user on the html page
-        user_form = UserForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
+        user_form = SignUpForm(request.POST)
         #If the details entered in the forms are valid, create the new user instance using the entered values
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
+        if user_form.is_valid():
+            user_form.save()
+            username = user_form.cleaned_data.get('username')
+            password = user_form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
 
-            #Adds member to permissions group
-            group = Group.objects.get(name='member')
-            user.groups.add(group)
-            
-            user.set_password(user.password)
-            user.save()
-            
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            
-            profile.save()
-            registered = True
+            if user is not None:
+                #Adds member to permissions group
+                group_member = Group.objects.get(name='member')
+                user.groups.add(group_member)         
+                user.save()
+
+                new_member = Member()
+                registered = True
     else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-        
-    context_dict = {'user_form': user_form,'profile_form' : profile_form, 'registered': registered}
-    return render(request, 'register.html', context =context_dict)
+        user_form = SignUpForm()
+    return render(request, 'register.html', {'form': user_form, 'registered':registered})
 
 #Uses decorators to make sure only unauthenticated user can access the login page
 @unauthenticated_user

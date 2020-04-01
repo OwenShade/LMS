@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from LMS.models import Member, Category, Book, Staff, ISBN
-from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
+from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm, UserCreationForm
 
 #Form for adding a category
 #categories only have two fields. One is shown on the form (name) and the other, views, is initialised to zero when the new category is made
@@ -79,6 +79,15 @@ class StaffProfileForm(forms.ModelForm):
         model = Staff
         fields = ('role', 'phone',)
 
+class SignUpForm(UserCreationForm):
+    username = forms.CharField(max_length=30)
+    email = forms.EmailField(max_length=200)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2', )
+
+#NOT IN USE
 #form for creating a new user, used in the registration page
 class UserForm(forms.ModelForm):
     #3 inputs needed for the user to register, all displayed in text boxes. Username, password, and email
@@ -91,6 +100,7 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('password', 'username', 'email',)
         
+#NOT IN USE
 class UserProfileForm(UserForm):
     #script for styling the form
     def __init__(self, *args, **kwargs):
