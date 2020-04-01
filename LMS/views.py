@@ -168,7 +168,7 @@ def search(request):
     return render(request, 'search.html', context = context_dict)
 
 #Uses decorators to make sure only logged in users can change their password
-@login_required
+@allowed_users(allowed_roles=['admin','staff','member'])
 def change_password(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
@@ -192,7 +192,6 @@ def change_password(request):
     return render(request, 'change_password.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add categories
-@login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_category(request):
     context_dict = {}
@@ -218,7 +217,6 @@ def add_category(request):
     return render(request, 'add_category.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add books
-@login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_book(request):
     context_dict = {}
@@ -263,7 +261,6 @@ def add_book(request):
     return render(request, 'add_book.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add new staff members
-@login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_staff(request):
     context_dict = {}
@@ -301,7 +298,6 @@ def add_staff(request):
     return render(request, 'add_staff.html', context = context_dict)
 
 #Uses decorators to make sure only logged in members (users) can return books
-@login_required
 @allowed_users(allowed_roles=['member'])
 def returns(request):
     context_dict = {}
@@ -341,7 +337,6 @@ def returns(request):
     return render(request, 'returns.html', context=context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can access the staff page
-@login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def staff_page(request):
     context_dict = {}
@@ -434,7 +429,7 @@ def show_isbn(request, isbn):
 
 
 #Uses decorators to make sure only logged in users can log out
-@login_required
+@allowed_users(allowed_roles=['admin','staff','member'])
 def user_logout(request):
     logout(request)
     #sends a message when redirected to let the user know they have been successfully logged out
