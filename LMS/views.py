@@ -480,12 +480,14 @@ def extend_loan(request):
         return redirect('/LMS/extend_loan')
     return render(request, 'extend_loan.html', context=context_dict)
 
+#Retrieves cookies from the current server session, and if it fails returns a default value
 def get_server_side_cookie(request, cookie, default_val=None):
     val = request.session.get(cookie)
     if not val:
         val = default_val 
     return val
 
+#Updates the last visit cookie to the current visit if the last visit was more than 10 seconds ago, and updates visits
 def visitor_cookie_handler(request):
     visits = int(get_server_side_cookie(request, 'visits', '1')) 
 
@@ -499,4 +501,3 @@ def visitor_cookie_handler(request):
         request.session['last_visit'] = last_visit_cookie
     
     request.session['visits'] = visits
-    
