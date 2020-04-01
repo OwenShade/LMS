@@ -233,11 +233,15 @@ def add_book(request):
             #if successfull, tell the user with a redirect message
             form = ISBNForm(request.POST)
             if form.is_valid():
-                form.save(commit=True)
-                book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
-                book.save()
-                log(request, book, "Added Book")
-                messages.success(request, 'Book successfully added.')
+                try:
+                    form.save(commit=True)
+                    book = Book(isbn=ISBN.objects.get(ISBN=form['ISBN'].value()), location=form['location'].value())
+                    book.save()
+                    log(request, book, "Added Book")
+                    messages.success(request, 'Book successfully added.')
+                except:
+                    form.save(commit=False)
+                    messages.error(request, 'Book already exists.')
         elif 'submit_book' in request.POST:
             #display the form which allows staff to add copies of the same book
             #if successfull, tell the user with a redirect message
@@ -251,6 +255,7 @@ def add_book(request):
                     messages.success(request, 'Copy of book successfully added.')
                 else:
                     form.add_error('ISBN', 'No ISBN Found')
+                    messages.error(request, 'Book does not exist.')
         return redirect('/LMS/staff_page')
             
     else:
