@@ -34,6 +34,8 @@ class Category(models.Model):
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
+        if self.views < 0:
+            self.views = 0
         super(Category, self).save(*args, **kwargs)
     
     def __str__(self):
@@ -50,7 +52,8 @@ class ISBN(models.Model):
     author = models.CharField(max_length=128)
     genre = models.CharField(max_length=128)
     views = models.IntegerField(default=0)
-    
+    if self.views < 0:
+        self.views=0
     def __str__(self):
         return str(self.title)
     
