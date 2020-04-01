@@ -78,11 +78,12 @@ def register(request):
 
             if user is not None:
                 #Adds member to permissions group
-                group_member = Group.objects.get(name='member')
-                user.groups.add(group_member)         
+                group_member = Group.objects.get(name='member', )
+                user.groups.add(group_member)     
                 user.save()
 
-                new_member = Member()
+                new_member = Member(user = user)
+                new_member.save()
                 registered = True
     else:
         user_form = SignUpForm()
@@ -260,39 +261,39 @@ def add_book(request):
 @login_required
 @allowed_users(allowed_roles=['admin','staff'])
 def add_staff(request):
-    context_dict = {}
+    registered = False
     #adds a boolean to the context dict describing whether or not a user is a staff member
-    context_dict['staff'] = if_staff(request)
     #Shows the staff form and profile form to the user when called upon
     #sets the new staffs attributes according to the data added and assigns the staff member to the staff group
     if request.method == 'POST':
-        staff_form = StaffForm(request.POST)
-        profile_form = StaffProfileForm(request.POST)
+        staff_form = NewStaffForm(request.POST)
 
-        if staff_form.is_valid() and profile_form.is_valid():
-            staff = staff_form.save()
+        if staff_form.is_valid():
+            staff_form.save()
 
-            staff.set_password(staff.password)
-            staff.save()
-            
-            #Add staff to group permissions
-            group = Group.objects.get(name='staff')
-            staff.groups.add(group)
-            
-            profile = profile_form.save(commit=False)
-            profile.user = staff
-            
-            profile.save()
-            log(request, profile, "Added new staff")
-            #sends a message when redirected to let the user know they have been successfully added the record
-            messages.success(request, 'Staff successfully added.')
-            return redirect('/LMS/staff_page')
+            username = staff_form.cleaned_data.get('username')
+            password = staff_form.cleaned_data.get('password1')
+            role = staff_form.cleaned_data.get('role')
+            phone = staff_form.cleaned_data.get('phone')
+
+            staff = authenticate(username=username, password=password)
+
+            if staff is not None:
+                #Add staff to group permissions
+                group = Group.objects.get(name='staff')
+                staff.groups.add(group)
+
+                new_staff= Staff(user = staff, role=role, phone = phone  )
+                new_staff.save()
+                registered = True
+
+                log(request, new_staff, "Added new staff")
+                messages.success(request, 'Staff successfully added.')
+                
     else:
-        staff_form = StaffForm()
-        profile_form = StaffProfileForm()
-    context_dict['staff_form'] = staff_form
-    context_dict['profile_form'] = profile_form
-    return render(request, 'add_staff.html', context = context_dict)
+        staff_form = NewStaffForm()
+    return render(request, 'add_staff.html', {'form': staff_form, 'registered':registered})
+
 
 #Uses decorators to make sure only logged in members (users) can return books
 @login_required
@@ -400,7 +401,7 @@ def show_isbn(request, isbn):
         context_dict['isbn'] = None
         context_dict['books'] = None
     if request.method == 'POST':
-        
+
         #If a loan button pressed, finds the book to loan and takes it out
         book = None
         for key in request.POST.keys():

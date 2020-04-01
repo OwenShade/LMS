@@ -71,7 +71,7 @@ Home
                 <tbody>
                     {% for book in books %}
                     <tr>
-                        <td>{{book.title}}</td>
+                        <td><a href="{% url 'LMS:isbn_num' book.ISBN %}">{{ book.title }}</a></td>
                         <td>{{book.author}}</td>
                         <td>{{book.genre}}</td>
                     </tr>
