@@ -210,7 +210,6 @@ def add_category(request):
             
             #if the category already exists, let the user know through a redirect message
             except:
-                form.save(commit=False)
                 messages.error(request, 'Category already exists.')
                 return redirect('/LMS/staff_page')
     context_dict['form'] = form
