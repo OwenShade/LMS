@@ -168,7 +168,7 @@ def search(request):
     return render(request, 'search.html', context = context_dict)
 
 #Uses decorators to make sure only logged in users can change their password
-@allowed_users(allowed_roles=['admin','staff','member'])
+@allowed_users(allowed_roles=['staff','member'])
 def change_password(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
@@ -192,7 +192,7 @@ def change_password(request):
     return render(request, 'change_password.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add categories
-@allowed_users(allowed_roles=['admin','staff'])
+@allowed_users(allowed_roles=['staff'])
 def add_category(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
@@ -217,7 +217,7 @@ def add_category(request):
     return render(request, 'add_category.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add books
-@allowed_users(allowed_roles=['admin','staff'])
+@allowed_users(allowed_roles=['staff'])
 def add_book(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
@@ -261,7 +261,7 @@ def add_book(request):
     return render(request, 'add_book.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add new staff members
-@allowed_users(allowed_roles=['admin','staff'])
+@allowed_users(allowed_roles=['staff'])
 def add_staff(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
@@ -337,7 +337,7 @@ def returns(request):
     return render(request, 'returns.html', context=context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can access the staff page
-@allowed_users(allowed_roles=['admin','staff'])
+@allowed_users(allowed_roles=['staff'])
 def staff_page(request):
     context_dict = {}
     context_dict['staff'] = if_staff(request)
@@ -429,7 +429,7 @@ def show_isbn(request, isbn):
 
 
 #Uses decorators to make sure only logged in users can log out
-@allowed_users(allowed_roles=['admin','staff','member'])
+@allowed_users(allowed_roles=['staff','member'])
 def user_logout(request):
     logout(request)
     #sends a message when redirected to let the user know they have been successfully logged out
@@ -437,7 +437,7 @@ def user_logout(request):
     return redirect(reverse('home'))
 
 #Uses decorators to make sure only logged in staff members and admins can extend loans
-@allowed_users(allowed_roles=['admin','staff'])
+@allowed_users(allowed_roles=['staff'])
 def extend_loan(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
