@@ -268,6 +268,8 @@ def add_book(request):
 #Uses decorators to make sure only logged in staff members and admins can add new staff members
 @allowed_users(allowed_roles=['staff'])
 def add_staff(request):
+    context_dict = {}
+    context_dict['staff'] = if_staff(request)
     registered = False
     #adds a boolean to the context dict describing whether or not a user is a staff member
     #Shows the staff form and profile form to the user when called upon
@@ -299,7 +301,9 @@ def add_staff(request):
                 
     else:
         staff_form = StaffForm()
-    return render(request, 'add_staff.html', {'form': staff_form, 'registered':registered})
+    context_dict['form'] = staff_form
+    context_dict['registered'] = registered
+    return render(request, 'add_staff.html', context=context_dict)
 
 
 #Uses decorators to make sure only logged in members (users) can return books
