@@ -11,26 +11,27 @@
     </div>
 
     {% if registered %}
-        <p>Thank you for registering!
-        <a href="{% url 'LMS:login' %}">Log in</a></p>
+        <div class="alert alert-success" role="alert">
+            <p>Thank you for registering! <a href="{% url 'LMS:login' %}">Log in</a></p>
+        </div>
+
     {% else %}
         <div class="row">
-            <form id="UserForm" method="post" action="/LMS/register/" enctype="multipart/form-data" class="col-8">
-
+            <form method="post" class="">
                 {% csrf_token %}
-                {% for field in profile_form %}
-                    <div class="form-group row">
-                        <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.help_text }}</label>
-                        <div class="col-5">
-                            {{field}}
-                            <div class="invalid-feedback">{{ field.errors }}</div>
-                        </div>
-                    </div>
+                {% for field in form %}
+                    <p>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                    <small class="text-muted">{{ field.help_text }}</small>
+                    
+                    {% for error in field.errors %}
+                        <p class="text-danger">{{ error }}</p>
+                    {% endfor %}
+                    </p>
                 {% endfor %}
-                
-                <input type="submit" name="submit" class="btn btn-primary my-2" value="Register" />
-
+                <button type="submit">Sign up</button>
             </form>
         </div>
-    {% endif %} 
+    {% endif%}
 {% endblock %}

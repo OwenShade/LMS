@@ -2,12 +2,6 @@ ul.errorlist {
 	display:none;
 }
 
-.navbar_logo {
-	display: inline-block;
-	width: 70px;
-	height: 60px;
-}
-
 .form-signin {
   width: 100%;
   max-width: 330px;

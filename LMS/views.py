@@ -1,19 +1,21 @@
 from LMS.models import *
 from LMS.forms import *
 from django.shortcuts import render, reverse, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from django.contrib.admin.models import LogEntry
+from django.views.decorators.csrf import csrf_exempt
 from _datetime import date, timedelta
 from django.db import IntegrityError
 from .decorators import unauthenticated_user
 from .decorators import allowed_users
 from django.contrib.auth.models import Group
 from datetime import datetime
+from django.template.loader import render_to_string
 
 #Simple function that is mapped to the base html so that we can check what level of
 #permissions a user has on all pages of the site, in order to decide what type of content they are shown
@@ -66,33 +68,28 @@ def home(request):
 @unauthenticated_user
 def register(request):
     registered = False
-
     if request.method == 'POST':
         #display the forms to the user on the html page
-        user_form = UserForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
+        user_form = SignUpForm(request.POST)
         #If the details entered in the forms are valid, create the new user instance using the entered values
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
+        if user_form.is_valid():
+            user_form.save()
+            username = user_form.cleaned_data.get('username')
+            password = user_form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
 
-            #Adds member to permissions group
-            group = Group.objects.get(name='member')
-            user.groups.add(group)
-            
-            user.set_password(user.password)
-            user.save()
-            
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            
-            profile.save()
-            registered = True
+            if user is not None:
+                #Adds member to permissions group
+                group_member = Group.objects.get(name='member', )
+                user.groups.add(group_member)     
+                user.save()
+
+                new_member = Member(user = user)
+                new_member.save()
+                registered = True
     else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-        
-    context_dict = {'user_form': user_form,'profile_form' : profile_form, 'registered': registered}
-    return render(request, 'register.html', context =context_dict)
+        user_form = SignUpForm()
+    return render(request, 'register.html', {'form': user_form, 'registered':registered})
 
 #Uses decorators to make sure only unauthenticated user can access the login page
 @unauthenticated_user
@@ -112,7 +109,10 @@ def user_login(request):
                 #if the login is correct, login the user and display a success message
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}")
-                return HttpResponseRedirect(request.session['login_from'])
+                if request.session.has_key('login_from'):
+                    return HttpResponseRedirect(request.session['login_from'])
+                else:
+                    return render(request, 'home.html', context=context)
             else:
                 #if the login is wrong, tell the user
                 context["login_errors"].append("Invalid login details supplied.")
@@ -139,32 +139,36 @@ def browse(request):
     return response
 
 #view for the search page
+@csrf_exempt
 def search(request):
     context_dict = {}
     context_dict['staff'] = if_staff(request)
     #sends a request to display the search form
-    if request.method == 'POST':
-        search_form = SearchForm(request.POST)
-        if search_form.is_valid():
-            data = search_form['search'].value()
-            option = search_form['options'].value()
-            #if the user selects genre from the drop down menu, search genres 
-            if option == "1":
-                results = ISBN.objects.filter(genre__icontains=data).order_by('-views')[:30]
-            #if the user selects title from the drop down menu, search titles
-            elif option == "2":
-                results = ISBN.objects.filter(title__icontains=data).order_by('-views')[:30]
-            #if the user selects authors from the drop down menu, search authors
-            elif option == "3":
-                results = ISBN.objects.filter(author__icontains=data).order_by('-views')[:30]
-            #if the user selects ISBN from the drop down menu, search ISBN
-            else:
-                results = ISBN.objects.filter(ISBN__icontains=data).order_by('-views')[:30]
+    data = request.GET.get('search')
+    option = request.GET.get('options')
+    if data:
+        #if the user selects genre from the drop down menu, search genres
+        if option == "1":
+            results = ISBN.objects.filter(genre__icontains=data).order_by('-views')
+        #if the user selects title from the drop down menu, search titles
+        elif option == "2":
+            results = ISBN.objects.filter(title__icontains=data).order_by('-views')
+        #if the user selects authors from the drop down menu, search authors
+        elif option == "3":
+            results = ISBN.objects.filter(author__icontains=data).order_by('-views')
+        #if the user selects ISBN from the drop down menu, search ISBN
+        else:
+            results = ISBN.objects.filter(ISBN__icontains=data).order_by('-views')
+
     else:
-        results = []
-        search_form = SearchForm()
+        results = ISBN.objects.all().order_by('-views')[:100]
     context_dict['results'] = results
-    context_dict['search_form'] = search_form
+    
+    if request.is_ajax():
+        html = render_to_string(template_name="results.html", context=context_dict)
+        data_dict = {"html_from_view": html}
+        return JsonResponse(data=data_dict, safe=False)
+    
     return render(request, 'search.html', context = context_dict)
 
 #Uses decorators to make sure only logged in users can change their password
@@ -201,7 +205,7 @@ def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
         #if the form is correct, let the user know through a redirect message
-        if form.is_valid():
+        if form:
             try:
                 form.save(commit=True)
                 messages.success(request, 'Category successfully added.')
@@ -210,7 +214,6 @@ def add_category(request):
             
             #if the category already exists, let the user know through a redirect message
             except:
-                form.save(commit=False)
                 messages.error(request, 'Category already exists.')
                 return redirect('/LMS/staff_page')
     context_dict['form'] = form
@@ -263,39 +266,39 @@ def add_book(request):
 #Uses decorators to make sure only logged in staff members and admins can add new staff members
 @allowed_users(allowed_roles=['staff'])
 def add_staff(request):
-    context_dict = {}
+    registered = False
     #adds a boolean to the context dict describing whether or not a user is a staff member
-    context_dict['staff'] = if_staff(request)
     #Shows the staff form and profile form to the user when called upon
     #sets the new staffs attributes according to the data added and assigns the staff member to the staff group
     if request.method == 'POST':
         staff_form = StaffForm(request.POST)
-        profile_form = StaffProfileForm(request.POST)
 
-        if staff_form.is_valid() and profile_form.is_valid():
-            staff = staff_form.save()
+        if staff_form.is_valid():
+            staff_form.save()
 
-            staff.set_password(staff.password)
-            staff.save()
-            
-            #Add staff to group permissions
-            group = Group.objects.get(name='staff')
-            staff.groups.add(group)
-            
-            profile = profile_form.save(commit=False)
-            profile.user = staff
-            
-            profile.save()
-            log(request, profile, "Added new staff")
-            #sends a message when redirected to let the user know they have been successfully added the record
-            messages.success(request, 'Staff successfully added.')
-            return redirect('/LMS/staff_page')
+            username = staff_form.cleaned_data.get('username')
+            password = staff_form.cleaned_data.get('password1')
+            role = staff_form.cleaned_data.get('role')
+            phone = staff_form.cleaned_data.get('phone')
+
+            staff = authenticate(username=username, password=password)
+
+            if staff is not None:
+                #Add staff to group permissions
+                group = Group.objects.get(name='staff')
+                staff.groups.add(group)
+
+                new_staff= Staff(user = staff, role=role, phone = phone  )
+                new_staff.save()
+                registered = True
+
+                log(request, new_staff, "Added new staff")
+                messages.success(request, 'Staff successfully added.')
+                
     else:
         staff_form = StaffForm()
-        profile_form = StaffProfileForm()
-    context_dict['staff_form'] = staff_form
-    context_dict['profile_form'] = profile_form
-    return render(request, 'add_staff.html', context = context_dict)
+    return render(request, 'add_staff.html', {'form': staff_form, 'registered':registered})
+
 
 #Uses decorators to make sure only logged in members (users) can return books
 @allowed_users(allowed_roles=['member'])
@@ -401,7 +404,7 @@ def show_isbn(request, isbn):
         context_dict['isbn'] = None
         context_dict['books'] = None
     if request.method == 'POST':
-        
+
         #If a loan button pressed, finds the book to loan and takes it out
         book = None
         for key in request.POST.keys():
@@ -475,12 +478,14 @@ def extend_loan(request):
         return redirect('/LMS/extend_loan')
     return render(request, 'extend_loan.html', context=context_dict)
 
+#Retrieves cookies from the current server session, and if it fails returns a default value
 def get_server_side_cookie(request, cookie, default_val=None):
     val = request.session.get(cookie)
     if not val:
         val = default_val 
     return val
 
+#Updates the last visit cookie to the current visit if the last visit was more than 10 seconds ago, and updates visits
 def visitor_cookie_handler(request):
     visits = int(get_server_side_cookie(request, 'visits', '1')) 
 
@@ -494,4 +499,3 @@ def visitor_cookie_handler(request):
         request.session['last_visit'] = last_visit_cookie
     
     request.session['visits'] = visits
-    
