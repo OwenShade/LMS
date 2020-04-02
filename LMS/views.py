@@ -142,26 +142,23 @@ def search(request):
     context_dict['staff'] = if_staff(request)
     #sends a request to display the search form
     data = request.GET.get('search')
+    option = request.GET.get('options')
     if data:
-        data = request.GET.get('search')
-        option = request.GET.get('options')
-        #if the user selects genre from the drop down menu, search genres 
-        if data and option:
-            if option == "1":
-                results = ISBN.objects.filter(genre__icontains=data).order_by('-views')[:30]
-            #if the user selects title from the drop down menu, search titles
-            elif option == "2":
-                results = ISBN.objects.filter(title__icontains=data).order_by('-views')[:30]
-            #if the user selects authors from the drop down menu, search authors
-            elif option == "3":
-                results = ISBN.objects.filter(author__icontains=data).order_by('-views')[:30]
-            #if the user selects ISBN from the drop down menu, search ISBN
-            else:
-                results = ISBN.objects.filter(ISBN__icontains=data).order_by('-views')[:30]
+        #if the user selects genre from the drop down menu, search genres
+        if option == "1":
+            results = ISBN.objects.filter(genre__icontains=data).order_by('-views')
+        #if the user selects title from the drop down menu, search titles
+        elif option == "2":
+            results = ISBN.objects.filter(title__icontains=data).order_by('-views')
+        #if the user selects authors from the drop down menu, search authors
+        elif option == "3":
+            results = ISBN.objects.filter(author__icontains=data).order_by('-views')
+        #if the user selects ISBN from the drop down menu, search ISBN
         else:
-            results = []
+            results = ISBN.objects.filter(ISBN__icontains=data).order_by('-views')
+
     else:
-        results = []
+        results = ISBN.objects.all().order_by('-views')[:100]
     context_dict['results'] = results
     
     if request.is_ajax():

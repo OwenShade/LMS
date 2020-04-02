@@ -1,5 +1,5 @@
 {% if results %}
-        <h3 class="text-center mb-3 mt-1">Popular Books</h3>
+        <h3 class="text-center mb-3 mt-1">Search Results</h3>
 
         <table class="table">
             <thead>
@@ -19,4 +19,6 @@
                 {% endfor %}
             </tbody>
         </table>
+{% else %}
+        <p>No results</p>
 {% endif %}
