@@ -109,7 +109,10 @@ def user_login(request):
                 #if the login is correct, login the user and display a success message
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}")
-                return HttpResponseRedirect(request.session['login_from'])
+                if request.session.has_key('login_from'):
+                    return HttpResponseRedirect(request.session['login_from'])
+                else:
+                    return render(request, 'home.html', context=context)
             else:
                 #if the login is wrong, tell the user
                 context["login_errors"].append("Invalid login details supplied.")
@@ -169,7 +172,7 @@ def search(request):
     return render(request, 'search.html', context = context_dict)
 
 #Uses decorators to make sure only logged in users can change their password
-@login_required
+@allowed_users(allowed_roles=['staff','member'])
 def change_password(request):
     context_dict = {}
     #adds a boolean to the context dict describing whether or not a user is a staff member
@@ -193,7 +196,6 @@ def change_password(request):
     return render(request, 'change_password.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add categories
-@login_required
 @allowed_users(allowed_roles=['staff'])
 def add_category(request):
     context_dict = {}
@@ -203,7 +205,7 @@ def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
         #if the form is correct, let the user know through a redirect message
-        if form.is_valid():
+        if form:
             try:
                 form.save(commit=True)
                 messages.success(request, 'Category successfully added.')
@@ -212,14 +214,12 @@ def add_category(request):
             
             #if the category already exists, let the user know through a redirect message
             except:
-                form.save(commit=False)
                 messages.error(request, 'Category already exists.')
                 return redirect('/LMS/staff_page')
     context_dict['form'] = form
     return render(request, 'add_category.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add books
-@login_required
 @allowed_users(allowed_roles=['staff'])
 def add_book(request):
     context_dict = {}
@@ -264,7 +264,6 @@ def add_book(request):
     return render(request, 'add_book.html', context = context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can add new staff members
-@login_required
 @allowed_users(allowed_roles=['staff'])
 def add_staff(request):
     registered = False
@@ -302,7 +301,6 @@ def add_staff(request):
 
 
 #Uses decorators to make sure only logged in members (users) can return books
-@login_required
 @allowed_users(allowed_roles=['member'])
 def returns(request):
     context_dict = {}
@@ -342,7 +340,6 @@ def returns(request):
     return render(request, 'returns.html', context=context_dict)
 
 #Uses decorators to make sure only logged in staff members and admins can access the staff page
-@login_required
 @allowed_users(allowed_roles=['staff'])
 def staff_page(request):
     context_dict = {}
@@ -435,7 +432,7 @@ def show_isbn(request, isbn):
 
 
 #Uses decorators to make sure only logged in users can log out
-@login_required
+@allowed_users(allowed_roles=['staff','member'])
 def user_logout(request):
     logout(request)
     #sends a message when redirected to let the user know they have been successfully logged out
