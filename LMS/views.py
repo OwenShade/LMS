@@ -204,7 +204,7 @@ def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
         #if the form is correct, let the user know through a redirect message
-        if form.is_valid():
+        if form:
             try:
                 form.save(commit=True)
                 messages.success(request, 'Category successfully added.')

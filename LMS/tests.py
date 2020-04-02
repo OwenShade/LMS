@@ -82,12 +82,24 @@ class SearchViewTests(TestCase):
         self.assertEquals(num_categories, 3)
     
     def test_category_that_already_exists_cannot_be_added_again(self):
+        
+        def add_user(self, user, email, password, book_limit=10):
+            Group.objects.get_or_create(name='staff')
+            staff = User.objects.create_user(user, email, password)
+            group = Group.objects.get(name='staff')
+            staff.groups.add(group)
+            staff.save()
+
+        add_user(self, "TestUser","test@test.com", "TestUsersPassword2000")
+        
+        self.client.post(reverse('LMS:login'),
+                                    {'username': 'TestUser',
+                                    'password': 'TestUsersPassword2000', })
+        
+        self.add_category('General Works')
         response = self.client.post(reverse('LMS:add_category'),
-                                    {'name': 'General Works',})
-        self.assertEquals(response.status_code, 200)
-        response = self.client.post(reverse('LMS:add_category'),
-                                    {'name': 'General Works',})
-        self.assertEquals(response.status_code, 302)
+                                    {'name': 'General Works',}, follow=True)
+        self.assertContains(response, "Category already")
 
 class CategorySlugViewTests(TestCase):
 
@@ -97,11 +109,10 @@ class CategorySlugViewTests(TestCase):
         displays a view to reflect this
         """
 
-        response = self.client.get('LMS/browse/general-works')
-
+        self.add_category("Classic Works",9)
+        response = self.client.get(reverse('LMS:show_category', args=("classic-works",)))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'There are no books present.')
-        self.assertQuerysetEqual(response.context['ISBN'], [])
+        self.assertContains(response, 'No books currently')
 
     def add_category(self, name, views=0):
             category = Category(name=name)
@@ -125,14 +136,11 @@ class CategorySlugViewTests(TestCase):
         self.add_ISBN(1000001, category, "Another Book", "A. Notherwoman", "Murder Mystery")
         self.add_ISBN(1000002, category, "A Final Book", "A. Finalwoman", "Science Fiction")
 
-        response = self.client.get('LMS/browse/general-works')
+        response = self.client.get(reverse('LMS:show_category', args=("general-workings",)))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "A book")
         self.assertContains(response, "Another Book")
         self.assertContains(response, "A Final Book")
-
-        num_ISBN = len(response.context['ISBN'])
-        self.assertEquals(num_ISBN, 3)
 
 class UserAuthenticationTests(TestCase):
 
