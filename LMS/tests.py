@@ -50,6 +50,7 @@ class SearchViewTests(TestCase):
         category = Category
         category.views = views
         category.name = name
+        category.save(category)
         
         return category
 
