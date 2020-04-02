@@ -112,7 +112,10 @@ def user_login(request):
                 #if the login is correct, login the user and display a success message
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}")
-                return HttpResponseRedirect(request.session['login_from'])
+                if request.session.has_key('login_from'):
+                    return HttpResponseRedirect(request.session['login_from'])
+                else:
+                    return render(request, 'home.html', context=context)
             else:
                 #if the login is wrong, tell the user
                 context["login_errors"].append("Invalid login details supplied.")

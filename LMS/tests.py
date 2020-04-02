@@ -2,6 +2,7 @@ from django.test import TestCase
 from LMS.models import *
 from django.urls import reverse
 from django.contrib import auth
+from django.contrib.auth.models import Group, User
 
 # Create your tests here.
 class CategoryMethodTests(TestCase):
@@ -167,13 +168,15 @@ class UserAuthenticationTests(TestCase):
 
 class UserLoginOutTests(TestCase):
 
-    def add_user(self, user, password, book_limit=10):
+    def add_user(self, user, email, password, book_limit=10):
         """
         This method adds an instance of a user
         according to the user model
         """
-        member = User(username=user, password=password)
-        member.password = password
+        Group.objects.get_or_create(name='member')
+        member = User.objects.create_user(user, email, password)
+        group = Group.objects.get(name='member')
+        member.groups.add(group)
         
         member.save()
         return member
@@ -181,13 +184,11 @@ class UserLoginOutTests(TestCase):
 
     def test_user_logs_in_successfully(self):
 
-        self.add_user("TestUser", "TestUsersPassword2000")
-
+        self.add_user("TestUser","test@test.com", "TestUsersPassword2000")
+        
         response = self.client.post(reverse('LMS:login'),
                                     {'username': 'TestUser',
-                                    'password': 'TestUsersPassword2000'})
+                                    'password': 'TestUsersPassword2000', })
         self.assertEqual(response.status_code, 200)
-        user = auth.get_user(self.client)
-        self.assertContains(response, "You are now logged in as TestUser")
-
+        self.assertContains(response, "You are now logged in")
 
