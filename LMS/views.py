@@ -56,9 +56,9 @@ def home(request):
     try:
         #finds the 5 most popular books by check their amount of views and appends them to the context dict
         book_list = ISBN.objects.order_by('-views')[:5]
-        context_dict['books'] = book_list
+        context_dict['results'] = book_list
     except:
-        context_dict['books'] = None
+        context_dict['results'] = None
     
     #returns the request to the home page along with the context dictionary
     response = render(request, 'home.html', context=context_dict)
