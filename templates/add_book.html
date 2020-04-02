@@ -38,6 +38,9 @@
         <input type="submit" name="submit_isbn" class="btn btn-primary" value="Create Book" /> 
         <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
     </form>
+    <div class="py-5 text-center">
+        <h2>Add a copy of an existing book</h2>
+    </div>
     <form id="BookForm" method="post" action="/LMS/add_book/">
         {% csrf_token %}
         {% for field in book_form %}

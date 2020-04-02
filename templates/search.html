@@ -10,7 +10,7 @@
         <div class="card-header">
             <h3>Search</h3>
         </div>
-        <div class="card-body"></div>
+        <div class="card-body">
             <input id="search" name="search" placeholder="Search" class="form-control">
             <select id="options" name="options" class="form-control">
                 <option value="1">Genre</option>
@@ -20,8 +20,8 @@
             </select>
         </div>
     </div>
-<div id="dynamic_content" class="col-6">
+    <div id="dynamic_content" class="col-6">
         {% include 'results.html' %}
-</div>
-<script type="text/javascript" src="{% static "javascript/main.js" %}"></script>
+    </div>
+    <script type="text/javascript" src="{% static "javascript/main.js" %}"></script>
 {% endblock %}

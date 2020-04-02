@@ -84,3 +84,8 @@ class LoginForm(AuthenticationForm):
 class BookForm(forms.Form):
     ISBN = forms.IntegerField(min_value=1000000000, max_value=9999999999, help_text="Please enter the ISBN.", label="ISBN")
     location = forms.CharField(max_length=16, help_text="Please enter the shelf that this book is on.")
+    #script for styling the form
+    def __init__(self, *args, **kwargs):
+        super(BookForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class' : 'form-control'})
