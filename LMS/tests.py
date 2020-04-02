@@ -82,11 +82,11 @@ class SearchViewTests(TestCase):
         self.assertEquals(num_categories, 3)
     
     def test_category_that_already_exists_cannot_be_added_again(self):
-        
-        response = self.client.get(reverse('LMS:browse'))
-        self.add_category('General Works')
+        response = self.client.post(reverse('LMS:add_category'),
+                                    {'name': 'General Works',})
         self.assertEquals(response.status_code, 200)
-        self.add_category('General Works')
+        response = self.client.post(reverse('LMS:add_category'),
+                                    {'name': 'General Works',})
         self.assertEquals(response.status_code, 302)
 
 class CategorySlugViewTests(TestCase):
@@ -103,26 +103,27 @@ class CategorySlugViewTests(TestCase):
         self.assertContains(response, 'There are no books present.')
         self.assertQuerysetEqual(response.context['ISBN'], [])
 
-    def add_ISBN(self, isbn, category, title, author, genre, views = 0):
-        """
-        This method adds an instance of an ISBN according to the ISBN model
-        """
-        def add_category(self, name, views=0):
+    def add_category(self, name, views=0):
             category = Category(name=name)
             category.save()
             
             return category
+
+    def add_ISBN(self, isbn, category, title, author, genre, views = 0):
+        """
+        This method adds an instance of an ISBN according to the ISBN model
+        """
         
-        category = add_category(category,9)
+        
         isbn = ISBN(ISBN=isbn,category=category,title=title,author=author,genre=genre)
         isbn.save()
         return isbn
 
     def test_category_slug_with_books_present(self):
-
-        self.add_ISBN(1000000, "General Workings", "A book", "A. Woman", "Romance")
-        self.add_ISBN(1000001, "General Workings", "Another Book", "A. Notherwoman", "Murder Mystery")
-        self.add_ISBN(1000002, "General Workings", "A Final Book", "A. Finalwoman", "Science Fiction")
+        category = self.add_category("General Workings",9)
+        self.add_ISBN(1000000, category, "A book", "A. Woman", "Romance")
+        self.add_ISBN(1000001, category, "Another Book", "A. Notherwoman", "Murder Mystery")
+        self.add_ISBN(1000002, category, "A Final Book", "A. Finalwoman", "Science Fiction")
 
         response = self.client.get('LMS/browse/general-works')
         self.assertEqual(response.status_code, 200)
