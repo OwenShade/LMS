@@ -5,69 +5,74 @@
 {% endblock %}
 
 {% block body_block %}
-    <div class="py-5 text-center">
-        <h1>Add a book</h1>
-    </div>
-
-    <form id="ISBNForm" method="post" action="/LMS/add_book/">
-        {% csrf_token %}
-        {% for field in isbn_form %}
-            {% if field not in isbn_form.hidden_fields %}
-                <div class="form-group row">
-                    <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
-                    <div class="col-5">
-                        {{field}}
-                        <div class="invalid-feedback">{{ field.errors }}</div>
-                    </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-
-        {% if isbn_form.errors %}
+    <div class="row">
+        <div class="col-6 p-6">
+        <div class="py-5 text-center">
+            <h1>Add a book</h1>
+        </div>
+        <form id="ISBNForm" method="post" action="/LMS/add_book/">
+            {% csrf_token %}
             {% for field in isbn_form %}
-                <div class="row">
-                    {% for error in field.errors %}
-                        <div class="alert alert-danger">
-                            <strong>{{ error }}</strong>
+                {% if field not in isbn_form.hidden_fields %}
+                    <div class="form-group row">
+                        <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
+                        <div class="col-5">
+                            {{field}}
+                            <div class="invalid-feedback">{{ field.errors }}</div>
                         </div>
-                    {% endfor %}
-                </div>
-            {% endfor %}
-        {% endif %}
-
-        <input type="submit" name="submit_isbn" class="btn btn-primary" value="Create Book" /> 
-        <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
-    </form>
-    <div class="py-5 text-center">
-        <h2>Add a copy of an existing book</h2>
-    </div>
-    <form id="BookForm" method="post" action="/LMS/add_book/">
-        {% csrf_token %}
-        {% for field in book_form %}
-            {% if field not in book_form.hidden_fields %}
-                <div class="form-group row">
-                    <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
-                    <div class="col-5">
-                        {{field}}
-                        <div class="invalid-feedback">{{ field.errors }}</div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-
-        {% if book_form.errors %}
-            {% for field in form %}
-                <div class="row">
-                    {% for error in field.errors %}
-                        <div class="alert alert-danger">
-                            <strong>{{ error }}</strong>
-                        </div>
-                    {% endfor %}
-                </div>
+                {% endif %}
             {% endfor %}
-        {% endif %}
 
-        <input type="submit" name="submit_book" class="btn btn-primary" value="Add Copy of Book" /> 
-        <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
-    </form>
+            {% if isbn_form.errors %}
+                {% for field in isbn_form %}
+                    <div class="row">
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <input type="submit" name="submit_isbn" class="btn btn-primary" value="Create Book" /> 
+            <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
+        </form>
+        </div>
+        <div class="col-6 p-6">
+        <div class="py-5 text-center">
+            <h1>Add a copy</h1>
+        </div>
+        <form id="BookForm" method="post" action="/LMS/add_book/">
+            {% csrf_token %}
+            {% for field in book_form %}
+                {% if field not in book_form.hidden_fields %}
+                    <div class="form-group row">
+                        <label for="id_{{field.name}}" class="col-3 col-form-label">{{ field.label }}</label>
+                        <div class="col-5">
+                            {{field}}
+                            <div class="invalid-feedback">{{ field.errors }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {% if book_form.errors %}
+                {% for field in form %}
+                    <div class="row">
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <input type="submit" name="submit_book" class="btn btn-primary" value="Add Copy of Book" /> 
+            <a href="{% url 'LMS:staff_page' %}" class="btn btn-secondary">Back to staff page</a>
+        </form>
+        </div>
+    </div>
 {% endblock %}
