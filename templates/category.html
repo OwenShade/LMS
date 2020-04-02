@@ -23,11 +23,11 @@
             <h1 class="row my-3">{{ category.name }}</h1>
             <div class="row">
                 {% if books %}
-                    <ul class="list-group">
+                    <ul class="col list-group">
                     {% for book in books %}
                         <li class="list-group-item list-group-item-action">
                             {{ forloop.counter }}. <a href="{% url 'LMS:isbn_num' book.ISBN %}">{{ book.title }}</a>
-                            <p>by {{ book.author }}</p>
+                            <p class="text-muted">by {{ book.author }}</p>
                         </li>
                     {% endfor %}
                     </ul>

@@ -20,11 +20,10 @@ def populate():
         p.save()
     
     #Create groups and admin user
-    Group.objects.get_or_create(name='admin')
     Group.objects.get_or_create(name='staff')
     Group.objects.get_or_create(name='member')
     user = User.objects.create_user('admin', 'admin@admin.com', 'admin')
-    group = Group.objects.get(name='admin')
+    group = Group.objects.get(name='staff')
     user.groups.add(group)
 
     # At this point, user is a User object that has already been saved

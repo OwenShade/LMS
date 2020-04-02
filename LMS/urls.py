@@ -7,6 +7,7 @@ app_name = 'LMS'
 urlpatterns = [
     #Url patters for all the views and pages in the site
     path('', views.home, name ='home'),
+    path('index', views.home, name='home'),
     path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'),
     path('browse/', views.browse, name='browse' ),

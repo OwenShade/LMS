@@ -18,8 +18,9 @@
     <table class="table">
         <thead>
             <tr>
-            <th scope="w-50">Book Name</th>
-            <th scope="w-30">Book ID</th>
+            <th scope="w-40">Book Name</th>
+            <th scope="w-20">Book ID</th>
+            <th scope="w-20">Lent To</th>
             <th scope="w-20">Time Left</th>
             <th scope="w-10">Return</th>
             </tr>
@@ -32,6 +33,9 @@
                 </td>
                 <td>
                     {{ book.pk_num }}
+                </td>
+                <td>
+                    {{ book.taken_out.user.username }}
                 </td>
                 <td>
                     {{ time_left }} days
