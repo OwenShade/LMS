@@ -68,14 +68,14 @@ class SearchViewTests(TestCase):
         checks that the correct number of categories are present
         """
 
-        self.add_category('General Works')
-        self.add_category('Drama')
+        self.add_category('Science Fictions')
+        self.add_category('Romance')
         self.add_category('Philosophy')
 
         response = self.client.get(reverse('LMS:browse'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "General Works")
-        self.assertContains(response, "Drama")
+        self.assertContains(response, "Science Fiction")
+        self.assertContains(response, "Romance")
         self.assertContains(response, "Philosophy")
 
         num_categories = len(response.context['categories'])
