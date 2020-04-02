@@ -73,7 +73,7 @@
                                     <td>{{ book.pk_num }}</td>
                                     <td>{{ book.location }}</td>
                                     {% if not staff %}
-                                        {% if book.taken_out %}
+                                        {% if book.back_in %}
                                             <td>Book on loan.</td>
                                         {% elif limit %}
                                             <td>Reached book limit</td>
