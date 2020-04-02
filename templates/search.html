@@ -10,13 +10,15 @@
         <div class="card-header">
             <h3>Search</h3>
         </div>
-        <input id="search" name="search" placeholder="Search">
-        <select id="options" name="options">
-            <option value="1">Genre</option>
-            <option value="2">Title</option>
-            <option value="3">Author</option>
-            <option value="4">ISBN</option>
-          </select>
+        <div class="card-body"></div>
+            <input id="search" name="search" placeholder="Search">
+            <select id="options" name="options">
+                <option value="1">Genre</option>
+                <option value="2">Title</option>
+                <option value="3">Author</option>
+                <option value="4">ISBN</option>
+            </select>
+        </div>
     </div>
 <div id="dynamic_content" class="col-6">
     {% include 'results.html' %}
