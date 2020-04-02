@@ -118,7 +118,8 @@ def user_login(request):
                 context["login_errors"].append("Invalid login details supplied.")
         else:
             print(form.errors)
-            context["login_errors"] = (form.errors)
+            for error in form.errors:
+                context["login_errors"].append(str(form.errors[error][0]))
 
     form = LoginForm()
     context["form"] = form

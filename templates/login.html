@@ -9,11 +9,11 @@
 {% block body_block %}
     <div class="text-center p-2">
         {% if login_errors %}
-            <div class="p-2 m-2 my-auto bg-danger text-white">
-                {% for error in login_errors.items %}
+            {% for error in login_errors %}
+                <div class="p-2 m-2 my-auto bg-danger text-white">
                     <p class="my-auto">{{error}}</p>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         {% endif %}
         <div class="row">
             <form method="POST" class="form-signin col-8 col-md-offset-2 m-auto">
