@@ -28,7 +28,15 @@ class CategoryMethodTests(TestCase):
 
 class ISBNMethodTests(TestCase):
         def test_ensure_views_are_positive(self):
-            isbn = ISBN(ISBN=1, category="MUST BE A CATEGORY INSTANCE ERROR HERE", views=-1)
+            def add_category(self, name, views=0):
+                category = Category(name=name)
+                category.save()
+                
+                return category
+        
+            category = add_category("Tester",9)
+            
+            isbn = ISBN(ISBN=1, category=category, views=-1)
             isbn.save()
 
             self.assertEqual((isbn.views >= 0 ), True)
@@ -46,11 +54,9 @@ class SearchViewTests(TestCase):
         self.assertContains(response, 'There are no categories present.')
         self.assertQuerysetEqual(response.context['categories'], [])
 
-    def add_category(name, views=0):
-        category = Category
-        category.views = views
-        category.name = name
-        category.save(category)
+    def add_category(self, name, views=0):
+        category = Category(name=name)
+        category.save()
         
         return category
 
@@ -96,24 +102,26 @@ class CategorySlugViewTests(TestCase):
         self.assertContains(response, 'There are no books present.')
         self.assertQuerysetEqual(response.context['ISBN'], [])
 
-    def add_ISBN(ISBN, category, title, author, genre, views = 0):
+    def add_ISBN(self, isbn, category, title, author, genre, views = 0):
         """
         This method adds an instance of an ISBN according to the ISBN model
         """
-        isbn = ISBN
-        isbn.category = category
-        isbn.title = title
-        isbn.author = author
-        isbn.genre = genre
-        isbn.views = views
-
+        def add_category(self, name, views=0):
+            category = Category(name=name)
+            category.save()
+            
+            return category
+        
+        category = add_category(category,9)
+        isbn = ISBN(ISBN=isbn,category=category,title=title,author=author,genre=genre)
+        isbn.save()
         return isbn
 
     def test_category_slug_with_books_present(self):
 
-        self.add_ISBN(1000000, "General Works", "A book", "A. Woman", "Romance")
-        self.add_ISBN(1000001, "General Works", "Another Book", "A. Notherwoman", "Murder Mystery")
-        self.add_ISBN(1000002, "General Works", "A Final Book", "A. Finalwoman", "Science Fiction")
+        self.add_ISBN(1000000, "General Workings", "A book", "A. Woman", "Romance")
+        self.add_ISBN(1000001, "General Workings", "Another Book", "A. Notherwoman", "Murder Mystery")
+        self.add_ISBN(1000002, "General Workings", "A Final Book", "A. Finalwoman", "Science Fiction")
 
         response = self.client.get('LMS/browse/general-works')
         self.assertEqual(response.status_code, 200)
@@ -159,13 +167,12 @@ class UserAuthenticationTests(TestCase):
 
 class UserLoginOutTests(TestCase):
 
-    def add_user(user, password, book_limit=10):
+    def add_user(self, user, password, book_limit=10):
         """
         This method adds an instance of a user
         according to the user model
         """
-        member = Member.objects.get_or_create(user=user)[0]
-        member.book_limit = book_limit
+        member = User(username=user, password=password)
         member.password = password
         
         member.save()
@@ -174,13 +181,13 @@ class UserLoginOutTests(TestCase):
 
     def test_user_logs_in_successfully(self):
 
-        self.add_user("TestUser", "TestUsersPassword@2000")
+        self.add_user("TestUser", "TestUsersPassword2000")
 
         response = self.client.post(reverse('LMS:login'),
                                     {'username': 'TestUser',
-                                    'password': 'TestUsersPassword@2000'})
+                                    'password': 'TestUsersPassword2000'})
         self.assertEqual(response.status_code, 200)
         user = auth.get_user(self.client)
-        assert user.is_authenticated()
+        self.assertContains(response, "You are now logged in as TestUser")
 
 
